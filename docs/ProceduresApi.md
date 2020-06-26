@@ -15,21 +15,22 @@ Method | HTTP request | Description
 [**procedures_post**](ProceduresApi.md#procedures_post) | **POST** /procedures | Create a new Procedure
 
 
-# **export_procedures_get**
+
+## export_procedures_get
+
 > String export_procedures_get(authorization, opts)
 
 Export Procedure list
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ProceduresApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-opts = { 
+opts = {
   status: 'status_example', # String | Return Procedure list based on the status for each Procedure
   name: 'test', # String | Filter by name (contains)
   members_firstname: 'test', # String | Filter by member firstname (contains)
@@ -54,6 +55,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -81,31 +83,30 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: text/csv
+- **Content-Type**: Not defined
+- **Accept**: text/csv
 
 
+## procedures_get
 
-# **procedures_get**
 > Array&lt;ProcedureOutput&gt; procedures_get(authorization, opts)
 
 Get Procedure list
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ProceduresApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-opts = { 
+opts = {
   status: 'status_example', # String | Return Procedure list based on the status for each Procedure
-  template: false, # BOOLEAN | Used to get Procedure template list
+  template: false, # Boolean | Used to get Procedure template list
   members: ['/members/f8311c9b-7b37-46d4-b28e-0c40d44b2f95'], # Array<String> | Get Procedure list for given members (paraph mode)
   items_per_page: '20', # String | Number of items per page for the pagination
-  pagination: true, # BOOLEAN | Enable the pagination
+  pagination: true, # Boolean | Enable the pagination
   page: 2, # Integer | Page of the pagination
   name: 'test', # String | Filter by name (contains)
   members_firstname: 'test', # String | Filter by member firstname (contains)
@@ -131,14 +132,15 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **String**| Authentication credentials for HTTP authentication | 
  **status** | **String**| Return Procedure list based on the status for each Procedure | [optional] 
- **template** | **BOOLEAN**| Used to get Procedure template list | [optional] [default to false]
+ **template** | **Boolean**| Used to get Procedure template list | [optional] [default to false]
  **members** | [**Array&lt;String&gt;**](String.md)| Get Procedure list for given members (paraph mode) | [optional] 
  **items_per_page** | **String**| Number of items per page for the pagination | [optional] 
- **pagination** | **BOOLEAN**| Enable the pagination | [optional] 
+ **pagination** | **Boolean**| Enable the pagination | [optional] 
  **page** | **Integer**| Page of the pagination | [optional] 
  **name** | **String**| Filter by name (contains) | [optional] 
  **members_firstname** | **String**| Filter by member firstname (contains) | [optional] 
@@ -162,27 +164,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## procedures_id_delete
 
-# **procedures_id_delete**
 > procedures_id_delete(id, authorization)
 
 Delete a Procedure
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ProceduresApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Delete a Procedure
@@ -193,6 +193,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -209,31 +210,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## procedures_id_duplicate_post
 
-# **procedures_id_duplicate_post**
 > ProcedureOutput procedures_id_duplicate_post(id, authorization, content_type, body)
 
 Duplicate a Procedure
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ProceduresApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::ProcedureDuplicateInput.new # ProcedureDuplicateInput | 
-
 
 begin
   #Duplicate a Procedure
@@ -245,6 +242,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -263,27 +261,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## procedures_id_get
 
-# **procedures_id_get**
 > ProcedureOutput procedures_id_get(id, authorization)
 
 Find a Procedure by ID
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ProceduresApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find a Procedure by ID
@@ -295,6 +291,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -311,12 +308,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## procedures_id_proof_get
 
-# **procedures_id_proof_get**
 > String procedures_id_proof_get(id, authorization)
 
 Get a Procedure proof file
@@ -324,16 +321,14 @@ Get a Procedure proof file
 Get a Procedure proof file
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ProceduresApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Get a Procedure proof file
@@ -345,6 +340,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -361,31 +357,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## procedures_id_put
 
-# **procedures_id_put**
 > ProcedureOutput procedures_id_put(id, authorization, content_type, body)
 
 Update a Procedure
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ProceduresApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::ProcedureInput.new # ProcedureInput | 
-
 
 begin
   #Update a Procedure
@@ -397,6 +389,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -415,31 +408,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## procedures_id_remind_post
 
-# **procedures_id_remind_post**
 > ProcedureOutput procedures_id_remind_post(id, authorization, content_type, body)
 
 Remind a Procedure
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ProceduresApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::ProcedureRemindInput.new # ProcedureRemindInput | 
-
 
 begin
   #Remind a Procedure
@@ -451,6 +440,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -469,29 +459,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## procedures_post
 
-# **procedures_post**
 > ProcedureOutput procedures_post(authorization, content_type, body)
 
 Create a new Procedure
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ProceduresApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::ProcedureInput.new # ProcedureInput | 
-
 
 begin
   #Create a new Procedure
@@ -503,6 +490,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -520,8 +508,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

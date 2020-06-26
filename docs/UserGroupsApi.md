@@ -8,20 +8,21 @@ Method | HTTP request | Description
 [**user_groups_id_get**](UserGroupsApi.md#user_groups_id_get) | **GET** /user_groups/{id} | Find a User Group by ID
 
 
-# **user_groups_get**
+
+## user_groups_get
+
 > Array&lt;UserGroup&gt; user_groups_get(authorization)
 
 Get User Group list
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::UserGroupsApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Get User Group list
@@ -33,6 +34,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -48,27 +50,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## user_groups_id_get
 
-# **user_groups_id_get**
 > UserGroup user_groups_id_get(id, authorization)
 
 Find a User Group by ID
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::UserGroupsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find a User Group by ID
@@ -80,6 +80,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -96,8 +97,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

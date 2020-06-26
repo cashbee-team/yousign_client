@@ -1,6 +1,7 @@
 # YousignClient::MemberInput
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user** | **String** | ID of the user in your companies. Informations about the member will be duplicate (first name, last name, email and phone number).  Required if none of fields above are specified. | [optional] 
@@ -15,5 +16,24 @@ Name | Type | Description | Notes
 **operation_level** | **String** |  | [optional] 
 **operation_custom_modes** | **Array&lt;String&gt;** |  | [optional] 
 **mode_sms_configuration** | [**ModeSmsConfiguration**](ModeSmsConfiguration.md) |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'YousignClient'
+
+instance = YousignClient::MemberInput.new(user: null,
+                                 type: null,
+                                 firstname: null,
+                                 lastname: null,
+                                 email: null,
+                                 phone: null,
+                                 position: null,
+                                 file_objects: null,
+                                 procedure: null,
+                                 operation_level: null,
+                                 operation_custom_modes: null,
+                                 mode_sms_configuration: null)
+```
 
 

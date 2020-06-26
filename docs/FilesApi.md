@@ -10,7 +10,9 @@ Method | HTTP request | Description
 [**files_post**](FilesApi.md#files_post) | **POST** /files | Create a new File
 
 
-# **files_id_download_get**
+
+## files_id_download_get
+
 > String files_id_download_get(id, authorization)
 
 Download a File
@@ -18,16 +20,14 @@ Download a File
 Used to get the base64 content of a file
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::FilesApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Download a File
@@ -39,6 +39,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -55,12 +56,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## files_id_duplicate_post
 
-# **files_id_duplicate_post**
 > FileOutput files_id_duplicate_post(id, authorization, content_type)
 
 Duplicate a File
@@ -68,18 +69,15 @@ Duplicate a File
 Duplicate a file. It will be create a clone of this file, with a new ID.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::FilesApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 
 begin
   #Duplicate a File
@@ -91,6 +89,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -108,12 +107,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## files_id_get
 
-# **files_id_get**
 > FileOutput files_id_get(id, authorization)
 
 Find a File by ID
@@ -121,16 +120,14 @@ Find a File by ID
 Returns all the information regarding the File but without its content (for performance issue).
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::FilesApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find a File by ID
@@ -142,6 +139,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -158,12 +156,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## files_post
 
-# **files_post**
 > FileOutput files_post(authorization, content_type, body)
 
 Create a new File
@@ -171,18 +169,15 @@ Create a new File
 Used to upload a file in base64 on our platform
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::FilesApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::FileInput.new # FileInput | 
-
 
 begin
   #Create a new File
@@ -194,6 +189,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -211,8 +207,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

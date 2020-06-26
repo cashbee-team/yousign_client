@@ -11,7 +11,9 @@ Method | HTTP request | Description
 [**members_post**](MembersApi.md#members_post) | **POST** /members | Create a new Member
 
 
-# **members_get**
+
+## members_get
+
 > Array&lt;MemberOutput&gt; members_get(authorization, opts)
 
 Get all Members
@@ -19,15 +21,14 @@ Get all Members
 Returns the list of Members of a organization. It only usefull if you use the query params named \"procedure\" for retrieve all members of a procedure.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::MembersApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-opts = { 
+opts = {
   procedure: 'Id for filter about a procedure' # String | 
 }
 
@@ -41,6 +42,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -57,12 +59,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## members_id_delete
 
-# **members_id_delete**
 > members_id_delete(id, authorization)
 
 Delete a Member
@@ -70,16 +72,14 @@ Delete a Member
 Delete a member
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::MembersApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Delete a Member
@@ -90,6 +90,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -106,12 +107,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## members_id_proof_get
 
-# **members_id_proof_get**
 > String members_id_proof_get(id, authorization)
 
 Get a proof file of a Member
@@ -119,16 +120,14 @@ Get a proof file of a Member
 Get a proof file of a member
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::MembersApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Get a proof file of a Member
@@ -140,6 +139,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -156,12 +156,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## members_id_put
 
-# **members_id_put**
 > MemberOutput members_id_put(id, authorization, content_type, body)
 
 Edit a Member
@@ -169,20 +169,16 @@ Edit a Member
 Edit a member
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::MembersApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::MemberInput.new # MemberInput | 
-
 
 begin
   #Edit a Member
@@ -194,6 +190,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -212,12 +209,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## members_post
 
-# **members_post**
 > MemberOutput members_post(authorization, content_type, body)
 
 Create a new Member
@@ -225,18 +222,15 @@ Create a new Member
 Create a new member
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::MembersApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::MemberInput.new # MemberInput | 
-
 
 begin
   #Create a new Member
@@ -248,6 +242,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -265,8 +260,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

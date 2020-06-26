@@ -11,20 +11,21 @@ Method | HTTP request | Description
 [**users_post**](UsersApi.md#users_post) | **POST** /users | Create a new User on Yousign application
 
 
-# **users_get**
+
+## users_get
+
 > Array&lt;UserOutput&gt; users_get(authorization)
 
 List all Users
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::UsersApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #List all Users
@@ -36,6 +37,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -51,27 +53,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## users_id_delete
 
-# **users_id_delete**
 > users_id_delete(id, authorization)
 
 Delete a User
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::UsersApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Delete a User
@@ -82,6 +82,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -98,27 +99,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## users_id_get
 
-# **users_id_get**
 > UserOutput users_id_get(id, authorization)
 
 Find a User by ID
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::UsersApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find a User by ID
@@ -131,6 +130,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -146,31 +146,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## users_id_put
 
-# **users_id_put**
 > UserOutput users_id_put(id, authorization, content_type, body)
 
 Update a User
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::UsersApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::UserInput.new # UserInput | 
-
 
 begin
   #Update a User
@@ -183,6 +179,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -200,29 +197,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## users_post
 
-# **users_post**
 > UserOutput users_post(authorization, content_type, body)
 
 Create a new User on Yousign application
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::UsersApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::UserInput.new # UserInput | 
-
 
 begin
   #Create a new User on Yousign application
@@ -234,6 +228,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -251,8 +246,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

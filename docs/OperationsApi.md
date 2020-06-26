@@ -8,22 +8,22 @@ Method | HTTP request | Description
 [**operations_post**](OperationsApi.md#operations_post) | **POST** /operations | Create a new Operation
 
 
-# **operations_id_get**
+
+## operations_id_get
+
 > OperationOutput operations_id_get(id, authorization)
 
 Find an Operation by ID
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::OperationsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find an Operation by ID
@@ -35,6 +35,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -51,29 +52,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## operations_post
 
-# **operations_post**
 > OperationOutput operations_post(authorization, content_type, body)
 
 Create a new Operation
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::OperationsApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::OperationInput.new # OperationInput | 
-
 
 begin
   #Create a new Operation
@@ -85,6 +83,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -102,8 +101,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

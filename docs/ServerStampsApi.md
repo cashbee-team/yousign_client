@@ -8,22 +8,22 @@ Method | HTTP request | Description
 [**server_stamps_post**](ServerStampsApi.md#server_stamps_post) | **POST** /server_stamps | Create a Server Stamp
 
 
-# **server_stamps_id_get**
+
+## server_stamps_id_get
+
 > ServerStampOutput server_stamps_id_get(id, authorization)
 
 Find a Server Stamp by ID
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ServerStampsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find a Server Stamp by ID
@@ -35,6 +35,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -51,29 +52,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## server_stamps_post
 
-# **server_stamps_post**
 > ServerStampOutput server_stamps_post(authorization, content_type, body)
 
 Create a Server Stamp
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ServerStampsApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::ServerStampInput.new # ServerStampInput | 
-
 
 begin
   #Create a Server Stamp
@@ -85,6 +83,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -102,8 +101,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

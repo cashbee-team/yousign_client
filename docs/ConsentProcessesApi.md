@@ -14,22 +14,22 @@ Method | HTTP request | Description
 [**consent_processes_post**](ConsentProcessesApi.md#consent_processes_post) | **POST** /consent_processes | Create a new Consent Process
 
 
-# **consent_process_values_get**
+
+## consent_process_values_get
+
 > ConsentProcessValueOutput consent_process_values_get(member, authorization)
 
 Get list of Consent Process Value
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ConsentProcessesApi.new
-
 member = '/members/17625df4-4ee7-498e-822d-3637c91b6f40' # String | id of member
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Get list of Consent Process Value
@@ -41,6 +41,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -57,28 +58,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## consent_process_values_id_get
 
-# **consent_process_values_id_get**
 > ConsentProcessValueOutput consent_process_values_id_get(id, authorization, opts)
 
 Get a Consent Process Value
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ConsentProcessesApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-opts = { 
+opts = {
   member: '/members/17625df4-4ee7-498e-822d-3637c91b6f40' # String | id of member (required for anonymous)
 }
 
@@ -92,6 +91,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -109,29 +109,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## consent_process_values_post
 
-# **consent_process_values_post**
 > ConsentProcessValueOutput consent_process_values_post(authorization, content_type, body)
 
 Create a new Consent Process Value
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ConsentProcessesApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::ConsentProcessValueInput.new # ConsentProcessValueInput | 
-
 
 begin
   #Create a new Consent Process Value
@@ -143,6 +140,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -160,26 +158,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## consent_processes_get
 
-# **consent_processes_get**
 > Array&lt;ConsentProcessOutput&gt; consent_processes_get(authorization, opts)
 
 Get list of Consent Processes
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ConsentProcessesApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-opts = { 
+opts = {
   member: '/members/17625df4-4ee7-498e-822d-3637c91b6f40', # String | id of member (required for anonymous)
   procedure: '/procedures/17625df4-4ee7-498e-822d-3637c91b6f40' # String | id of procedure (required if the member attribut is not set)
 }
@@ -194,6 +191,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -211,27 +209,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## consent_processes_id_delete
 
-# **consent_processes_id_delete**
 > consent_processes_id_delete(id, authorization)
 
 Delete a Consent Process
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ConsentProcessesApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Delete a Consent Process
@@ -242,6 +238,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -258,28 +255,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## consent_processes_id_get
 
-# **consent_processes_id_get**
 > ConsentProcessOutput consent_processes_id_get(id, authorization, opts)
 
 Get a Consent Process
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ConsentProcessesApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-opts = { 
+opts = {
   member: '/members/17625df4-4ee7-498e-822d-3637c91b6f40' # String | id of member (required for anonymous)
 }
 
@@ -293,6 +288,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -310,31 +306,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## consent_processes_id_put
 
-# **consent_processes_id_put**
 > ConsentProcessOutput consent_processes_id_put(id, authorization, content_type, body)
 
 Update a Consent Process
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ConsentProcessesApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::ConsentProcessInput.new # ConsentProcessInput | 
-
 
 begin
   #Update a Consent Process
@@ -346,6 +338,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -364,29 +357,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## consent_processes_post
 
-# **consent_processes_post**
 > ConsentProcessOutput consent_processes_post(authorization, content_type, body)
 
 Create a new Consent Process
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::ConsentProcessesApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::ConsentProcessInput.new # ConsentProcessInput | 
-
 
 begin
   #Create a new Consent Process
@@ -398,6 +388,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -415,8 +406,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

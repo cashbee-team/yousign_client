@@ -10,7 +10,9 @@ Method | HTTP request | Description
 [**file_objects_post**](FileObjectsApi.md#file_objects_post) | **POST** /file_objects | Create a new File Object
 
 
-# **file_objects_id_delete**
+
+## file_objects_id_delete
+
 > file_objects_id_delete(id, authorization)
 
 Delete a File Object
@@ -18,16 +20,14 @@ Delete a File Object
 Delete a File Object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::FileObjectsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Delete a File Object
@@ -38,6 +38,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -54,12 +55,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## file_objects_id_get
 
-# **file_objects_id_get**
 > FileObjectOutput file_objects_id_get(id, authorization)
 
 Find a File Object by ID
@@ -67,16 +68,14 @@ Find a File Object by ID
 Get a File Object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::FileObjectsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find a File Object by ID
@@ -89,6 +88,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -104,12 +104,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## file_objects_id_put
 
-# **file_objects_id_put**
 > FileObjectOutput file_objects_id_put(id, authorization, content_type, body)
 
 Update a File Object
@@ -117,20 +117,16 @@ Update a File Object
 Update a File Object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::FileObjectsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::FileObjectInput.new # FileObjectInput | 
-
 
 begin
   #Update a File Object
@@ -143,6 +139,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -160,12 +157,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## file_objects_post
 
-# **file_objects_post**
 > FileObjectOutput file_objects_post(authorization, content_type, body)
 
 Create a new File Object
@@ -173,18 +170,15 @@ Create a new File Object
 Create a new fileObject
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::FileObjectsApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::FileObjectInput.new # FileObjectInput | 
-
 
 begin
   #Create a new File Object
@@ -196,6 +190,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -213,8 +208,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

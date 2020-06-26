@@ -7,20 +7,21 @@ Method | HTTP request | Description
 [**workspaces_get**](WorkspacesApi.md#workspaces_get) | **GET** /workspaces | List all Workspaces
 
 
-# **workspaces_get**
+
+## workspaces_get
+
 > Array&lt;WorkspaceOutput&gt; workspaces_get(authorization)
 
 List all Workspaces
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::WorkspacesApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #List all Workspaces
@@ -32,6 +33,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -47,8 +49,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

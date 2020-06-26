@@ -2521,7 +2521,6 @@
         "id" : {
           "type" : "string",
           "description" : "Organization ID",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/organizations/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "name" : {
@@ -3168,7 +3167,6 @@
         "creator" : {
           "type" : "string",
           "description" : "Id of creator",
-          "pattern" : "^/users/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/users/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "sha256" : {
@@ -3493,7 +3491,6 @@
         "creator" : {
           "type" : "string",
           "description" : "Id of creator of the object",
-          "pattern" : "^/users/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/users/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "creatorFirstName" : {
@@ -3507,7 +3504,6 @@
         "workspace" : {
           "type" : "string",
           "description" : "Id of workspace creator of the object",
-          "pattern" : "^/workspaces/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/workspaces/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "template" : {
@@ -3673,7 +3669,7 @@
         },
         "operationLevel" : {
           "type" : "string",
-          "enum" : [ "none", "custom" ]
+          "enum" : [ "none", "custom", "advanced" ]
         },
         "operationCustomModes" : {
           "type" : "array",
@@ -3759,7 +3755,7 @@
         },
         "operationLevel" : {
           "type" : "string",
-          "enum" : [ "none", "custom" ]
+          "enum" : [ "none", "custom", "advanced" ]
         },
         "operationCustomModes" : {
           "type" : "array",
@@ -3806,7 +3802,6 @@
         "position" : {
           "type" : "string",
           "description" : "Coordinates of the signature image to set. Format is : \"llx,lly,urx,ury\". llx=left lower x coordinate, lly=left lower y coordinate, urx=upper right x coordinate, ury = upper right y coordinate. To get easily coordinates, you could use this tool : http://placeit.yousign.fr",
-          "pattern" : "/^\\d+(,\\d+){3}$/",
           "example" : "400,700,500,800"
         },
         "fieldName" : {
@@ -3891,7 +3886,6 @@
         "position" : {
           "type" : "string",
           "description" : "Coordinates of the signature image to set. Format is : “llx,lly,urx,ury”. llx=left lower x coordinate, lly=left lower y coordinate, urx=upper right x coordinate, ury = upper right y coordinate. To get easily coordinates, you could use this tool : http://placeit.yousign.fr",
-          "pattern" : "/^\\d+(,\\d+){3}$/",
           "example" : "400,700,500,800"
         },
         "fieldName" : {
@@ -3979,7 +3973,6 @@
         "position" : {
           "type" : "string",
           "description" : "Coordinates of the signature image to set. Format is : \"llx,lly,urx,ury\". llx=left lower x coordinate, lly=left lower y coordinate, urx=upper right x coordinate, ury = upper right y coordinate. To get easily coordinates, you could use this tool : http://placeit.yousign.fr",
-          "pattern" : "/^\\d+(,\\d+){3}$/",
           "example" : "400,700,500,800"
         },
         "fieldName" : {
@@ -4020,7 +4013,6 @@
         "position" : {
           "type" : "string",
           "description" : "Coordinates of the signature image to set. Format is : “llx,lly,urx,ury”. llx=left lower x coordinate, lly=left lower y coordinate, urx=upper right x coordinate, ury = upper right y coordinate. To get easily coordinates, you could use this tool : http://placeit.yousign.fr",
-          "pattern" : "/^\\d+(,\\d+){3}$/",
           "example" : "400,700,500,800"
         },
         "fieldName" : {

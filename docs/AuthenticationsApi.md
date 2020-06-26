@@ -12,22 +12,22 @@ Method | HTTP request | Description
 [**authentications_sms_id_put**](AuthenticationsApi.md#authentications_sms_id_put) | **PUT** /authentications/sms/{id} | Update an SMS Authentication
 
 
-# **authentications_email_id_get**
+
+## authentications_email_id_get
+
 > AuthenticationEmailOutput authentications_email_id_get(id, authorization)
 
 Find an Authentication by ID
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::AuthenticationsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find an Authentication by ID
@@ -40,6 +40,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -55,31 +56,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## authentications_email_id_put
 
-# **authentications_email_id_put**
 > AuthenticationEmailOutput authentications_email_id_put(id, authorization, content_type, body)
 
 Update an Email Authentication
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::AuthenticationsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
-body = YousignClient::Body2.new # Body2 | 
-
+body = YousignClient::InlineObject2.new # InlineObject2 | 
 
 begin
   #Update an Email Authentication
@@ -92,12 +89,13 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
  **authorization** | **String**| Authentication credentials for HTTP authentication | 
  **content_type** | **String**| The MIME type of the body of the request | 
- **body** | [**Body2**](Body2.md)|  | 
+ **body** | [**InlineObject2**](InlineObject2.md)|  | 
 
 ### Return type
 
@@ -109,27 +107,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## authentications_inwebo_id_get
 
-# **authentications_inwebo_id_get**
 > AuthenticationInweboOutput authentications_inwebo_id_get(id, authorization)
 
 Get an Authentication
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::AuthenticationsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Get an Authentication
@@ -142,6 +138,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -157,31 +154,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## authentications_inwebo_id_put
 
-# **authentications_inwebo_id_put**
 > AuthenticationInweboOutput authentications_inwebo_id_put(id, authorization, content_type, body)
 
 Update an inwebo Authentication
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::AuthenticationsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
-body = YousignClient::Body.new # Body | 
-
+body = YousignClient::InlineObject.new # InlineObject | 
 
 begin
   #Update an inwebo Authentication
@@ -194,12 +187,13 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
  **authorization** | **String**| Authentication credentials for HTTP authentication | 
  **content_type** | **String**| The MIME type of the body of the request | 
- **body** | [**Body**](Body.md)|  | 
+ **body** | [**InlineObject**](InlineObject.md)|  | 
 
 ### Return type
 
@@ -211,27 +205,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## authentications_sms_id_get
 
-# **authentications_sms_id_get**
 > AuthenticationSmsOutput authentications_sms_id_get(id, authorization)
 
 Find an Authentication by ID
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::AuthenticationsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find an Authentication by ID
@@ -244,6 +236,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
@@ -259,31 +252,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## authentications_sms_id_put
 
-# **authentications_sms_id_put**
 > AuthenticationSmsOutput authentications_sms_id_put(id, authorization, content_type, body)
 
 Update an SMS Authentication
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::AuthenticationsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
-body = YousignClient::Body1.new # Body1 | 
-
+body = YousignClient::InlineObject1.new # InlineObject1 | 
 
 begin
   #Update an SMS Authentication
@@ -296,12 +285,13 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
  **authorization** | **String**| Authentication credentials for HTTP authentication | 
  **content_type** | **String**| The MIME type of the body of the request | 
- **body** | [**Body1**](Body1.md)|  | 
+ **body** | [**InlineObject1**](InlineObject1.md)|  | 
 
 ### Return type
 
@@ -313,8 +303,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

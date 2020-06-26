@@ -16,7 +16,9 @@ Method | HTTP request | Description
 [**signature_uis_post**](SignatureUIsApi.md#signature_uis_post) | **POST** /signature_uis | Create a new Signature UI
 
 
-# **signature_ui_labels_get**
+
+## signature_ui_labels_get
+
 > Array&lt;SignatureUiLabelOutput&gt; signature_ui_labels_get(authorization, opts)
 
 Get Signature UI Labels
@@ -24,15 +26,14 @@ Get Signature UI Labels
 Only usefull if you use a filter with name or signatureUI
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::SignatureUIsApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-opts = { 
+opts = {
   name: 'name_example', # String | Filtering on name of signature ui labels
   signature_ui: 'signature_ui_example' # String | Filtering on id of signature ui resource
 }
@@ -47,6 +48,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -64,28 +66,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## signature_ui_labels_id_delete
 
-# **signature_ui_labels_id_delete**
 > signature_ui_labels_id_delete(id, authorization, opts)
 
 Delete a Signature UI Label
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::SignatureUIsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-opts = { 
+opts = {
   id2: '/signature_ui_labels/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' # String | Id of signature ui label
 }
 
@@ -98,6 +98,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -115,28 +116,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## signature_ui_labels_id_get
 
-# **signature_ui_labels_id_get**
 > SignatureUiLabelOutput signature_ui_labels_id_get(id, authorization, opts)
 
 Find a Signature UI Label by ID
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::SignatureUIsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-opts = { 
+opts = {
   id2: '/signature_ui_labels/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' # String | id of signature ui label
 }
 
@@ -150,6 +149,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -167,32 +167,28 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## signature_ui_labels_id_put
 
-# **signature_ui_labels_id_put**
 > SignatureUiLabelOutput signature_ui_labels_id_put(id, authorization, content_type, body, opts)
 
 Update a Signature UI Label
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::SignatureUIsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::SignatureUiLabelInput.new # SignatureUiLabelInput | 
-
-opts = { 
+opts = {
   id2: '/signature_ui_labels/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' # String | Id of signature ui labels
 }
 
@@ -206,6 +202,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -225,29 +222,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## signature_ui_labels_post
 
-# **signature_ui_labels_post**
 > SignatureUiLabelOutput signature_ui_labels_post(authorization, content_type, body)
 
 Create a new Signature UI Label
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::SignatureUIsApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::SignatureUiLabelInput.new # SignatureUiLabelInput | 
-
 
 begin
   #Create a new Signature UI Label
@@ -259,6 +253,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -276,25 +271,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## signature_uis_get
 
-# **signature_uis_get**
 > Array&lt;SignatureUiOutput&gt; signature_uis_get(authorization)
 
 Get Signature UI list
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::SignatureUIsApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Get Signature UI list
@@ -306,6 +300,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -321,30 +316,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## signature_uis_id_delete
 
-# **signature_uis_id_delete**
 > signature_uis_id_delete(id, authorization, content_type, opts)
 
 Delete a Signature UI
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::SignatureUIsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
-opts = { 
+opts = {
   id2: '/signature_uis/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' # String | Id of the signature ui
 }
 
@@ -357,6 +349,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -375,30 +368,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## signature_uis_id_get
 
-# **signature_uis_id_get**
 > SignatureUiOutput signature_uis_id_get(id, authorization, content_type, opts)
 
 Find a Signature UI by ID
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::SignatureUIsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
-opts = { 
+opts = {
   id2: '/signature_uis/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' # String | id of a signature ui
 }
 
@@ -412,6 +402,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -430,30 +421,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## signature_uis_id_put
 
-# **signature_uis_id_put**
 > SignatureUiInputUpdate signature_uis_id_put(id, authorization, content_type, opts)
 
 Update a Signature UI
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::SignatureUIsApi.new
-
 id = 'id_example' # String | 
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
-opts = { 
+opts = {
   id2: '/signature_uis/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' # String | id of signature ui to update
 }
 
@@ -467,6 +455,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -485,12 +474,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## signature_uis_post
 
-# **signature_uis_post**
 > SignatureUiOutput signature_uis_post(authorization, content_type, body)
 
 Create a new Signature UI
@@ -498,18 +487,15 @@ Create a new Signature UI
 Here is the url format to build on your side to get a custom signature interface with your settings :  https://webapp.yousign.com/procedure/sign?members=~2Fmembers~2F__MEMBER_ID__&signatureUi=~2Fsignature_uis~2F__SIGNATURE_UI_ID__
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::SignatureUIsApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 content_type = 'application/json' # String | The MIME type of the body of the request
-
 body = YousignClient::SignatureUiInput.new # SignatureUiInput | 
-
 
 begin
   #Create a new Signature UI
@@ -521,6 +507,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -538,8 +525,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

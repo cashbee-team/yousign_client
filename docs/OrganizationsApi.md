@@ -7,20 +7,21 @@ Method | HTTP request | Description
 [**organizations_get**](OrganizationsApi.md#organizations_get) | **GET** /organizations | List all Organizations
 
 
-# **organizations_get**
+
+## organizations_get
+
 > Array&lt;OrganizationOutput&gt; organizations_get(authorization)
 
 List all Organizations
 
 ### Example
+
 ```ruby
 # load the gem
 require 'yousign_client'
 
 api_instance = YousignClient::OrganizationsApi.new
-
 authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #List all Organizations
@@ -32,6 +33,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -47,8 +49,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
