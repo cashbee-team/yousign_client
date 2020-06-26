@@ -1,0 +1,5417 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "For your information, the Yousign API documentation is available at https://dev.yousign.com/",
+    "version" : "2.1",
+    "title" : "Yousign API Swagger",
+    "contact" : {
+      "name" : "our technical support",
+      "email" : "support@yousign.fr"
+    }
+  },
+  "host" : "api.yousign.com",
+  "schemes" : [ "https" ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/organizations" : {
+      "get" : {
+        "tags" : [ "Organizations" ],
+        "summary" : "List all Organizations",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/OrganizationOutput"
+              }
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Organizations"
+      }
+    },
+    "/workspaces" : {
+      "get" : {
+        "tags" : [ "Workspaces" ],
+        "summary" : "List all Workspaces",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/WorkspaceOutput"
+              }
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Workspaces"
+      }
+    },
+    "/users" : {
+      "get" : {
+        "tags" : [ "Users" ],
+        "summary" : "List all Users",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/UserOutput"
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Users" ],
+        "summary" : "Create a new User on Yousign application",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/UserInput"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/UserOutput"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Users"
+      }
+    },
+    "/users/{id}" : {
+      "get" : {
+        "tags" : [ "Users" ],
+        "summary" : "Find a User by ID",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/UserOutput"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Users" ],
+        "summary" : "Update a User",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/UserInput"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/UserOutput"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Users" ],
+        "summary" : "Delete a User",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Status 204"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Users"
+      }
+    },
+    "/user_groups" : {
+      "get" : {
+        "tags" : [ "User Groups" ],
+        "summary" : "Get User Group list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/UserGroup"
+              }
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "User Groups"
+      }
+    },
+    "/user_groups/{id}" : {
+      "get" : {
+        "tags" : [ "User Groups" ],
+        "summary" : "Find a User Group by ID",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/UserGroup"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "User Groups"
+      }
+    },
+    "/files" : {
+      "post" : {
+        "tags" : [ "Files" ],
+        "summary" : "Create a new File",
+        "description" : "Used to upload a file in base64 on our platform",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/FileInput"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/FileOutput"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Files"
+      }
+    },
+    "/files/{id}" : {
+      "get" : {
+        "tags" : [ "Files" ],
+        "summary" : "Find a File by ID",
+        "description" : "Returns all the information regarding the File but without its content (for performance issue).",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/FileOutput"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Files"
+      }
+    },
+    "/files/{id}/download" : {
+      "get" : {
+        "tags" : [ "Files" ],
+        "summary" : "Download a File",
+        "description" : "Used to get the base64 content of a file",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "string",
+              "description" : "It will return directly the base 64 of the file."
+            },
+            "examples" : {
+              "application/json" : "Base64 content file"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Files"
+      }
+    },
+    "/files/{id}/duplicate" : {
+      "post" : {
+        "tags" : [ "Files" ],
+        "summary" : "Duplicate a File",
+        "description" : "Duplicate a file. It will be create a clone of this file, with a new ID.",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/FileOutput"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Files"
+      }
+    },
+    "/procedures" : {
+      "get" : {
+        "tags" : [ "Procedures" ],
+        "summary" : "Get Procedure list",
+        "parameters" : [ {
+          "name" : "status",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Return Procedure list based on the status for each Procedure",
+          "enum" : [ "active", "finished", "expired", "refused", "draft" ]
+        }, {
+          "name" : "template",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean",
+          "description" : "Used to get Procedure template list",
+          "default" : false
+        }, {
+          "name" : "members",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "description" : "Get Procedure list for given members (paraph mode)",
+          "items" : {
+            "type" : "string"
+          },
+          "x-example" : "/members/f8311c9b-7b37-46d4-b28e-0c40d44b2f95"
+        }, {
+          "name" : "itemsPerPage",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Number of items per page for the pagination",
+          "x-example" : "20"
+        }, {
+          "name" : "pagination",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean",
+          "description" : "Enable the pagination",
+          "x-example" : true
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Page of the pagination",
+          "x-example" : 2
+        }, {
+          "name" : "name",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filter by name (contains)",
+          "x-example" : "test"
+        }, {
+          "name" : "members.firstname",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filter by member firstname (contains)",
+          "x-example" : "test"
+        }, {
+          "name" : "members.lastname",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filter by member lastname (contains)",
+          "x-example" : "test"
+        }, {
+          "name" : "members.phone",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filter by member phone (contains)",
+          "x-example" : "+33102030405"
+        }, {
+          "name" : "members.email",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filter by member email (contains)",
+          "x-example" : "test@test.fr"
+        }, {
+          "name" : "files.name",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filter by file name (contains)",
+          "x-example" : "test"
+        }, {
+          "name" : "createdAt",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "description" : "Filter by creation date\n\ncreatedAt[after]=2017-09-18\ncreatedAt[before]=2017-09-18\ncreatedAt[strictly_after]=2017-09-18\ncreatedAt[strictly_before]=2017-09-18",
+          "items" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "name" : "updatedAt",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "description" : "Filter by update date\n\nupdatedAt[after]=2017-09-18\nupdatedAt[before]=2017-09-18\nupdatedAt[strictly_after]=2017-09-18\nupdatedAt[strictly_before]=2017-09-18",
+          "items" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "name" : "expiresAt",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "description" : "Filter by expire date\n\nexpiresAt[after]=2017-09-18\nexpiresAt[before]=2017-09-18\nexpiresAt[strictly_after]=2017-09-18\nexpiresAt[strictly_before]=2017-09-18",
+          "items" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "name" : "deletedAt",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "description" : "Filter by delete date\n\ndeletedAt[after]=2017-09-18\ndeletedAt[before]=2017-09-18\ndeletedAt[strictly_after]=2017-09-18\ndeletedAt[strictly_before]=2017-09-18",
+          "items" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "name" : "order[createdAt]",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Order by createdAt\n\norder[createdAt]=asc\norder[createdAt]=desc",
+          "enum" : [ "asc", "desc" ]
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ProcedureOutput"
+              }
+            },
+            "headers" : {
+              "X-Yousign-Pagination-TotalItems" : {
+                "type" : "integer",
+                "format" : "int32",
+                "description" : "Total of items for the pagination",
+                "x-example" : 120
+              },
+              "X-Yousign-Pagination-Page-Last" : {
+                "type" : "integer",
+                "format" : "int32",
+                "description" : "Last page of pagination",
+                "x-example" : 4
+              },
+              "X-Yousign-Pagination-Page-Current" : {
+                "type" : "integer",
+                "format" : "int32",
+                "description" : "Current page of pagination",
+                "x-example" : 1
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Procedures" ],
+        "summary" : "Create a new Procedure",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ProcedureInput"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/ProcedureOutput"
+            }
+          },
+          "400" : {
+            "description" : "Status 400"
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "/procedures/{id}" : {
+      "get" : {
+        "tags" : [ "Procedures" ],
+        "summary" : "Find a Procedure by ID",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/ProcedureOutput"
+            }
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Procedures" ],
+        "summary" : "Update a Procedure",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ProcedureInput"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/ProcedureOutput"
+            }
+          },
+          "400" : {
+            "description" : "Status 400"
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Procedures" ],
+        "summary" : "Delete a Procedure",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Status 204"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "/procedures/{id}/duplicate" : {
+      "post" : {
+        "tags" : [ "Procedures" ],
+        "summary" : "Duplicate a Procedure",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ProcedureDuplicateInput"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/ProcedureOutput"
+            }
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "/export/procedures" : {
+      "get" : {
+        "tags" : [ "Procedures" ],
+        "summary" : "Export Procedure list",
+        "produces" : [ "text/csv" ],
+        "parameters" : [ {
+          "name" : "status",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Return Procedure list based on the status for each Procedure",
+          "enum" : [ "active", "finished", "expired", "refused", "draft" ]
+        }, {
+          "name" : "name",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filter by name (contains)",
+          "x-example" : "test"
+        }, {
+          "name" : "members.firstname",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filter by member firstname (contains)",
+          "x-example" : "test"
+        }, {
+          "name" : "members.lastname",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filter by member lastname (contains)",
+          "x-example" : "test"
+        }, {
+          "name" : "members.phone",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filter by member phone (contains)",
+          "x-example" : "+33102030405"
+        }, {
+          "name" : "members.email",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filter by member email (contains)",
+          "x-example" : "test@test.fr"
+        }, {
+          "name" : "files.name",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filter by file name (contains)",
+          "x-example" : "test"
+        }, {
+          "name" : "createdAt",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "description" : "Filter by creation date\n\ncreatedAt[after]=2017-09-18\ncreatedAt[before]=2017-09-18\ncreatedAt[strictly_after]=2017-09-18\ncreatedAt[strictly_before]=2017-09-18",
+          "items" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "name" : "updatedAt",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "description" : "Filter by update date\n\nupdatedAt[after]=2017-09-18\nupdatedAt[before]=2017-09-18\nupdatedAt[strictly_after]=2017-09-18\nupdatedAt[strictly_before]=2017-09-18",
+          "items" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "name" : "expiresAt",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "description" : "Filter by expire date\n\nexpiresAt[after]=2017-09-18\nexpiresAt[before]=2017-09-18\nexpiresAt[strictly_after]=2017-09-18\nexpiresAt[strictly_before]=2017-09-18",
+          "items" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "name" : "deletedAt",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "description" : "Filter by delete date\n\ndeletedAt[after]=2017-09-18\ndeletedAt[before]=2017-09-18\ndeletedAt[strictly_after]=2017-09-18\ndeletedAt[strictly_before]=2017-09-18",
+          "items" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "name" : "order[createdAt]",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Order by attribut",
+          "enum" : [ "asc", "desc" ]
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "string"
+            },
+            "examples" : {
+              "text/csv" : "CSV Content"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "/procedures/{id}/remind" : {
+      "post" : {
+        "tags" : [ "Procedures" ],
+        "summary" : "Remind a Procedure",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ProcedureRemindInput"
+          }
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Status 204",
+            "schema" : {
+              "$ref" : "#/definitions/ProcedureOutput"
+            }
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "/procedures/{id}/proof" : {
+      "get" : {
+        "tags" : [ "Procedures" ],
+        "summary" : "Get a Procedure proof file",
+        "description" : "Get a Procedure proof file",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "string",
+              "description" : "Return a base 64 content zip file that contains all members proof file."
+            },
+            "examples" : {
+              "application/json" : "base64 content"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "/members" : {
+      "get" : {
+        "tags" : [ "Members" ],
+        "summary" : "Get all Members",
+        "description" : "Returns the list of Members of a organization.\nIt only usefull if you use the query params named \"procedure\" for retrieve all members of a procedure.",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "procedure",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-example" : "Id for filter about a procedure"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Array of members",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/MemberOutput"
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Members" ],
+        "summary" : "Create a new Member",
+        "description" : "Create a new member",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/MemberInput"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/MemberOutput"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Members"
+      }
+    },
+    "/members/{id}" : {
+      "put" : {
+        "tags" : [ "Members" ],
+        "summary" : "Edit a Member",
+        "description" : "Edit a member",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/MemberInput"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/MemberOutput"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Members" ],
+        "summary" : "Delete a Member",
+        "description" : "Delete a member",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Status 204"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Members"
+      }
+    },
+    "/members/{id}/proof" : {
+      "get" : {
+        "tags" : [ "Members" ],
+        "summary" : "Get a proof file of a Member",
+        "description" : "Get a proof file of a member",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "string"
+            },
+            "examples" : {
+              "application/json" : "base64 content of the txt file"
+            }
+          },
+          "404" : {
+            "description" : "The member does not exist or the member have not signed yet."
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Members"
+      }
+    },
+    "/file_objects" : {
+      "post" : {
+        "tags" : [ "File Objects" ],
+        "summary" : "Create a new File Object",
+        "description" : "Create a new fileObject",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/FileObjectInput"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/FileObjectOutput"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "File Objects"
+      }
+    },
+    "/file_objects/{id}" : {
+      "get" : {
+        "tags" : [ "File Objects" ],
+        "summary" : "Find a File Object by ID",
+        "description" : "Get a File Object",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/FileObjectOutput"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "File Objects" ],
+        "summary" : "Update a File Object",
+        "description" : "Update a File Object",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/FileObjectInput"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/FileObjectOutput"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "File Objects" ],
+        "summary" : "Delete a File Object",
+        "description" : "Delete a File Object",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Status 204"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "File Objects"
+      }
+    },
+    "/operations" : {
+      "post" : {
+        "tags" : [ "Operations" ],
+        "summary" : "Create a new Operation",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/OperationInput"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/OperationOutput"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Operations"
+      }
+    },
+    "/operations/{id}" : {
+      "get" : {
+        "tags" : [ "Operations" ],
+        "summary" : "Find an Operation by ID",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/OperationOutput"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Operations"
+      }
+    },
+    "/authentications/inwebo/{id}" : {
+      "get" : {
+        "tags" : [ "Authentications" ],
+        "summary" : "Get an Authentication",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/AuthenticationInweboOutput"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Authentications" ],
+        "summary" : "Update an inwebo Authentication",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object",
+            "properties" : {
+              "signImage" : {
+                "type" : "string",
+                "description" : "Image of signature (base 64)"
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/AuthenticationInweboOutput"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Authentications"
+      }
+    },
+    "/authentications/sms/{id}" : {
+      "get" : {
+        "tags" : [ "Authentications" ],
+        "summary" : "Find an Authentication by ID",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/AuthenticationSmsOutput"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Authentications" ],
+        "summary" : "Update an SMS Authentication",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object",
+            "required" : [ "code" ],
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "description" : "Code sms received by user"
+              },
+              "signImage" : {
+                "type" : "string",
+                "description" : "Image of signature (base 64)"
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/AuthenticationSmsOutput"
+            }
+          },
+          "400" : {
+            "description" : "Code is not correct or expired",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "detail" : {
+                  "type" : "string",
+                  "description" : "Description of error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Authentications"
+      }
+    },
+    "/authentications/email/{id}" : {
+      "get" : {
+        "tags" : [ "Authentications" ],
+        "summary" : "Find an Authentication by ID",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/AuthenticationEmailOutput"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Authentications" ],
+        "summary" : "Update an Email Authentication",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "object",
+            "required" : [ "code" ],
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "description" : "Code sms received by user"
+              },
+              "signImage" : {
+                "type" : "string",
+                "description" : "Image of signature (base 64)"
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/AuthenticationEmailOutput"
+            }
+          },
+          "400" : {
+            "description" : "Code is not correct or expired",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "detail" : {
+                  "type" : "string",
+                  "description" : "Description of error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Authentications"
+      }
+    },
+    "/consent_processes" : {
+      "get" : {
+        "tags" : [ "Consent Processes" ],
+        "summary" : "Get list of Consent Processes",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "member",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "id of member (required for anonymous)",
+          "x-example" : "/members/17625df4-4ee7-498e-822d-3637c91b6f40"
+        }, {
+          "name" : "procedure",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "id of procedure (required if the member attribut is not set)",
+          "x-example" : "/procedures/17625df4-4ee7-498e-822d-3637c91b6f40"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ConsentProcessOutput"
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Consent Processes" ],
+        "summary" : "Create a new Consent Process",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ConsentProcessInput"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/ConsentProcessOutput"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Consent Process"
+      }
+    },
+    "/consent_processes/{id}" : {
+      "get" : {
+        "tags" : [ "Consent Processes" ],
+        "summary" : "Get a Consent Process",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "member",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "id of member (required for anonymous)",
+          "x-example" : "/members/17625df4-4ee7-498e-822d-3637c91b6f40"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/ConsentProcessOutput"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Consent Processes" ],
+        "summary" : "Update a Consent Process",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ConsentProcessInput"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/ConsentProcessOutput"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Consent Processes" ],
+        "summary" : "Delete a Consent Process",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Status 204"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Consent Process"
+      }
+    },
+    "/consent_process_values/{id}" : {
+      "get" : {
+        "tags" : [ "Consent Processes" ],
+        "summary" : "Get a Consent Process Value",
+        "parameters" : [ {
+          "name" : "member",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "id of member (required for anonymous)",
+          "x-example" : "/members/17625df4-4ee7-498e-822d-3637c91b6f40"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/ConsentProcessValueOutput"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Consent Process"
+      }
+    },
+    "/consent_process_values" : {
+      "get" : {
+        "tags" : [ "Consent Processes" ],
+        "summary" : "Get list of Consent Process Value",
+        "parameters" : [ {
+          "name" : "member",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "description" : "id of member",
+          "x-example" : "/members/17625df4-4ee7-498e-822d-3637c91b6f40"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/ConsentProcessValueOutput"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Consent Processes" ],
+        "summary" : "Create a new Consent Process Value",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ConsentProcessValueInput"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/ConsentProcessValueOutput"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Consent Process"
+      }
+    },
+    "/signature_uis" : {
+      "get" : {
+        "tags" : [ "Signature UIs" ],
+        "summary" : "Get Signature UI list",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/SignatureUiOutput"
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Signature UIs" ],
+        "summary" : "Create a new Signature UI",
+        "description" : "Here is the url format to build on your side to get a custom signature interface with your settings : \nhttps://webapp.yousign.com/procedure/sign?members=~2Fmembers~2F__MEMBER_ID__&signatureUi=~2Fsignature_uis~2F__SIGNATURE_UI_ID__",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SignatureUiInput"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/SignatureUiOutput"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Signature UIs"
+      }
+    },
+    "/signature_uis/{id}" : {
+      "get" : {
+        "tags" : [ "Signature UIs" ],
+        "summary" : "Find a Signature UI by ID",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "id of a signature ui",
+          "x-example" : "/signature_uis/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/SignatureUiOutput"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Signature UIs" ],
+        "summary" : "Update a Signature UI",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "id of signature ui to update",
+          "x-example" : "/signature_uis/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/SignatureUiInputUpdate"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Signature UIs" ],
+        "summary" : "Delete a Signature UI",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Id of the signature ui",
+          "x-example" : "/signature_uis/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Status 204"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Signature UIs"
+      }
+    },
+    "/signature_ui_labels" : {
+      "get" : {
+        "tags" : [ "Signature UIs" ],
+        "summary" : "Get Signature UI Labels",
+        "description" : "Only usefull if you use a filter with name or signatureUI",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filtering on name of signature ui labels"
+        }, {
+          "name" : "signatureUi",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Filtering on id of signature ui resource"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/SignatureUiLabelOutput"
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Signature UIs" ],
+        "summary" : "Create a new Signature UI Label",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SignatureUiLabelInput"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/SignatureUiLabelOutput"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Signature UIs"
+      }
+    },
+    "/signature_ui_labels/{id}" : {
+      "get" : {
+        "tags" : [ "Signature UIs" ],
+        "summary" : "Find a Signature UI Label by ID",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "id of signature ui label",
+          "x-example" : "/signature_ui_labels/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/SignatureUiLabelOutput"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Signature UIs" ],
+        "summary" : "Update a Signature UI Label",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Id of signature ui labels",
+          "x-example" : "/signature_ui_labels/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SignatureUiLabelInput"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/SignatureUiLabelOutput"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Signature UIs" ],
+        "summary" : "Delete a Signature UI Label",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "description" : "Id of signature ui label",
+          "x-example" : "/signature_ui_labels/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Status 204"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Signature UIs"
+      }
+    },
+    "/server_stamps" : {
+      "post" : {
+        "tags" : [ "Server Stamps" ],
+        "summary" : "Create a Server Stamp",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ServerStampInput"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/ServerStampOutput"
+            }
+          },
+          "400" : {
+            "description" : "Status 400"
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Server Stamp"
+      }
+    },
+    "/server_stamps/{id}" : {
+      "get" : {
+        "tags" : [ "Server Stamps" ],
+        "summary" : "Find a Server Stamp by ID",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/ServerStampOutput"
+            }
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Server Stamp"
+      }
+    },
+    "/check-document/identities" : {
+      "post" : {
+        "tags" : [ "Check Documents" ],
+        "summary" : "Verify an identity document (passport, id cards)",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CheckDocumentIdentitiesInput"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/CheckDocumentIdentitiesOutput"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Check Document"
+      }
+    },
+    "/check-document/identities/{id}" : {
+      "get" : {
+        "tags" : [ "Check Documents" ],
+        "summary" : "Get informations about an identity document (passport, id cards)",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/CheckDocumentIdentitiesOutput"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Check Document"
+      }
+    },
+    "/check-document/bank_accounts" : {
+      "post" : {
+        "tags" : [ "Check Documents" ],
+        "summary" : "Verify a bank document (RIB)",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "The MIME type of the body of the request",
+          "x-example" : "application/json"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CheckDocumentBankAccountsInput"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Status 201",
+            "schema" : {
+              "$ref" : "#/definitions/CheckDocumentBankAccountsOutput"
+            }
+          },
+          "400" : {
+            "description" : "Status 400"
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Check Document"
+      }
+    },
+    "/check-document/bank_accounts/{id}" : {
+      "get" : {
+        "tags" : [ "Check Documents" ],
+        "summary" : "Get informations about a bank document (RIB)",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : "Authentication credentials for HTTP authentication",
+          "x-example" : "Bearer {{access_token}}"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/CheckDocumentBankAccountsOutput"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "x-restlet" : {
+        "section" : "Check Document"
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "ApiKey" : {
+      "type" : "apiKey",
+      "name" : "Authorization",
+      "in" : "header"
+    }
+  },
+  "definitions" : {
+    "ConfigEmailTemplate" : {
+      "type" : "object",
+      "required" : [ "message", "subject", "to" ],
+      "properties" : {
+        "to" : {
+          "type" : "array",
+          "description" : "Reference or email of recipients",
+          "items" : {
+            "type" : "string",
+            "description" : "You can given an array of recipients.\n\nA recipient can be a specific email like `my-user@email.com` or a variable which is available in the list below.",
+            "enum" : [ "@members", "@members.auto", "@members.pending", "@members.processing", "@members.done", "@members.refused", "@member", "@creator", "@subscribers", "@subscribers.groupName1", "@subscribers.groupName2" ]
+          }
+        },
+        "subject" : {
+          "type" : "string",
+          "description" : "Subject of the mail"
+        },
+        "message" : {
+          "type" : "string",
+          "description" : "Object of the mail"
+        },
+        "fromName" : {
+          "type" : "string",
+          "description" : "Modify the from name",
+          "default" : "Yousign"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Config"
+      }
+    },
+    "OrganizationOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Organization ID",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/organizations/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Organization name"
+        },
+        "url" : {
+          "type" : "string",
+          "description" : "Custom URL for the Organization (internal usage only, should not be used)"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Created date of the object"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Updated date of the object"
+        },
+        "fSso" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "maxUsers" : {
+          "type" : "number",
+          "description" : "Internal usage, should not be used"
+        },
+        "procedureRelatedFilesEnable" : {
+          "type" : "boolean",
+          "description" : "Defined if the organization anable the related files"
+        },
+        "subscriptions" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "autoCollection" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "vatNumber" : {
+          "type" : "string",
+          "description" : "Internal usage, should not be used"
+        },
+        "billingAddress" : {
+          "$ref" : "#/definitions/OrganizationBillingAddress"
+        },
+        "inAppSupport" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "inAppUpdates" : {
+          "type" : "string",
+          "description" : "Internal usage, should not be used"
+        },
+        "fileTemplate" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fArchive" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fUserPermissions" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fProcedureTemplate" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fProcedureReminderAuto" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fApi" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fCheckdocument" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fProcedureCreate" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fSignatureUi" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fServerStamp" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fOperationLevelNone" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fConsentProcess" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fOperationLevelAdvanced" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fOperationCustomModeEmail" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fDynamicFields" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "samlIdentityProvider" : {
+          "type" : "string",
+          "description" : "Internal usage, should not be used"
+        },
+        "passwordPolicyPattern" : {
+          "type" : "string",
+          "description" : "Pattern of the password policy for the organization"
+        },
+        "passwordPolicyDescription" : {
+          "type" : "string",
+          "description" : "Description for the password policy"
+        },
+        "userActivation" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        },
+        "fProcedureTemplatePermissions" : {
+          "type" : "boolean",
+          "description" : "Internal usage, should not be used"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Organizations"
+      }
+    },
+    "OrganizationBillingAddress" : {
+      "type" : "object",
+      "properties" : {
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "company" : {
+          "type" : "string"
+        },
+        "phone" : {
+          "type" : "string"
+        },
+        "line1" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "zip" : {
+          "type" : "string"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Organizations"
+      }
+    },
+    "WorkspaceOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Object's ID",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/workspaces/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Workspace name"
+        },
+        "config" : {
+          "$ref" : "#/definitions/WorkspaceConfig"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "emailProcedureFromName" : {
+          "type" : "string"
+        },
+        "contactFieldVisibility" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "slug" : {
+          "type" : "string"
+        },
+        "hasCustomLogo" : {
+          "type" : "boolean"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Workspaces"
+      }
+    },
+    "WorkspaceConfig" : {
+      "type" : "object",
+      "properties" : {
+        "authenticationModes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "enum" : [ "sms", "inwebo" ]
+          }
+        },
+        "procedure" : {
+          "$ref" : "#/definitions/WorkspaceConfigProcedure"
+        },
+        "email" : {
+          "$ref" : "#/definitions/WorkspaceConfigEmail"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Workspaces"
+      }
+    },
+    "WorkspaceConfigProcedure" : {
+      "type" : "object",
+      "properties" : {
+        "authenticationModes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "enum" : [ "sms", "inwebo" ]
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Workspaces"
+      }
+    },
+    "WorkspaceConfigEmail" : {
+      "type" : "object",
+      "properties" : {
+        "procedure.started" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "procedure.finished" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "procedure.refused" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "procedure.expired" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "procedure.deleted" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "member.started" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "member.finished" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "comment.created" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Workspaces"
+      }
+    },
+    "UserInput" : {
+      "type" : "object",
+      "required" : [ "email", "firstname", "lastname" ],
+      "properties" : {
+        "firstname" : {
+          "type" : "string",
+          "description" : "User's firstname"
+        },
+        "lastname" : {
+          "type" : "string",
+          "description" : "User's lastname"
+        },
+        "email" : {
+          "type" : "string",
+          "description" : "User's email address (This field is allowed only during creation)"
+        },
+        "title" : {
+          "type" : "string",
+          "description" : "User's job title"
+        },
+        "phone" : {
+          "type" : "string",
+          "description" : "User's phone number (mobiles and landline telephones are supported). Phone number must be formatted to E164 (https://en.wikipedia.org/wiki/E.164) which includes the symbol '+' and the country code. For example : +33612131315. All countries are supported."
+        },
+        "permission" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "enum" : [ "ROLE_ADMIN", "ROLE_MANAGER", "ROLE_SIGNER" ]
+          }
+        },
+        "group" : {
+          "type" : "string",
+          "description" : "User's UserGroup",
+          "pattern" : "^/user_groups/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/user_groups/4f3ef3ac-d234-4abf-8dc9-4c7f37d34402"
+        },
+        "config" : {
+          "type" : "object"
+        },
+        "defaultSignImage" : {
+          "type" : "string",
+          "description" : "ID of file image",
+          "pattern" : "^/files/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/files/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "notifications" : {
+          "type" : "object",
+          "description" : "Defines if the notifications are enable ou disable for entities",
+          "properties" : {
+            "procedure" : {
+              "type" : "boolean"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Users"
+      }
+    },
+    "UserOutput" : {
+      "type" : "object",
+      "required" : [ "email", "firstname", "lastname" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Object's ID",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/users/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "firstname" : {
+          "type" : "string",
+          "description" : "User's firstname"
+        },
+        "lastname" : {
+          "type" : "string",
+          "description" : "User's lastname"
+        },
+        "email" : {
+          "type" : "string",
+          "description" : "User's email address"
+        },
+        "title" : {
+          "type" : "string",
+          "description" : "User's title"
+        },
+        "phone" : {
+          "type" : "string",
+          "description" : "User's phone number (mobiles and landline telephones are supported). Phone number must be formatted to E164 (https://en.wikipedia.org/wiki/E.164) which includes the symbol '+' and the country code. For example : +33612131315. All countries are supported."
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "User's status",
+          "enum" : [ "not_activated", "activated" ]
+        },
+        "organization" : {
+          "type" : "string",
+          "description" : "ID of the organization the user belongs to",
+          "example" : "/organizations/b7599d85-4076-4752-94fb-8fbe10147e60"
+        },
+        "workspaces" : {
+          "type" : "array",
+          "description" : "List of workspaces to which the user is connected and has access",
+          "items" : {
+            "$ref" : "#/definitions/UserWorkspaceOutput"
+          }
+        },
+        "permission" : {
+          "type" : "string"
+        },
+        "group" : {
+          "$ref" : "#/definitions/UserGroup"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Created date of the object"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Updated date of the object"
+        },
+        "deleted" : {
+          "type" : "boolean",
+          "description" : "Defines if the User is deleted or not"
+        },
+        "deletedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Defines the date where the user has been deleted"
+        },
+        "config" : {
+          "type" : "object"
+        },
+        "inweboUserRequest" : {
+          "type" : "string",
+          "description" : "Internal usage, should not be used",
+          "example" : "/inwebo_user_requests/b7599d85-4076-4752-94fb-8fbe10147e60"
+        },
+        "samlNameId" : {
+          "type" : "string",
+          "description" : "ID of SAML"
+        },
+        "defaultSignImage" : {
+          "type" : "string",
+          "description" : "ID of the default sign image.",
+          "example" : "/files/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "notifications" : {
+          "type" : "object",
+          "description" : "Defines if the notifications are enable ou disable for entities",
+          "properties" : {
+            "procedure" : {
+              "type" : "boolean"
+            }
+          },
+          "example" : "{\n  \"procedure\": true\n}"
+        },
+        "fastSign" : {
+          "type" : "boolean",
+          "description" : "Defines if the fast signature is available for the user on the Yousign application"
+        },
+        "fullName" : {
+          "type" : "string",
+          "description" : "User's full name"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Users"
+      }
+    },
+    "InweboUserRequest" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Id of the object",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/inwebo_user_requests/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Users"
+      }
+    },
+    "UserWorkspaceOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Object's ID",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/workspaces/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Workspace name"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Users"
+      }
+    },
+    "UserGroup" : {
+      "type" : "object",
+      "required" : [ "name" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Id of the object",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/user_groups/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Name of the UserGroup"
+        },
+        "permissions" : {
+          "type" : "array",
+          "description" : "Permissions of UserGroup",
+          "items" : {
+            "type" : "string",
+            "enum" : [ "procedure_write", "procedure_template_write", "procedure_create_from_template", "sign", "workspace", "user", "api_key", "contact", "procedure_custom_field", "signature_ui", "server_stamp", "certificate", "archive" ]
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "User Groups"
+      }
+    },
+    "FileInput" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "Name of the file"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Type of the file",
+          "enum" : [ "signable", "attachment" ]
+        },
+        "password" : {
+          "type" : "string",
+          "description" : "Password for protected PDF file"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Description of the file"
+        },
+        "metadata" : {
+          "type" : "object",
+          "description" : "Metadata of the file",
+          "properties" : {
+            "key1" : {
+              "type" : "string"
+            },
+            "key2" : {
+              "type" : "integer"
+            }
+          }
+        },
+        "content" : {
+          "type" : "string",
+          "description" : "Content in base 64 of the file"
+        },
+        "procedure" : {
+          "type" : "string",
+          "description" : "Id of the procedure",
+          "pattern" : "^/procedures/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/procedures/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "position" : {
+          "type" : "integer",
+          "format" : "int32",
+          "default" : 0
+        }
+      },
+      "x-restlet" : {
+        "section" : "Files"
+      }
+    },
+    "FileOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Id of the object",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/files/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Name of the file"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Type of file",
+          "enum" : [ "signable", "sign_image", "attachment" ]
+        },
+        "contentType" : {
+          "type" : "string",
+          "description" : "Type of content",
+          "example" : "application/pdf"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Description of the file"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "description" : "Created date of the object"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "description" : "Updated date of the object"
+        },
+        "metadata" : {
+          "type" : "object",
+          "description" : "Metadata of the file",
+          "properties" : {
+            "key1" : {
+              "type" : "string"
+            },
+            "key2" : {
+              "type" : "integer"
+            }
+          }
+        },
+        "workspace" : {
+          "type" : "string",
+          "description" : "Id of workspace",
+          "pattern" : "^/workspaces/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/workspaces/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "creator" : {
+          "type" : "string",
+          "description" : "Id of creator",
+          "pattern" : "^/users/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/users/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "sha256" : {
+          "type" : "string",
+          "description" : "File hash",
+          "example" : "23203f9264161714cdb8d2f474b9b641e6a735f8cea4098c40a3cab8743bd749"
+        },
+        "position" : {
+          "type" : "integer",
+          "format" : "int32",
+          "default" : 0
+        }
+      },
+      "x-restlet" : {
+        "section" : "Files"
+      }
+    },
+    "ProcedureInput" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "Name of procedure"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Description of procedure"
+        },
+        "expiresAt" : {
+          "type" : "string",
+          "format" : "date",
+          "description" : "Expiration date. The procedure will be out of usage after this date."
+        },
+        "template" : {
+          "type" : "boolean",
+          "description" : "Defines if the procedure is a template (if true). A template could be used by a procedure to get all properties of the template. Check parent parameter for more information."
+        },
+        "ordered" : {
+          "type" : "boolean",
+          "description" : "Defines an order for the procedure process. If true, position of each member will be used to define the validation workflow."
+        },
+        "metadata" : {
+          "type" : "object",
+          "description" : "Metadata of the file (do not forget to replace key1 and key2 by your own custom values)",
+          "properties" : {
+            "key1" : {
+              "type" : "string"
+            },
+            "key2" : {
+              "type" : "integer"
+            }
+          }
+        },
+        "config" : {
+          "$ref" : "#/definitions/ProcedureConfig"
+        },
+        "members" : {
+          "type" : "array",
+          "description" : "List of members, REQUIRED if start field is true.",
+          "items" : {
+            "$ref" : "#/definitions/MemberInput"
+          }
+        },
+        "start" : {
+          "type" : "boolean",
+          "description" : "Defines if the procedure has been started. If false, the procedure status will be draft.",
+          "default" : true
+        },
+        "relatedFilesEnable" : {
+          "type" : "boolean",
+          "description" : "Defines if related files are available. Used only for organization that have this option."
+        },
+        "archive" : {
+          "type" : "boolean",
+          "description" : "Defines if the files of the procedure must be archived (Organization should be allowed)",
+          "default" : false
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "ProcedureDuplicateInput" : {
+      "type" : "object",
+      "properties" : {
+        "start" : {
+          "type" : "boolean",
+          "description" : "Defines if the new procedure should be started after the duplication",
+          "default" : false,
+          "example" : true
+        },
+        "template" : {
+          "type" : "boolean",
+          "description" : "Override the parent value for this property and defines if the new procedure should be a template or not",
+          "example" : false
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "ProcedureConfig" : {
+      "type" : "object",
+      "properties" : {
+        "email" : {
+          "$ref" : "#/definitions/ProcedureConfigEmail"
+        },
+        "reminders" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ProcedureConfigReminder"
+          }
+        },
+        "webhook" : {
+          "$ref" : "#/definitions/ProcedureConfigWebhook"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "ProcedureConfigWebhook" : {
+      "type" : "object",
+      "properties" : {
+        "procedure.started" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigWebhookTemplate"
+          }
+        },
+        "procedure.finished" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigWebhookTemplate"
+          }
+        },
+        "procedure.refused" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigWebhookTemplate"
+          }
+        },
+        "procedure.expired" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigWebhookTemplate"
+          }
+        },
+        "procedure.deleted" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigWebhookTemplate"
+          }
+        },
+        "member.started" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigWebhookTemplate"
+          }
+        },
+        "member.finished" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigWebhookTemplate"
+          }
+        },
+        "comment.created" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigWebhookTemplate"
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "ProcedureConfigReminder" : {
+      "type" : "object",
+      "required" : [ "interval" ],
+      "properties" : {
+        "interval" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Number of days between each reminder. The date of the creation of the procedure is used to define the date of the reminder. For example, if you set 2 and the procedure is created at 2017-01-01T15:03:01, the first reminder will be sent at 2017-01-03T15:03:01.",
+          "default" : 1,
+          "minimum" : 1
+        },
+        "limit" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Limit of reminders sent.",
+          "default" : 5,
+          "minimum" : 1,
+          "maximum" : 90
+        },
+        "config" : {
+          "$ref" : "#/definitions/ProcedureConfigReminderConfig"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "ProcedureConfigEmail" : {
+      "type" : "object",
+      "properties" : {
+        "procedure.started" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "procedure.finished" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "procedure.refused" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "procedure.expired" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "procedure.deleted" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "member.started" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "member.finished" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        },
+        "comment.created" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "ProcedureConfigReminderConfig" : {
+      "type" : "object",
+      "properties" : {
+        "email" : {
+          "$ref" : "#/definitions/ProcedureConfigReminderConfigEmail"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "ProcedureConfigReminderConfigEmail" : {
+      "type" : "object",
+      "properties" : {
+        "reminder.executed" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "ProcedureOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Id of the object",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/procedures/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Name of procedure"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Description of procedure"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Created date of the object"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Updated date of the object"
+        },
+        "expiresAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Expiration date. The procedure will be out of usage after this date."
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Status of the procedure",
+          "enum" : [ "draft", "active", "finished", "expired", "refused" ]
+        },
+        "creator" : {
+          "type" : "string",
+          "description" : "Id of creator of the object",
+          "pattern" : "^/users/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/users/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "creatorFirstName" : {
+          "type" : "string",
+          "description" : "The creator's first name"
+        },
+        "creatorLastName" : {
+          "type" : "string",
+          "description" : "The creator's last name"
+        },
+        "workspace" : {
+          "type" : "string",
+          "description" : "Id of workspace creator of the object",
+          "pattern" : "^/workspaces/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/workspaces/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "template" : {
+          "type" : "boolean",
+          "description" : "Defines if the procedure is a template (if true). A template could be used by a procedure to get all properties of the template. Check parent parameter for more information."
+        },
+        "ordered" : {
+          "type" : "boolean",
+          "description" : "Defines an order for the procedure process. If true, position of each member will be used to define the validation workflow."
+        },
+        "parent" : {
+          "type" : "string",
+          "description" : "Id of a procedure template used to get all properties of the template in the new procedure. If you set other properties, they will be replaced. If you don’t set other properties, all properties will be cloned.",
+          "example" : "/procedures/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "metadata" : {
+          "type" : "object",
+          "description" : "Metadata of the procedure",
+          "properties" : {
+            "key1" : {
+              "type" : "string"
+            },
+            "key2" : {
+              "type" : "integer"
+            }
+          }
+        },
+        "config" : {
+          "$ref" : "#/definitions/ProcedureConfig"
+        },
+        "members" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/MemberOutput"
+          }
+        },
+        "files" : {
+          "type" : "array",
+          "description" : "List of files used in the procedure.",
+          "items" : {
+            "$ref" : "#/definitions/FileOutput"
+          }
+        },
+        "relatedFilesEnable" : {
+          "type" : "boolean",
+          "description" : "Defines if related files are available."
+        },
+        "archive" : {
+          "type" : "boolean",
+          "description" : "Defines if the files of the procedure must be archived (Workspace should be allowed)",
+          "default" : false
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "ProcedureRemindInput" : {
+      "type" : "object",
+      "properties" : {
+        "config" : {
+          "$ref" : "#/definitions/ProcedureRemindConfig"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "ProcedureRemindConfig" : {
+      "type" : "object",
+      "properties" : {
+        "email" : {
+          "$ref" : "#/definitions/ProcedureRemindConfigEmail"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "ProcedureRemindConfigEmail" : {
+      "type" : "object",
+      "properties" : {
+        "reminder.executed" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigEmailTemplate"
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "ConfigWebhookTemplate" : {
+      "type" : "object",
+      "required" : [ "url" ],
+      "properties" : {
+        "url" : {
+          "type" : "string",
+          "description" : "Url to call"
+        },
+        "method" : {
+          "type" : "string",
+          "description" : "Http request type",
+          "default" : "GET",
+          "enum" : [ "GET", "POST", "PUT", "PATCH" ]
+        },
+        "headers" : {
+          "type" : "object",
+          "description" : "Http request headers",
+          "example" : {
+            "X-Yousign-Custom-Header" : "Test value"
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Procedures"
+      }
+    },
+    "MemberInput" : {
+      "type" : "object",
+      "properties" : {
+        "user" : {
+          "type" : "string",
+          "description" : "ID of the user in your companies. Informations about the member will be duplicate (first name, last name, email and phone number).\n\nRequired if none of fields above are specified."
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Type of a member. \"signer\" to sign documents (legally) and \"validator\" to validate documents.",
+          "default" : "signer",
+          "enum" : [ "signer", "validator" ]
+        },
+        "firstname" : {
+          "type" : "string",
+          "description" : "Firstname of an external member. Required if user field is blank"
+        },
+        "lastname" : {
+          "type" : "string",
+          "description" : "Lastname of an external member. Required if user field is blank"
+        },
+        "email" : {
+          "type" : "string",
+          "description" : "Email of an external member. Required if user field is blank"
+        },
+        "phone" : {
+          "type" : "string",
+          "description" : "Phone of an external member. Required if user field is blank"
+        },
+        "position" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "If the procedure have the boolean \"ordered\" at true, you can define position of the order to invite your members to sign.\nOnly the first member will be invited to sign.\n\nWhen the first member have signed, the second will be invited, etc..."
+        },
+        "fileObjects" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FileObjectInput"
+          }
+        },
+        "procedure" : {
+          "type" : "string",
+          "description" : "Procedure id reference"
+        },
+        "operationLevel" : {
+          "type" : "string",
+          "enum" : [ "none", "custom" ]
+        },
+        "operationCustomModes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "enum" : [ "sms", "inwebo", "email" ]
+          }
+        },
+        "modeSmsConfiguration" : {
+          "$ref" : "#/definitions/ModeSmsConfiguration"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Members"
+      }
+    },
+    "MemberOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Id of the object",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/members/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "user" : {
+          "type" : "string",
+          "description" : "Internal user associated with the member. In this case, informations about the member will be informations of the user (first name, last name, phone number and email).",
+          "pattern" : "^/users/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/users/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Type of a member. \"signer\" to sign documents (legally) and \"validator\" to validate documents.",
+          "default" : "signer",
+          "enum" : [ "signer", "validator" ]
+        },
+        "firstname" : {
+          "type" : "string",
+          "description" : "Firstname of an external member."
+        },
+        "lastname" : {
+          "type" : "string",
+          "description" : "Lastname of an external member."
+        },
+        "email" : {
+          "type" : "string",
+          "description" : "Email of an external member."
+        },
+        "phone" : {
+          "type" : "string",
+          "description" : "Phone of an external member."
+        },
+        "position" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Position of the member if ordered is set to true. Example with two members, the first one could have a position set to 1, the second one set to 2. In this case, when the procedure starts, only the first member will be notified and could validate the documents. The second one could not validate the documents, he will be notified when the first signer is notified."
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "status" : {
+          "type" : "string",
+          "enum" : [ "pending", "processing", "done", "refused" ]
+        },
+        "fileObjects" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FileObjectOutput"
+          }
+        },
+        "comment" : {
+          "type" : "string",
+          "description" : "Comment of a member when he refuses a signature"
+        },
+        "procedure" : {
+          "type" : "string",
+          "description" : "Procedure id reference"
+        },
+        "operationLevel" : {
+          "type" : "string",
+          "enum" : [ "none", "custom" ]
+        },
+        "operationCustomModes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "enum" : [ "sms", "inwebo", "email" ]
+          }
+        },
+        "modeSmsConfiguration" : {
+          "$ref" : "#/definitions/ModeSmsConfiguration"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Members"
+      }
+    },
+    "ModeSmsConfiguration" : {
+      "type" : "object",
+      "required" : [ "content" ],
+      "properties" : {
+        "content" : {
+          "type" : "string",
+          "description" : "Content of your custom sms message. Should contains the substring `{{code}}`",
+          "example" : "Hello, your code for signature is {{code}}."
+        }
+      },
+      "x-restlet" : {
+        "section" : "Members"
+      }
+    },
+    "FileObjectInput" : {
+      "type" : "object",
+      "required" : [ "file" ],
+      "properties" : {
+        "file" : {
+          "type" : "string",
+          "description" : "File id reference"
+        },
+        "page" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Page of the visible signature. This property is ignored if fieldName is set. \nIf you want a visible signature, you must set page, position and fieldName."
+        },
+        "position" : {
+          "type" : "string",
+          "description" : "Coordinates of the signature image to set. Format is : \"llx,lly,urx,ury\". llx=left lower x coordinate, lly=left lower y coordinate, urx=upper right x coordinate, ury = upper right y coordinate. To get easily coordinates, you could use this tool : http://placeit.yousign.fr",
+          "pattern" : "/^\\d+(,\\d+){3}$/",
+          "example" : "400,700,500,800"
+        },
+        "fieldName" : {
+          "type" : "string",
+          "description" : "[type=signature] Name of the signature field existing in the document, it will be not used on the signature image."
+        },
+        "mention" : {
+          "type" : "string",
+          "description" : "[type=signature] Text associated above the signature image.\n\nYou can use some variable inside : {{date.en}} {{date.fr}} {{time.en}} {{time.fr}} that it will be parsed to show the date of the signature."
+        },
+        "mention2" : {
+          "type" : "string",
+          "description" : "[type=signature] Text associated below the signature image. (internal usage only, should not be used).\n\nYou can use some variable inside : {{date.en}} {{date.fr}} {{time.en}} {{time.fr}} that it will be parsed to show the date of the signature."
+        },
+        "member" : {
+          "type" : "string",
+          "description" : "Member id reference"
+        },
+        "reason" : {
+          "type" : "string",
+          "description" : "[type=signature] The reason they are signing the agreement",
+          "default" : "Signed by Yousign"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "The type of the file object",
+          "default" : "signature",
+          "enum" : [ "signature", "text" ]
+        },
+        "contentRequired" : {
+          "type" : "boolean",
+          "description" : "[type=text] Indicate if the member must fill or not the field",
+          "default" : false
+        },
+        "content" : {
+          "type" : "string",
+          "description" : "[type=text] The content of the field. Could be used for placeholder",
+          "maxLength" : 255
+        },
+        "fontFamily" : {
+          "type" : "string",
+          "description" : "[type=text] The font familly used to render the TextField. Currently only the default value will be used.",
+          "default" : "raleway",
+          "enum" : [ "raleway" ]
+        },
+        "fontSize" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "[type=text] The font size used to render the field. Currently only the default value will be used.",
+          "default" : 12,
+          "minimum" : 6,
+          "maximum" : 20
+        },
+        "fontColor" : {
+          "type" : "string",
+          "description" : "[type=text] The font color used to render the field.",
+          "pattern" : "^(0|255|25[0-4]|2[0-4]\\d|1\\d\\d|0?\\d?\\d),(0|255|25[0-4]|2[0-4]\\d|1\\d\\d|0?\\d?\\d),(0|255|25[0-4]|2[0-4]\\d|1\\d\\d|0?\\d?\\d)$",
+          "example" : "0,0,0"
+        }
+      },
+      "x-restlet" : {
+        "section" : "File Objects"
+      }
+    },
+    "FileObjectOutput" : {
+      "type" : "object",
+      "required" : [ "file" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Id of the object",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/file_objects/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "file" : {
+          "$ref" : "#/definitions/FileOutput"
+        },
+        "page" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Page of the visible signature. This property is ignored if fieldName is set. If you want a visible signature, you must set page, position and fieldName."
+        },
+        "position" : {
+          "type" : "string",
+          "description" : "Coordinates of the signature image to set. Format is : “llx,lly,urx,ury”. llx=left lower x coordinate, lly=left lower y coordinate, urx=upper right x coordinate, ury = upper right y coordinate. To get easily coordinates, you could use this tool : http://placeit.yousign.fr",
+          "pattern" : "/^\\d+(,\\d+){3}$/",
+          "example" : "400,700,500,800"
+        },
+        "fieldName" : {
+          "type" : "string",
+          "description" : "[type=signature] Name of the signature field existing in the document"
+        },
+        "mention" : {
+          "type" : "string",
+          "description" : "[type=signature] Text associated above the signature image.\n\nYou can use some variable inside : {{date.en}} {{date.fr}} {{time.en}} {{time.fr}} that it will be parsed to show the date of the signature.",
+          "example" : "Read and approuved"
+        },
+        "mention2 (internal)" : {
+          "type" : "string",
+          "description" : "[type=signature] Text associated below the signature image. (internal usage only, should not be used).\n\nYou can use some variable inside : {{date.en}} {{date.fr}} {{time.en}} {{time.fr}} that it will be parsed to show the date of the signature."
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Created date of the object"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Updated date of the object"
+        },
+        "executedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Date of signature or validation"
+        },
+        "reason" : {
+          "type" : "string",
+          "description" : "[type=signature] The reason they are signing the agreement",
+          "default" : "Signed by Firstname Lastname"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "The type of the file object",
+          "default" : "signature",
+          "enum" : [ "signature", "text" ]
+        },
+        "contentRequired" : {
+          "type" : "boolean",
+          "description" : "[type=text] Indicate if the member must fill or not the field",
+          "default" : false
+        },
+        "content" : {
+          "type" : "string",
+          "description" : "[type=text] The content of the field. Could be used for placeholder",
+          "maxLength" : 255
+        },
+        "fontFamily" : {
+          "type" : "string",
+          "description" : "[type=text] The font familly used to render the TextField. Currently only the default value will be used.",
+          "default" : "raleway",
+          "enum" : [ "raleway" ]
+        },
+        "fontSize" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "[type=text] The font size used to render the field. Currently only the default value will be used.",
+          "default" : 12,
+          "minimum" : 6,
+          "maximum" : 20
+        },
+        "fontColor" : {
+          "type" : "string",
+          "description" : "[type=text] The font color used to render the field.",
+          "pattern" : "^(0|255|25[0-4]|2[0-4]\\d|1\\d\\d|0?\\d?\\d),(0|255|25[0-4]|2[0-4]\\d|1\\d\\d|0?\\d?\\d),(0|255|25[0-4]|2[0-4]\\d|1\\d\\d|0?\\d?\\d)$",
+          "example" : "0,0,0"
+        }
+      },
+      "x-restlet" : {
+        "section" : "File Objects"
+      }
+    },
+    "FileObjectInputWithoutFileReference" : {
+      "type" : "object",
+      "properties" : {
+        "page" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Page of the visible signature. This property is ignored if fieldName is set. \nIf you want a visible signature, you must set page, position and fieldName."
+        },
+        "position" : {
+          "type" : "string",
+          "description" : "Coordinates of the signature image to set. Format is : \"llx,lly,urx,ury\". llx=left lower x coordinate, lly=left lower y coordinate, urx=upper right x coordinate, ury = upper right y coordinate. To get easily coordinates, you could use this tool : http://placeit.yousign.fr",
+          "pattern" : "/^\\d+(,\\d+){3}$/",
+          "example" : "400,700,500,800"
+        },
+        "fieldName" : {
+          "type" : "string",
+          "description" : "Name of the signature field existing in the document, it will be not used on the signature image."
+        },
+        "mention" : {
+          "type" : "string",
+          "description" : "Text associated above the signature image.\n\nYou can use some variable inside : {{date.en}} {{date.fr}} {{time.en}} {{time.fr}} that it will be parsed to show the date of the signature."
+        },
+        "mention2" : {
+          "type" : "string",
+          "description" : "Text associated below the signature image.\n\nYou can use some variable inside : {{date.en}} {{date.fr}} {{time.en}} {{time.fr}} that it will be parsed to show the date of the signature."
+        },
+        "reason" : {
+          "type" : "string",
+          "description" : "The reason they are signing the agreement",
+          "default" : "Signed by Yousign"
+        }
+      },
+      "x-restlet" : {
+        "section" : "File Objects"
+      }
+    },
+    "FileObjectOutputWithoutFileReference" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Id of the object",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/file_objects/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "page" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Page of the visible signature. This property is ignored if fieldName is set. If you want a visible signature, you must set page, position and fieldName."
+        },
+        "position" : {
+          "type" : "string",
+          "description" : "Coordinates of the signature image to set. Format is : “llx,lly,urx,ury”. llx=left lower x coordinate, lly=left lower y coordinate, urx=upper right x coordinate, ury = upper right y coordinate. To get easily coordinates, you could use this tool : http://placeit.yousign.fr",
+          "pattern" : "/^\\d+(,\\d+){3}$/",
+          "example" : "400,700,500,800"
+        },
+        "fieldName" : {
+          "type" : "string",
+          "description" : "Name of the signature field existing in the document"
+        },
+        "mention" : {
+          "type" : "string",
+          "description" : "Text associated above the signature image.\n\nYou can use some variable inside : {{date.en}} {{date.fr}} {{time.en}} {{time.fr}} that it will be parsed to show the date of the signature.",
+          "example" : "Read and approuved"
+        },
+        "mention2 (internal)" : {
+          "type" : "string",
+          "description" : "Text associated below the signature image.\n\nYou can use some variable inside : {{date.en}} {{date.fr}} {{time.en}} {{time.fr}} that it will be parsed to show the date of the signature."
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Created date of the object"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Updated date of the object"
+        },
+        "executedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Date of signature or validation"
+        },
+        "reason" : {
+          "type" : "string",
+          "description" : "The reason they are signing the agreement",
+          "default" : "Signed by Yousign"
+        }
+      },
+      "x-restlet" : {
+        "section" : "File Objects"
+      }
+    },
+    "OperationOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Id of operation"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date",
+          "description" : "Date of creation"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date",
+          "description" : "Last date of update"
+        },
+        "authentication" : {
+          "$ref" : "#/definitions/AuthenticationInweboOutput"
+        },
+        "mode" : {
+          "type" : "string",
+          "description" : "Mode of authentication",
+          "enum" : [ "sms", "inwebo", "email" ]
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Status of operation",
+          "enum" : [ "pending", "done", "error" ]
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Type of operation",
+          "enum" : [ "accept", "refuse" ]
+        },
+        "metadata" : {
+          "type" : "object",
+          "description" : "Metadata of the operation",
+          "properties" : {
+            "key1" : {
+              "type" : "string"
+            },
+            "key2" : {
+              "type" : "integer"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Operations"
+      }
+    },
+    "OperationInput" : {
+      "type" : "object",
+      "required" : [ "mode", "type" ],
+      "properties" : {
+        "type" : {
+          "type" : "string",
+          "description" : "Type of operation",
+          "enum" : [ "accept", "refuse" ]
+        },
+        "mode" : {
+          "type" : "string",
+          "description" : "Mode of authentication",
+          "enum" : [ "sms", "inwebo", "email" ]
+        },
+        "allMembers" : {
+          "type" : "boolean",
+          "default" : false
+        },
+        "members" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "example" : "/members/548922ec-b94f-476a-93e9-d7f73c35a92c"
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Status of operation",
+          "enum" : [ "pending", "done", "error" ]
+        },
+        "comment" : {
+          "type" : "string"
+        },
+        "metadata" : {
+          "type" : "object",
+          "description" : "Metadata of the operation",
+          "properties" : {
+            "key1" : {
+              "type" : "string"
+            },
+            "key2" : {
+              "type" : "integer"
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Operations"
+      }
+    },
+    "AuthenticationInweboOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "id of authentication"
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Status of authentication",
+          "enum" : [ "waiting", "refused", "timeout", "ok" ]
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Type of authentication"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Authentications"
+      }
+    },
+    "AuthenticationSmsOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "id of authentication"
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Status of authentication",
+          "enum" : [ "active", "expired", "used", "reached" ]
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Type of authentication"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Authentications"
+      }
+    },
+    "AuthenticationEmailOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "id of authentication"
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Status of authentication",
+          "enum" : [ "active", "expired", "used", "reached" ]
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Type of authentication"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Authentications"
+      }
+    },
+    "ConsentProcessOutput" : {
+      "type" : "object",
+      "required" : [ "members" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Id of object",
+          "example" : "/consent_processes/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Type of operation",
+          "enum" : [ "text", "checkbox" ]
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Description of consent Process"
+        },
+        "required" : {
+          "type" : "boolean",
+          "description" : "Consent process is required",
+          "default" : true
+        },
+        "position" : {
+          "type" : "integer",
+          "description" : "Position of consent process",
+          "example" : 1
+        },
+        "expectedValue" : {
+          "type" : "string",
+          "description" : "Expected value for consent process value",
+          "example" : "My value"
+        },
+        "members" : {
+          "type" : "array",
+          "description" : "List of members attached to consent process",
+          "items" : {
+            "type" : "string"
+          },
+          "example" : [ "/members/9d1ede2b-5687-4440-bdc8-dd0bc64f664f" ]
+        },
+        "file" : {
+          "type" : "string",
+          "description" : "File attached to consent process",
+          "example" : "/files/9d1ede2b-5687-4440-bdc8-dd0bc64f664f"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Consent Process"
+      }
+    },
+    "ConsentProcessInput" : {
+      "type" : "object",
+      "required" : [ "members", "type" ],
+      "properties" : {
+        "type" : {
+          "type" : "string",
+          "description" : "Type of operation",
+          "enum" : [ "text", "checkbox" ]
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Description of consent Process"
+        },
+        "required" : {
+          "type" : "boolean",
+          "description" : "Consent process is required",
+          "default" : true
+        },
+        "position" : {
+          "type" : "integer",
+          "description" : "Position of consent process"
+        },
+        "expectedValue" : {
+          "type" : "string",
+          "description" : "Expected value for consent process value",
+          "example" : "My value"
+        },
+        "members" : {
+          "type" : "array",
+          "description" : "List of members attached to consent process",
+          "items" : {
+            "type" : "string"
+          },
+          "example" : [ "/members/9d1ede2b-5687-4440-bdc8-dd0bc64f664f" ]
+        },
+        "file" : {
+          "type" : "string",
+          "description" : "File attached to consent process",
+          "example" : "/files/9d1ede2b-5687-4440-bdc8-dd0bc64f664f"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Consent Process"
+      }
+    },
+    "ConsentProcessValueInput" : {
+      "type" : "object",
+      "required" : [ "consentProcess", "member" ],
+      "properties" : {
+        "consentProcess" : {
+          "type" : "string",
+          "description" : "Consent process attached to concent process value",
+          "example" : "/consent_processes/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "member" : {
+          "type" : "string",
+          "description" : "Member attached to concent process value",
+          "example" : "/members/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "value" : {
+          "type" : "string",
+          "description" : "Value of concent process value",
+          "example" : "My value"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Consent Process"
+      }
+    },
+    "ConsentProcessValueOutput" : {
+      "type" : "object",
+      "required" : [ "consentProcess", "member" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "id of object",
+          "example" : "/consent_process_values/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "consentProcess" : {
+          "type" : "string",
+          "description" : "Consent process attached to concent process value",
+          "example" : "/consent_processes/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "member" : {
+          "type" : "string",
+          "description" : "Member attached to concent process value",
+          "example" : "/members/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "value" : {
+          "type" : "string",
+          "description" : "Value of concent process value",
+          "example" : "My value"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Creation date",
+          "example" : "2018-10-30T16:10:00+01:00"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Consent Process"
+      }
+    },
+    "SignatureUiInput" : {
+      "type" : "object",
+      "required" : [ "name" ],
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "Signature UI's name",
+          "example" : "yousign-ui-website-contracts"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Signature UI's description",
+          "example" : "Used for quotation and contracts with partners on our website."
+        },
+        "enableHeaderBar" : {
+          "type" : "boolean",
+          "description" : "Toggle header bar of the app view",
+          "default" : true,
+          "example" : true
+        },
+        "enableHeaderBarSignAs" : {
+          "type" : "boolean",
+          "description" : "Toggle \"Sign as\" band on the top of the app view",
+          "default" : true,
+          "example" : true
+        },
+        "enableSidebar" : {
+          "type" : "boolean",
+          "description" : "Toggle sidebar of the app view",
+          "default" : true,
+          "example" : true
+        },
+        "enableMemberList" : {
+          "type" : "boolean",
+          "description" : "Toggle list of members in the procedure",
+          "default" : true,
+          "example" : true
+        },
+        "enableDocumentList" : {
+          "type" : "boolean",
+          "description" : "Toggle list of documents in the procedure",
+          "default" : true,
+          "example" : true
+        },
+        "enableDocumentDownload" : {
+          "type" : "boolean",
+          "description" : "Toggle downloads buttons for documents",
+          "default" : true,
+          "example" : true
+        },
+        "enableActivities" : {
+          "type" : "boolean",
+          "description" : "Toggle activity feed",
+          "default" : true,
+          "example" : true
+        },
+        "authenticationPopup" : {
+          "type" : "boolean",
+          "description" : "True for use a popup to enter the SMS code, false for use a fullscreen view.",
+          "default" : false,
+          "example" : true
+        },
+        "defaultZoom" : {
+          "type" : "number",
+          "description" : "Default value for zoom of the PDF viewer. Default value is the adapted to the resolution of your screen.",
+          "minimum" : 1,
+          "maximum" : 500
+        },
+        "logo" : {
+          "type" : "string",
+          "description" : "Base64 of your logo",
+          "example" : "data:image/png;base64,iVBORw[...]"
+        },
+        "signImageTypesAvailable" : {
+          "type" : "array",
+          "description" : "Allow sign images types available for signature. The first type of the list will be selected as default for the signer.",
+          "items" : {
+            "type" : "string",
+            "default" : "All types is allowed by default.",
+            "enum" : [ "name", "draw", "custom" ]
+          }
+        },
+        "defaultLanguage" : {
+          "type" : "string",
+          "description" : "Default selected language of the interface. Must be present in \"languages\" field."
+        },
+        "languages" : {
+          "type" : "array",
+          "description" : "Array of allowed languages, use country code",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "labels" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/SignatureUiLabelInputIncluded"
+          }
+        },
+        "fonts" : {
+          "type" : "array",
+          "description" : "List of fonts to load on the view. (Loaded via Google fonts)",
+          "items" : {
+            "type" : "string"
+          },
+          "example" : "Roboto"
+        },
+        "style" : {
+          "type" : "string",
+          "description" : "CSS for customize the view"
+        },
+        "redirectCancel" : {
+          "type" : "object",
+          "description" : "Redirection when a Procedure is refused",
+          "properties" : {
+            "url" : {
+              "type" : "string",
+              "description" : "URL of redirect"
+            },
+            "target" : {
+              "type" : "string",
+              "description" : "Target of the redirection",
+              "default" : "_top",
+              "enum" : [ "_top", "_blank", "_parent", "_self" ]
+            },
+            "auto" : {
+              "type" : "boolean",
+              "description" : "Don't redirect the user directly, send to our detail of the procedure view. But invite the user to click on a button for use this redirection.",
+              "default" : true,
+              "example" : true
+            }
+          }
+        },
+        "redirectError" : {
+          "required" : [ "url" ],
+          "type" : "object",
+          "description" : "Redirect when the Member gets an error on the procedure of the signature",
+          "properties" : {
+            "url" : {
+              "type" : "string",
+              "description" : "URL of redirect"
+            },
+            "target" : {
+              "type" : "string",
+              "description" : "Target of the redirection",
+              "enum" : [ "_top", "_blank", "_parent", "_self" ]
+            },
+            "auto" : {
+              "type" : "boolean",
+              "description" : "Don't redirect the user directly, send to our detail of the procedure view. But invite the user to click on a button for use this redirection.",
+              "default" : true,
+              "example" : true
+            }
+          }
+        },
+        "redirectSuccess" : {
+          "type" : "object",
+          "description" : "Redirect when the Member has successfully signed the procedure",
+          "properties" : {
+            "url" : {
+              "type" : "string",
+              "description" : "URL of redirect"
+            },
+            "target" : {
+              "type" : "string",
+              "description" : "Target of the redirection",
+              "enum" : [ "_top", "_blank", "_parent", "_self" ]
+            },
+            "auto" : {
+              "type" : "boolean",
+              "description" : "Don't redirect the user directly, send to our detail of the procedure view. But invite the user to click on a button for use this redirection.",
+              "default" : true,
+              "example" : true
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Signature UIs"
+      }
+    },
+    "SignatureUiLabelInput" : {
+      "type" : "object",
+      "required" : [ "name" ],
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "Name of the label. If the name is not used in the view, nothing will appear."
+        },
+        "languages" : {
+          "type" : "object",
+          "description" : "Translation of the label per language",
+          "example" : "{\"en\": \"Label en\", \"fr\": \"Label fr\"}"
+        },
+        "signatureUi" : {
+          "type" : "string",
+          "description" : "Associated Signature UI's ID"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Signature UIs"
+      }
+    },
+    "SignatureUiLabelInputIncluded" : {
+      "type" : "object",
+      "required" : [ "name" ],
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "Name of the label. If the name is not used in the view, nothing will appear."
+        },
+        "languages" : {
+          "type" : "object",
+          "description" : "Translation of the label per language",
+          "example" : "{\"en\": \"Label en\", \"fr\": \"Label fr\"}"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Signature UIs"
+      }
+    },
+    "SignatureUiLabelOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Resource's ID"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Name of the label. If the name is not used in the view, nothing will appear."
+        },
+        "languages" : {
+          "type" : "object",
+          "description" : "Translation of the label per language",
+          "example" : "{\"en\": \"Label en\", \"fr\": \"Label fr\"}"
+        },
+        "signatureUi" : {
+          "type" : "string",
+          "description" : "Associated signature UI's ID"
+        },
+        "creator" : {
+          "type" : "string",
+          "description" : "Creator's ID"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Date of creation"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Date of last update"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Signature UIs"
+      }
+    },
+    "SignatureUiOutput" : {
+      "type" : "object",
+      "required" : [ "name" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Resource's ID"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Resource's name"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "enableHeaderBar" : {
+          "type" : "boolean",
+          "description" : "Toggle header bar of the app view",
+          "default" : true,
+          "example" : true
+        },
+        "enableHeaderBarSignAs" : {
+          "type" : "boolean",
+          "description" : "Toggle \"Sign as\" band on the top of the app view",
+          "default" : true,
+          "example" : true
+        },
+        "enableSidebar" : {
+          "type" : "boolean",
+          "description" : "Toggle sidebar of the app view",
+          "default" : true,
+          "example" : true
+        },
+        "enableMemberList" : {
+          "type" : "boolean",
+          "description" : "Toggle list of members in the procedure",
+          "default" : true,
+          "example" : true
+        },
+        "enableDocumentList" : {
+          "type" : "boolean",
+          "description" : "Toggle list of documents in the procedure",
+          "default" : true,
+          "example" : true
+        },
+        "enableDocumentDownload" : {
+          "type" : "boolean",
+          "description" : "Toggle downloads buttons for documents",
+          "default" : true,
+          "example" : true
+        },
+        "enableActivities" : {
+          "type" : "boolean",
+          "description" : "Toggle activity feed",
+          "default" : true,
+          "example" : true
+        },
+        "authenticationPopup" : {
+          "type" : "boolean",
+          "description" : "True for use a popup for enter the SMS code, false for use a fullscreen view.",
+          "default" : false,
+          "example" : true
+        },
+        "defaultZoom" : {
+          "type" : "number",
+          "description" : "Default value for zoom of the PDF viewer. Default value is the adapted to the resolution of your screen."
+        },
+        "logo" : {
+          "type" : "string",
+          "description" : "Base64 of your logo",
+          "example" : "data:image/png;base64,iVBORw[...]"
+        },
+        "signImageTypesAvailable" : {
+          "type" : "array",
+          "description" : "Allow sign images types available for signature.",
+          "items" : {
+            "type" : "string",
+            "default" : "All types is allowed by default.",
+            "enum" : [ "name", "draw", "custom" ]
+          }
+        },
+        "defaultLanguage" : {
+          "type" : "string",
+          "description" : "Default language of the view. Must be in \"languages\" field."
+        },
+        "languages" : {
+          "type" : "array",
+          "description" : "Array of allowed languages, use country code",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "labels" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/SignatureUiLabelOutput"
+          }
+        },
+        "fonts" : {
+          "type" : "array",
+          "description" : "List of fonts to load on the view. (Loaded via google fonts)",
+          "items" : {
+            "type" : "string"
+          },
+          "example" : "Roboto"
+        },
+        "style" : {
+          "type" : "string",
+          "description" : "CSS for customize the view"
+        },
+        "redirectCancel" : {
+          "type" : "object",
+          "description" : "Redirection when a procedure is refused",
+          "properties" : {
+            "url" : {
+              "type" : "string",
+              "description" : "Url of redirect"
+            },
+            "target" : {
+              "type" : "string",
+              "description" : "target of the redirection",
+              "default" : "_top",
+              "enum" : [ "_top", "_blank", "_parent", "_self" ]
+            },
+            "auto" : {
+              "type" : "boolean",
+              "description" : "Don't redirect the user directly, send to our detail of the procedure view. But invite the user to click on a button for use this redirection.",
+              "example" : false
+            }
+          }
+        },
+        "redirectError" : {
+          "required" : [ "url" ],
+          "type" : "object",
+          "description" : "Redirect when the member get an error of the signature of the procedure",
+          "properties" : {
+            "url" : {
+              "type" : "string",
+              "description" : "Url of redirect"
+            },
+            "target" : {
+              "type" : "string",
+              "description" : "target of the redirection",
+              "enum" : [ "_top", "_blank", "_parent", "_self" ]
+            },
+            "auto" : {
+              "type" : "boolean",
+              "description" : "Don't redirect the user directly, send to our detail of the procedure view. But invite the user to click on a button for use this redirection.",
+              "default" : false
+            }
+          }
+        },
+        "redirectSuccess" : {
+          "type" : "object",
+          "description" : "Redirect when the member have successfully signed the procedure",
+          "properties" : {
+            "url" : {
+              "type" : "string",
+              "description" : "Url of redirect"
+            },
+            "target" : {
+              "type" : "string",
+              "description" : "Target of the redirection",
+              "enum" : [ "_top", "_blank", "_parent", "_self" ]
+            },
+            "auto" : {
+              "type" : "boolean",
+              "description" : "Don't redirect the user directly, send to our detail of the procedure view. But invite the user to click on a button for use this redirection.",
+              "default" : false
+            }
+          }
+        },
+        "creator" : {
+          "type" : "string",
+          "description" : "Creator's ID"
+        },
+        "workspace" : {
+          "type" : "string",
+          "description" : "Associated Workspace's ID"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Date of creation"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Date of last update"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Signature UIs"
+      }
+    },
+    "SignatureUiInputUpdate" : {
+      "type" : "object",
+      "required" : [ "name" ],
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "Resource's name"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Signature UI's description"
+        },
+        "enableHeaderBar" : {
+          "type" : "boolean",
+          "description" : "Toggle header bar of the app view",
+          "default" : true
+        },
+        "enableHeaderBarSignAs" : {
+          "type" : "boolean",
+          "description" : "Toggle \"Sign as\" band on the top of the app view",
+          "default" : true
+        },
+        "enableSidebar" : {
+          "type" : "boolean",
+          "description" : "Toggle sidebar of the app view",
+          "default" : true
+        },
+        "enableMemberList" : {
+          "type" : "boolean",
+          "description" : "Toggle list of members in the procedure",
+          "default" : true
+        },
+        "enableDocumentList" : {
+          "type" : "boolean",
+          "description" : "Toggle list of documents in the procedure",
+          "default" : true
+        },
+        "enableDocumentDownload" : {
+          "type" : "boolean",
+          "description" : "Toggle downloads buttons for documents",
+          "default" : true
+        },
+        "enableActivities" : {
+          "type" : "boolean",
+          "description" : "Toggle activity feed",
+          "default" : true
+        },
+        "authenticationPopup" : {
+          "type" : "boolean",
+          "description" : "True for use a popup for enter the SMS code, false for use a fullscreen view.",
+          "default" : false
+        },
+        "defaultZoom" : {
+          "type" : "number",
+          "description" : "Default zoom of the pdf viewer. Default is the adapted to the resolution of your screen."
+        },
+        "logo" : {
+          "type" : "string",
+          "description" : "Base64 of your logo"
+        },
+        "signImageTypesAvailable" : {
+          "type" : "array",
+          "description" : "Allow sign images types available for signature.",
+          "items" : {
+            "type" : "string",
+            "default" : "All types is allowed by default.",
+            "enum" : [ "name", "draw", "custom" ]
+          }
+        },
+        "defaultLanguage" : {
+          "type" : "string",
+          "description" : "Default language of the view. Must be in \"languages\" field."
+        },
+        "languages" : {
+          "type" : "array",
+          "description" : "Array of allowed languages, use country code",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "fonts" : {
+          "type" : "array",
+          "description" : "List of fonts to load on the view. (Loaded via google fonts)",
+          "items" : {
+            "type" : "string"
+          },
+          "example" : "Roboto"
+        },
+        "style" : {
+          "type" : "string",
+          "description" : "CSS for customize the view"
+        },
+        "redirectCancel" : {
+          "type" : "object",
+          "description" : "Redirection when a procedure is refused",
+          "properties" : {
+            "url" : {
+              "type" : "string",
+              "description" : "Url of redirect"
+            },
+            "target" : {
+              "type" : "string",
+              "description" : "target of the redirection",
+              "default" : "_top",
+              "enum" : [ "_top", "_blank", "_parent", "_self" ]
+            },
+            "auto" : {
+              "type" : "boolean",
+              "description" : "Don't redirect the user directly, send to our detail of the procedure view. But invite the user to click on a button for use this redirection.",
+              "example" : false
+            }
+          }
+        },
+        "redirectError" : {
+          "required" : [ "url" ],
+          "type" : "object",
+          "description" : "Redirect when the member get an error of the signature of the procedure",
+          "properties" : {
+            "url" : {
+              "type" : "string",
+              "description" : "Url of redirect"
+            },
+            "target" : {
+              "type" : "string",
+              "description" : "target of the redirection",
+              "enum" : [ "_top", "_blank", "_parent", "_self" ]
+            },
+            "auto" : {
+              "type" : "boolean",
+              "description" : "Don't redirect the user directly, send to our detail of the procedure view. But invite the user to click on a button for use this redirection.",
+              "default" : false
+            }
+          }
+        },
+        "redirectSuccess" : {
+          "type" : "object",
+          "description" : "Redirect when the member have successfully signed the procedure",
+          "properties" : {
+            "url" : {
+              "type" : "string",
+              "description" : "Url of redirect"
+            },
+            "target" : {
+              "type" : "string",
+              "description" : "Target of the redirection",
+              "enum" : [ "_top", "_blank", "_parent", "_self" ]
+            },
+            "auto" : {
+              "type" : "boolean",
+              "description" : "Don't redirect the user directly, send to our detail of the procedure view. But invite the user to click on a button for use this redirection.",
+              "default" : false
+            }
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Signature UIs"
+      }
+    },
+    "ServerStampInput" : {
+      "type" : "object",
+      "required" : [ "certificate", "file", "fileObjects" ],
+      "properties" : {
+        "file" : {
+          "type" : "string",
+          "description" : "Resource file uri",
+          "example" : "/files/1eb8923e-0558-4f0e-823e-294b422a28e2"
+        },
+        "certificate" : {
+          "type" : "string",
+          "description" : "Resource certificate uri (please contact support for more informations)",
+          "example" : "/certificates/5025dee5-8c16-444e-8147-a008d87156b2"
+        },
+        "config" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ServerStampConfig"
+          }
+        },
+        "fileObjects" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FileObjectInputWithoutFileReference"
+          }
+        },
+        "signImage" : {
+          "type" : "string",
+          "description" : "Image signature in base 64",
+          "example" : "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7..."
+        }
+      },
+      "x-restlet" : {
+        "section" : "Server Stamp"
+      }
+    },
+    "ServerStampOutput" : {
+      "type" : "object",
+      "required" : [ "certificate", "createdAt", "file", "fileObjects", "finishedAt", "id", "status", "updatedAt", "workspace" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Resource server stamp uri",
+          "example" : "/server_stamps/0c73955f-e4c8-4975-9a8c-ad0bc3dde689"
+        },
+        "file" : {
+          "type" : "string",
+          "description" : "Resource file uri",
+          "example" : "/files/1eb8923e-0558-4f0e-823e-294b422a28e2"
+        },
+        "certificate" : {
+          "type" : "string",
+          "description" : "Resource certificate uri (please contact support for more informations)",
+          "example" : "/certificates/5025dee5-8c16-444e-8147-a008d87156b2"
+        },
+        "config" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ServerStampConfig"
+          }
+        },
+        "fileObjects" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FileObjectOutputWithoutFileReference"
+          }
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "finishedAt" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "status" : {
+          "type" : "string",
+          "enum" : [ "pending", "processing", "done" ]
+        },
+        "workspace" : {
+          "type" : "string",
+          "description" : "Resource workspace uri",
+          "example" : "/workspaces/3df0b580-adfe-43a9-859c-d724bcfc240b"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Server Stamp"
+      }
+    },
+    "ServerStampConfig" : {
+      "type" : "object",
+      "properties" : {
+        "webhook" : {
+          "$ref" : "#/definitions/ServerStampConfigWebhook"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Server Stamp"
+      }
+    },
+    "ServerStampConfigWebhook" : {
+      "type" : "object",
+      "properties" : {
+        "server_stamp.finished" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ConfigWebhookTemplate"
+          }
+        }
+      },
+      "x-restlet" : {
+        "section" : "Server Stamp"
+      }
+    },
+    "CheckDocumentIdentitiesInput" : {
+      "type" : "object",
+      "required" : [ "file" ],
+      "properties" : {
+        "file" : {
+          "type" : "string",
+          "description" : "Content in base 64 of the document to check"
+        },
+        "firstNames" : {
+          "type" : "array",
+          "description" : "List of firstnames to check on document",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "birthName" : {
+          "type" : "string",
+          "description" : "Birth name to check on document"
+        },
+        "birthDate" : {
+          "type" : "string",
+          "format" : "date",
+          "description" : "Birth date to check on document"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Check Document"
+      }
+    },
+    "CheckDocumentIdentitiesOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Id of the object",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/check-document/identities/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Created date of the object"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Updated date of the object"
+        },
+        "firstNames" : {
+          "type" : "array",
+          "description" : "List of firstnames to check on document",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "birthName" : {
+          "type" : "string",
+          "description" : "Birth name to check on document"
+        },
+        "birthDate" : {
+          "type" : "string",
+          "format" : "date",
+          "description" : "Birth date to check on document"
+        },
+        "workspace" : {
+          "type" : "string",
+          "description" : "workspace creator of the object",
+          "example" : "/workspaces/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "creator" : {
+          "type" : "string",
+          "description" : "Creator of the object",
+          "example" : "/users/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "documentType" : {
+          "type" : "string",
+          "description" : "Type of document",
+          "enum" : [ "ID_CARD", "PASSPORT" ]
+        },
+        "extractedFirstNames" : {
+          "type" : "array",
+          "description" : "Extracted firstnames on the document",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "extractedBirthName" : {
+          "type" : "string",
+          "description" : "Extracted birth name on the document"
+        },
+        "extractedBirthDate" : {
+          "type" : "string",
+          "format" : "date",
+          "description" : "Extracted birth date on the document"
+        },
+        "extractedGender" : {
+          "type" : "string",
+          "description" : "Extracted gender on the document"
+        },
+        "extractedIssuanceDate" : {
+          "type" : "string",
+          "format" : "date",
+          "description" : "Extracted issuance date on the document"
+        },
+        "extractedExpirationDate" : {
+          "type" : "string",
+          "format" : "date",
+          "description" : "Extracted expiration date on the document"
+        },
+        "extractedMrz" : {
+          "type" : "array",
+          "description" : "Extracted MRZ on the document",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "firstNameValid" : {
+          "type" : "boolean",
+          "description" : "Defines if one firstname sent in the input is valid"
+        },
+        "birthNameValid" : {
+          "type" : "boolean",
+          "description" : "Defines if birth name sent in the input is valid"
+        },
+        "mrzValid" : {
+          "type" : "boolean",
+          "description" : "Defines if MRZ sent in the input is valid"
+        },
+        "expired" : {
+          "type" : "boolean",
+          "description" : "Defines if the document is expired"
+        },
+        "valid" : {
+          "type" : "boolean",
+          "description" : "Defines if the document is valid"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Check Document"
+      }
+    },
+    "CheckDocumentBankAccountsInput" : {
+      "type" : "object",
+      "required" : [ "file" ],
+      "properties" : {
+        "file" : {
+          "type" : "string",
+          "description" : "Content in base 64 of the document to check"
+        },
+        "firstName" : {
+          "type" : "string",
+          "description" : "Firstname to check on document"
+        },
+        "birthName" : {
+          "type" : "string",
+          "description" : "Birth name to check on document"
+        },
+        "lastName" : {
+          "type" : "string",
+          "description" : "Lastname to check on document"
+        },
+        "companyName" : {
+          "type" : "string",
+          "description" : "Company name to check on document"
+        },
+        "iban" : {
+          "type" : "string",
+          "description" : "Iban text to check on document"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Check Document"
+      }
+    },
+    "CheckDocumentBankAccountsOutput" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Id of the object",
+          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+          "example" : "/check-document/bank_accounts/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Created date of the object"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Updated date of the object"
+        },
+        "firstName" : {
+          "type" : "string",
+          "description" : "Firstname to check on document"
+        },
+        "birthName" : {
+          "type" : "string",
+          "description" : "Birth name to check on document"
+        },
+        "lastName" : {
+          "type" : "string",
+          "description" : "Lastname to check on document"
+        },
+        "iban" : {
+          "type" : "string",
+          "description" : "Iban to check on document"
+        },
+        "companyName" : {
+          "type" : "string",
+          "description" : "Company name to check on document"
+        },
+        "documentType" : {
+          "type" : "string",
+          "description" : "Type of document",
+          "enum" : [ "RIB" ]
+        },
+        "workspace" : {
+          "type" : "string",
+          "description" : "Workspace creator of the object",
+          "example" : "/workspaces/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "creator" : {
+          "type" : "string",
+          "description" : "Creator of the object",
+          "example" : "/users/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
+        },
+        "extractedIban" : {
+          "type" : "string",
+          "description" : "Extracted iban on the document"
+        },
+        "firstNameValid" : {
+          "type" : "boolean",
+          "description" : "Defines if one firstname sent in the input is valid"
+        },
+        "birthNameValid" : {
+          "type" : "boolean",
+          "description" : "Defines if birth name sent in the input is valid"
+        },
+        "lastNameValid" : {
+          "type" : "boolean",
+          "description" : "Defines if lastname sent in the input is valid"
+        },
+        "companyNameValid" : {
+          "type" : "boolean",
+          "description" : "Defines if company name sent in the input is valid"
+        },
+        "ibanValid" : {
+          "type" : "boolean",
+          "description" : "Defines if iban sent in the input is valid"
+        }
+      },
+      "x-restlet" : {
+        "section" : "Check Document"
+      }
+    }
+  },
+  "x-restlet" : {
+    "sections" : {
+      "Config" : { },
+      "Organizations" : { },
+      "Workspaces" : { },
+      "Users" : {
+        "description" : "A User is not only a signer or validator. Each additional User will be allowed to use Yousign application and **will be charged** in addition to existing Users. For more information, please visit our website : https://yousign.com/prix/or contact our sales team on hello@yousign.fr."
+      },
+      "User Groups" : {
+        "description" : "A User Group is associated with a combination of permissions available in the Yousign application (Manager, Signer, Admin, ...)."
+      },
+      "Files" : {
+        "description" : "Defines the PDF files you want to sign with Yousign."
+      },
+      "Procedures" : {
+        "description" : "A procedure is an invitation to sign one or more signers for one or more documents."
+      },
+      "Members" : {
+        "description" : "Defines a signer or a validator on a Procedure. It means the member is a contributor of the Procedure."
+      },
+      "File Objects" : { },
+      "Operations" : { },
+      "Authentications" : { },
+      "Consent Process" : { },
+      "Signature UIs" : {
+        "description" : "Customization templates for the Signature User Interfaces.\nThis feature **won't be available on Basic API plan** and **will be available only on Premium and Ultimate API plans**.\nThis allows you to change the signature interface with your graphic chart and gives you access to modify the logo, colors, fonts and many other elements of personalization."
+      },
+      "Server Stamp" : {
+        "description" : "Allows to sign document by server stamp"
+      },
+      "Check Document" : { }
+    }
+  }
+}
