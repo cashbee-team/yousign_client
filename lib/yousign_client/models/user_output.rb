@@ -257,10 +257,6 @@ module YousignClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if !@id.nil? && @id !~ Regexp.new(/^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
-        invalid_properties.push('invalid value for "id", must conform to the pattern /^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/.')
-      end
-
       if @firstname.nil?
         invalid_properties.push('invalid value for "firstname", firstname cannot be nil.')
       end
@@ -279,23 +275,12 @@ module YousignClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@id.nil? && @id !~ Regexp.new(/^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
       return false if @firstname.nil?
       return false if @lastname.nil?
       return false if @email.nil?
       status_validator = EnumAttributeValidator.new('String', ['not_activated', 'activated'])
       return false unless status_validator.valid?(@status)
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] id Value to be assigned
-    def id=(id)
-      if !id.nil? && id !~ Regexp.new(/^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
-        fail ArgumentError, 'invalid value for "id", must conform to the pattern /^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/.'
-      end
-
-      @id = id
     end
 
     # Custom attribute writer method checking allowed values (enum).

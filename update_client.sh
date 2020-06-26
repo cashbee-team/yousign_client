@@ -3,9 +3,5 @@
 yousign_url=https://swagger.yousign.com/swagger.json
 openapi_path=yousign_openapi.json
 
-echo "[INFO] Update yousign openapi $yousign_url"
-
-curl $yousign_url > $openapi_path
-
 echo "[INFO] Generate client"
 swagger-codegen generate -i $openapi_path -l ruby -o . -c config.json
