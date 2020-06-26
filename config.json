@@ -1,7 +1,7 @@
 {
   "gemName": "yousign_client",
-  "gemAuthor": "Chaker Nakhli",
-  "gemAuthorEmail": "chaker.nakhli@cashbee.fr",
+  "gemAuthor": "Thomas Burgaud",
+  "gemAuthorEmail": "thomas.burgaud@cashbee.fr",
   "gemSummary": "Yousign API Documentation Ruby Gem",
   "gemDescription": "Yousign API Documentation Ruby Gem",
   "gemHomepage": "https://github.com/cashbee-team/yousign_client",

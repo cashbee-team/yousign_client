@@ -19,8 +19,8 @@ Gem::Specification.new do |s|
   s.name        = "yousign_client"
   s.version     = YousignClient::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Chaker Nakhli"]
-  s.email       = ["chaker.nakhli@cashbee.fr"]
+  s.authors     = ["Thomas Burgaud"]
+  s.email       = ["thomas.burgaud@cashbee.fr"]
   s.homepage    = "https://github.com/cashbee-team/yousign_client"
   s.summary     = "Yousign API Documentation Ruby Gem"
   s.description = "Yousign API Documentation Ruby Gem"
