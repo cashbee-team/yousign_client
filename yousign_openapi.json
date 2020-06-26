@@ -2705,7 +2705,6 @@
         "id" : {
           "type" : "string",
           "description" : "Object's ID",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/workspaces/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "name" : {
@@ -2902,7 +2901,6 @@
         "id" : {
           "type" : "string",
           "description" : "Object's ID",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/users/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "firstname" : {
@@ -3013,7 +3011,6 @@
         "id" : {
           "type" : "string",
           "description" : "Id of the object",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/inwebo_user_requests/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         }
       },
@@ -3027,7 +3024,6 @@
         "id" : {
           "type" : "string",
           "description" : "Object's ID",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/workspaces/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "name" : {
@@ -3046,7 +3042,6 @@
         "id" : {
           "type" : "string",
           "description" : "Id of the object",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/user_groups/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "name" : {
@@ -3124,7 +3119,6 @@
         "id" : {
           "type" : "string",
           "description" : "Id of the object",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/files/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "name" : {
@@ -3466,7 +3460,6 @@
         "id" : {
           "type" : "string",
           "description" : "Id of the object",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/procedures/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "name" : {
@@ -3703,7 +3696,6 @@
         "id" : {
           "type" : "string",
           "description" : "Id of the object",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/members/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "user" : {
@@ -3886,7 +3878,6 @@
         "id" : {
           "type" : "string",
           "description" : "Id of the object",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/file_objects/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "file" : {
@@ -4019,7 +4010,6 @@
         "id" : {
           "type" : "string",
           "description" : "Id of the object",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/file_objects/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "page" : {
@@ -5158,7 +5148,7 @@
         "id" : {
           "type" : "string",
           "description" : "Id of the object",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
+
           "example" : "/check-document/identities/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "createdAt" : {
@@ -5303,7 +5293,6 @@
         "id" : {
           "type" : "string",
           "description" : "Id of the object",
-          "pattern" : "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$",
           "example" : "/check-document/bank_accounts/9d1ede2b-5687-4440-bdc8-dd0bc64f668c"
         },
         "createdAt" : {

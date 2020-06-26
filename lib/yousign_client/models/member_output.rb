@@ -213,10 +213,6 @@ module YousignClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if !@id.nil? && @id !~ Regexp.new(/^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
-        invalid_properties.push('invalid value for "id", must conform to the pattern /^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/.')
-      end
-
       if !@user.nil? && @user !~ Regexp.new(/^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
         invalid_properties.push('invalid value for "user", must conform to the pattern /^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/.')
       end
@@ -227,7 +223,6 @@ module YousignClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@id.nil? && @id !~ Regexp.new(/^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
       return false if !@user.nil? && @user !~ Regexp.new(/^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
       type_validator = EnumAttributeValidator.new('String', ['signer', 'validator'])
       return false unless type_validator.valid?(@type)
@@ -236,16 +231,6 @@ module YousignClient
       operation_level_validator = EnumAttributeValidator.new('String', ['none', 'custom'])
       return false unless operation_level_validator.valid?(@operation_level)
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] id Value to be assigned
-    def id=(id)
-      if !id.nil? && id !~ Regexp.new(/^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
-        fail ArgumentError, 'invalid value for "id", must conform to the pattern /^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/.'
-      end
-
-      @id = id
     end
 
     # Custom attribute writer method with validation
