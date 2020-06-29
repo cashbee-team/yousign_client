@@ -196,7 +196,7 @@ module YousignClient
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
-        'ApiKey' =>
+        'api_key' =>
           {
             type: 'api_key',
             in: 'header',

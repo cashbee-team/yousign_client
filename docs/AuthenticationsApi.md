@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **authentications_email_id_get**
-> AuthenticationEmailOutput authentications_email_id_get(id, authorization)
+> AuthenticationEmailOutput authentications_email_id_get(id, )
 
 Find an Authentication by ID
 
@@ -21,17 +21,22 @@ Find an Authentication by ID
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::AuthenticationsApi.new
 
 id = 'id_example' # String | 
 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find an Authentication by ID
-  result = api_instance.authentications_email_id_get(id, authorization)
+  result = api_instance.authentications_email_id_get(id, )
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling AuthenticationsApi->authentications_email_id_get: #{e}"
@@ -43,7 +48,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -51,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -61,7 +65,7 @@ No authorization required
 
 
 # **authentications_email_id_put**
-> AuthenticationEmailOutput authentications_email_id_put(id, authorization, content_type, body)
+> AuthenticationEmailOutput authentications_email_id_put(id, body)
 
 Update an Email Authentication
 
@@ -69,21 +73,24 @@ Update an Email Authentication
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::AuthenticationsApi.new
 
 id = 'id_example' # String | 
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 body = YousignClient::Body2.new # Body2 | 
 
 
 begin
   #Update an Email Authentication
-  result = api_instance.authentications_email_id_put(id, authorization, content_type, body)
+  result = api_instance.authentications_email_id_put(id, body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling AuthenticationsApi->authentications_email_id_put: #{e}"
@@ -95,8 +102,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**Body2**](Body2.md)|  | 
 
 ### Return type
@@ -105,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -115,7 +120,7 @@ No authorization required
 
 
 # **authentications_inwebo_id_get**
-> AuthenticationInweboOutput authentications_inwebo_id_get(id, authorization)
+> AuthenticationInweboOutput authentications_inwebo_id_get(id, )
 
 Get an Authentication
 
@@ -123,17 +128,22 @@ Get an Authentication
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::AuthenticationsApi.new
 
 id = 'id_example' # String | 
 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Get an Authentication
-  result = api_instance.authentications_inwebo_id_get(id, authorization)
+  result = api_instance.authentications_inwebo_id_get(id, )
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling AuthenticationsApi->authentications_inwebo_id_get: #{e}"
@@ -145,7 +155,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -153,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -163,7 +172,7 @@ No authorization required
 
 
 # **authentications_inwebo_id_put**
-> AuthenticationInweboOutput authentications_inwebo_id_put(id, authorization, content_type, body)
+> AuthenticationInweboOutput authentications_inwebo_id_put(id, body)
 
 Update an inwebo Authentication
 
@@ -171,21 +180,24 @@ Update an inwebo Authentication
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::AuthenticationsApi.new
 
 id = 'id_example' # String | 
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 body = YousignClient::Body.new # Body | 
 
 
 begin
   #Update an inwebo Authentication
-  result = api_instance.authentications_inwebo_id_put(id, authorization, content_type, body)
+  result = api_instance.authentications_inwebo_id_put(id, body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling AuthenticationsApi->authentications_inwebo_id_put: #{e}"
@@ -197,8 +209,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**Body**](Body.md)|  | 
 
 ### Return type
@@ -207,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -217,7 +227,7 @@ No authorization required
 
 
 # **authentications_sms_id_get**
-> AuthenticationSmsOutput authentications_sms_id_get(id, authorization)
+> AuthenticationSmsOutput authentications_sms_id_get(id, )
 
 Find an Authentication by ID
 
@@ -225,17 +235,22 @@ Find an Authentication by ID
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::AuthenticationsApi.new
 
 id = 'id_example' # String | 
 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find an Authentication by ID
-  result = api_instance.authentications_sms_id_get(id, authorization)
+  result = api_instance.authentications_sms_id_get(id, )
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling AuthenticationsApi->authentications_sms_id_get: #{e}"
@@ -247,7 +262,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -255,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -265,7 +279,7 @@ No authorization required
 
 
 # **authentications_sms_id_put**
-> AuthenticationSmsOutput authentications_sms_id_put(id, authorization, content_type, body)
+> AuthenticationSmsOutput authentications_sms_id_put(id, body)
 
 Update an SMS Authentication
 
@@ -273,21 +287,24 @@ Update an SMS Authentication
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::AuthenticationsApi.new
 
 id = 'id_example' # String | 
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 body = YousignClient::Body1.new # Body1 | 
 
 
 begin
   #Update an SMS Authentication
-  result = api_instance.authentications_sms_id_put(id, authorization, content_type, body)
+  result = api_instance.authentications_sms_id_put(id, body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling AuthenticationsApi->authentications_sms_id_put: #{e}"
@@ -299,8 +316,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**Body1**](Body1.md)|  | 
 
 ### Return type
@@ -309,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 

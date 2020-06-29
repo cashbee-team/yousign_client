@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **signature_ui_labels_get**
-> Array&lt;SignatureUiLabelOutput&gt; signature_ui_labels_get(authorization, opts)
+> Array&lt;SignatureUiLabelOutput&gt; signature_ui_labels_get(opts)
 
 Get Signature UI Labels
 
@@ -27,10 +27,15 @@ Only usefull if you use a filter with name or signatureUI
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::SignatureUIsApi.new
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
 
 opts = { 
   name: 'name_example', # String | Filtering on name of signature ui labels
@@ -39,7 +44,7 @@ opts = {
 
 begin
   #Get Signature UI Labels
-  result = api_instance.signature_ui_labels_get(authorization, opts)
+  result = api_instance.signature_ui_labels_get(opts)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling SignatureUIsApi->signature_ui_labels_get: #{e}"
@@ -50,7 +55,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
  **name** | **String**| Filtering on name of signature ui labels | [optional] 
  **signature_ui** | **String**| Filtering on id of signature ui resource | [optional] 
 
@@ -60,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -70,7 +74,7 @@ No authorization required
 
 
 # **signature_ui_labels_id_delete**
-> signature_ui_labels_id_delete(id, authorization, opts)
+> signature_ui_labels_id_delete(id, opts)
 
 Delete a Signature UI Label
 
@@ -78,12 +82,17 @@ Delete a Signature UI Label
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::SignatureUIsApi.new
 
 id = 'id_example' # String | 
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
 
 opts = { 
   id2: '/signature_ui_labels/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' # String | Id of signature ui label
@@ -91,7 +100,7 @@ opts = {
 
 begin
   #Delete a Signature UI Label
-  api_instance.signature_ui_labels_id_delete(id, authorization, opts)
+  api_instance.signature_ui_labels_id_delete(id, opts)
 rescue YousignClient::ApiError => e
   puts "Exception when calling SignatureUIsApi->signature_ui_labels_id_delete: #{e}"
 end
@@ -102,7 +111,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
  **id2** | **String**| Id of signature ui label | [optional] 
 
 ### Return type
@@ -111,7 +119,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -121,7 +129,7 @@ No authorization required
 
 
 # **signature_ui_labels_id_get**
-> SignatureUiLabelOutput signature_ui_labels_id_get(id, authorization, opts)
+> SignatureUiLabelOutput signature_ui_labels_id_get(id, opts)
 
 Find a Signature UI Label by ID
 
@@ -129,12 +137,17 @@ Find a Signature UI Label by ID
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::SignatureUIsApi.new
 
 id = 'id_example' # String | 
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
 
 opts = { 
   id2: '/signature_ui_labels/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' # String | id of signature ui label
@@ -142,7 +155,7 @@ opts = {
 
 begin
   #Find a Signature UI Label by ID
-  result = api_instance.signature_ui_labels_id_get(id, authorization, opts)
+  result = api_instance.signature_ui_labels_id_get(id, opts)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling SignatureUIsApi->signature_ui_labels_id_get: #{e}"
@@ -154,7 +167,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
  **id2** | **String**| id of signature ui label | [optional] 
 
 ### Return type
@@ -163,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -173,7 +185,7 @@ No authorization required
 
 
 # **signature_ui_labels_id_put**
-> SignatureUiLabelOutput signature_ui_labels_id_put(id, authorization, content_type, body, opts)
+> SignatureUiLabelOutput signature_ui_labels_id_put(idbody, opts)
 
 Update a Signature UI Label
 
@@ -181,14 +193,17 @@ Update a Signature UI Label
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::SignatureUIsApi.new
 
 id = 'id_example' # String | 
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 body = YousignClient::SignatureUiLabelInput.new # SignatureUiLabelInput | 
 
@@ -198,7 +213,7 @@ opts = {
 
 begin
   #Update a Signature UI Label
-  result = api_instance.signature_ui_labels_id_put(id, authorization, content_type, body, opts)
+  result = api_instance.signature_ui_labels_id_put(idbody, opts)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling SignatureUIsApi->signature_ui_labels_id_put: #{e}"
@@ -210,8 +225,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**SignatureUiLabelInput**](SignatureUiLabelInput.md)|  | 
  **id2** | **String**| Id of signature ui labels | [optional] 
 
@@ -221,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -231,7 +244,7 @@ No authorization required
 
 
 # **signature_ui_labels_post**
-> SignatureUiLabelOutput signature_ui_labels_post(authorization, content_type, body)
+> SignatureUiLabelOutput signature_ui_labels_post(body)
 
 Create a new Signature UI Label
 
@@ -239,19 +252,22 @@ Create a new Signature UI Label
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::SignatureUIsApi.new
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 body = YousignClient::SignatureUiLabelInput.new # SignatureUiLabelInput | 
 
 
 begin
   #Create a new Signature UI Label
-  result = api_instance.signature_ui_labels_post(authorization, content_type, body)
+  result = api_instance.signature_ui_labels_post(body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling SignatureUIsApi->signature_ui_labels_post: #{e}"
@@ -262,8 +278,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**SignatureUiLabelInput**](SignatureUiLabelInput.md)|  | 
 
 ### Return type
@@ -272,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -282,7 +296,7 @@ No authorization required
 
 
 # **signature_uis_get**
-> Array&lt;SignatureUiOutput&gt; signature_uis_get(authorization)
+> Array&lt;SignatureUiOutput&gt; signature_uis_get
 
 Get Signature UI list
 
@@ -290,15 +304,19 @@ Get Signature UI list
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::SignatureUIsApi.new
 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-
 begin
   #Get Signature UI list
-  result = api_instance.signature_uis_get(authorization)
+  result = api_instance.signature_uis_get
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling SignatureUIsApi->signature_uis_get: #{e}"
@@ -306,10 +324,7 @@ end
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -317,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -327,7 +342,7 @@ No authorization required
 
 
 # **signature_uis_id_delete**
-> signature_uis_id_delete(id, authorization, content_type, opts)
+> signature_uis_id_delete(id, opts)
 
 Delete a Signature UI
 
@@ -335,14 +350,17 @@ Delete a Signature UI
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::SignatureUIsApi.new
 
 id = 'id_example' # String | 
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 opts = { 
   id2: '/signature_uis/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' # String | Id of the signature ui
@@ -350,7 +368,7 @@ opts = {
 
 begin
   #Delete a Signature UI
-  api_instance.signature_uis_id_delete(id, authorization, content_type, opts)
+  api_instance.signature_uis_id_delete(id, opts)
 rescue YousignClient::ApiError => e
   puts "Exception when calling SignatureUIsApi->signature_uis_id_delete: #{e}"
 end
@@ -361,8 +379,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **id2** | **String**| Id of the signature ui | [optional] 
 
 ### Return type
@@ -371,7 +387,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -381,7 +397,7 @@ No authorization required
 
 
 # **signature_uis_id_get**
-> SignatureUiOutput signature_uis_id_get(id, authorization, content_type, opts)
+> SignatureUiOutput signature_uis_id_get(id, opts)
 
 Find a Signature UI by ID
 
@@ -389,14 +405,17 @@ Find a Signature UI by ID
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::SignatureUIsApi.new
 
 id = 'id_example' # String | 
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 opts = { 
   id2: '/signature_uis/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' # String | id of a signature ui
@@ -404,7 +423,7 @@ opts = {
 
 begin
   #Find a Signature UI by ID
-  result = api_instance.signature_uis_id_get(id, authorization, content_type, opts)
+  result = api_instance.signature_uis_id_get(id, opts)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling SignatureUIsApi->signature_uis_id_get: #{e}"
@@ -416,8 +435,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **id2** | **String**| id of a signature ui | [optional] 
 
 ### Return type
@@ -426,7 +443,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -436,7 +453,7 @@ No authorization required
 
 
 # **signature_uis_id_put**
-> SignatureUiInputUpdate signature_uis_id_put(id, authorization, content_type, opts)
+> SignatureUiInputUpdate signature_uis_id_put(id, opts)
 
 Update a Signature UI
 
@@ -444,14 +461,17 @@ Update a Signature UI
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::SignatureUIsApi.new
 
 id = 'id_example' # String | 
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 opts = { 
   id2: '/signature_uis/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' # String | id of signature ui to update
@@ -459,7 +479,7 @@ opts = {
 
 begin
   #Update a Signature UI
-  result = api_instance.signature_uis_id_put(id, authorization, content_type, opts)
+  result = api_instance.signature_uis_id_put(id, opts)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling SignatureUIsApi->signature_uis_id_put: #{e}"
@@ -471,8 +491,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **id2** | **String**| id of signature ui to update | [optional] 
 
 ### Return type
@@ -481,7 +499,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -491,7 +509,7 @@ No authorization required
 
 
 # **signature_uis_post**
-> SignatureUiOutput signature_uis_post(authorization, content_type, body)
+> SignatureUiOutput signature_uis_post(body)
 
 Create a new Signature UI
 
@@ -501,19 +519,22 @@ Here is the url format to build on your side to get a custom signature interface
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::SignatureUIsApi.new
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 body = YousignClient::SignatureUiInput.new # SignatureUiInput | 
 
 
 begin
   #Create a new Signature UI
-  result = api_instance.signature_uis_post(authorization, content_type, body)
+  result = api_instance.signature_uis_post(body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling SignatureUIsApi->signature_uis_post: #{e}"
@@ -524,8 +545,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**SignatureUiInput**](SignatureUiInput.md)|  | 
 
 ### Return type
@@ -534,7 +553,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 

@@ -34,7 +34,6 @@ describe 'WorkspacesApi' do
 
   # unit tests for workspaces_get
   # List all Workspaces
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [Array<WorkspaceOutput>]
   describe 'workspaces_get test' do

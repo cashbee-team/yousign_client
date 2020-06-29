@@ -20,25 +20,19 @@ module YousignClient
       @api_client = api_client
     end
     # List all Workspaces
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [Array<WorkspaceOutput>]
-    def workspaces_get(authorization, opts = {})
-      data, _status_code, _headers = workspaces_get_with_http_info(authorization, opts)
+    def workspaces_get(opts = {})
+      data, _status_code, _headers = workspaces_get_with_http_info(opts)
       data
     end
 
     # List all Workspaces
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<WorkspaceOutput>, Fixnum, Hash)>] Array<WorkspaceOutput> data, response status code and response headers
-    def workspaces_get_with_http_info(authorization, opts = {})
+    def workspaces_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: WorkspacesApi.workspaces_get ...'
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling WorkspacesApi.workspaces_get"
       end
       # resource path
       local_var_path = '/workspaces'
@@ -52,14 +46,13 @@ module YousignClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'Authorization'] = authorization
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

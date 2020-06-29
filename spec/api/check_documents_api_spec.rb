@@ -35,7 +35,6 @@ describe 'CheckDocumentsApi' do
   # unit tests for check_document_bank_accounts_id_get
   # Get informations about a bank document (RIB)
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [CheckDocumentBankAccountsOutput]
   describe 'check_document_bank_accounts_id_get test' do
@@ -46,8 +45,6 @@ describe 'CheckDocumentsApi' do
 
   # unit tests for check_document_bank_accounts_post
   # Verify a bank document (RIB)
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [CheckDocumentBankAccountsOutput]
@@ -60,7 +57,6 @@ describe 'CheckDocumentsApi' do
   # unit tests for check_document_identities_id_get
   # Get informations about an identity document (passport, id cards)
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [CheckDocumentIdentitiesOutput]
   describe 'check_document_identities_id_get test' do
@@ -71,8 +67,6 @@ describe 'CheckDocumentsApi' do
 
   # unit tests for check_document_identities_post
   # Verify an identity document (passport, id cards)
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [CheckDocumentIdentitiesOutput]

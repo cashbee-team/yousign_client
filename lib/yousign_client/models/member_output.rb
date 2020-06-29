@@ -228,7 +228,7 @@ module YousignClient
       return false unless type_validator.valid?(@type)
       status_validator = EnumAttributeValidator.new('String', ['pending', 'processing', 'done', 'refused'])
       return false unless status_validator.valid?(@status)
-      operation_level_validator = EnumAttributeValidator.new('String', ['none', 'custom'])
+      operation_level_validator = EnumAttributeValidator.new('String', ['none', 'custom', 'advanced'])
       return false unless operation_level_validator.valid?(@operation_level)
       true
     end
@@ -266,7 +266,7 @@ module YousignClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] operation_level Object to be assigned
     def operation_level=(operation_level)
-      validator = EnumAttributeValidator.new('String', ['none', 'custom'])
+      validator = EnumAttributeValidator.new('String', ['none', 'custom', 'advanced'])
       unless validator.valid?(operation_level)
         fail ArgumentError, 'invalid value for "operation_level", must be one of #{validator.allowable_values}.'
       end

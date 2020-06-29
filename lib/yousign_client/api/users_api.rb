@@ -20,25 +20,19 @@ module YousignClient
       @api_client = api_client
     end
     # List all Users
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [Array<UserOutput>]
-    def users_get(authorization, opts = {})
-      data, _status_code, _headers = users_get_with_http_info(authorization, opts)
+    def users_get(opts = {})
+      data, _status_code, _headers = users_get_with_http_info(opts)
       data
     end
 
     # List all Users
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<UserOutput>, Fixnum, Hash)>] Array<UserOutput> data, response status code and response headers
-    def users_get_with_http_info(authorization, opts = {})
+    def users_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UsersApi.users_get ...'
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling UsersApi.users_get"
       end
       # resource path
       local_var_path = '/users'
@@ -52,14 +46,13 @@ module YousignClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'Authorization'] = authorization
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -74,30 +67,24 @@ module YousignClient
     end
     # Delete a User
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def users_id_delete(id, authorization, opts = {})
-      users_id_delete_with_http_info(id, authorization, opts)
+    def users_id_delete(id, opts = {})
+      users_id_delete_with_http_info(id, opts)
       nil
     end
 
     # Delete a User
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def users_id_delete_with_http_info(id, authorization, opts = {})
+    def users_id_delete_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UsersApi.users_id_delete ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling UsersApi.users_id_delete"
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling UsersApi.users_id_delete"
       end
       # resource path
       local_var_path = '/users/{id}'.sub('{' + 'id' + '}', id.to_s)
@@ -111,14 +98,13 @@ module YousignClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'Authorization'] = authorization
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -132,30 +118,24 @@ module YousignClient
     end
     # Find a User by ID
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [UserOutput]
-    def users_id_get(id, authorization, opts = {})
-      data, _status_code, _headers = users_id_get_with_http_info(id, authorization, opts)
+    def users_id_get(id, opts = {})
+      data, _status_code, _headers = users_id_get_with_http_info(id, opts)
       data
     end
 
     # Find a User by ID
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [Array<(UserOutput, Fixnum, Hash)>] UserOutput data, response status code and response headers
-    def users_id_get_with_http_info(id, authorization, opts = {})
+    def users_id_get_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UsersApi.users_id_get ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling UsersApi.users_id_get"
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling UsersApi.users_id_get"
       end
       # resource path
       local_var_path = '/users/{id}'.sub('{' + 'id' + '}', id.to_s)
@@ -169,14 +149,13 @@ module YousignClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'Authorization'] = authorization
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -191,38 +170,26 @@ module YousignClient
     end
     # Update a User
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [UserOutput]
-    def users_id_put(id, authorization, content_type, body, opts = {})
-      data, _status_code, _headers = users_id_put_with_http_info(id, authorization, content_type, body, opts)
+    def users_id_put(id, body, opts = {})
+      data, _status_code, _headers = users_id_put_with_http_info(id, body, opts)
       data
     end
 
     # Update a User
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(UserOutput, Fixnum, Hash)>] UserOutput data, response status code and response headers
-    def users_id_put_with_http_info(id, authorization, content_type, body, opts = {})
+    def users_id_put_with_http_info(id, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UsersApi.users_id_put ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling UsersApi.users_id_put"
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling UsersApi.users_id_put"
-      end
-      # verify the required parameter 'content_type' is set
-      if @api_client.config.client_side_validation && content_type.nil?
-        fail ArgumentError, "Missing the required parameter 'content_type' when calling UsersApi.users_id_put"
       end
       # verify the required parameter 'body' is set
       if @api_client.config.client_side_validation && body.nil?
@@ -238,15 +205,13 @@ module YousignClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      header_params[:'Authorization'] = authorization
-      header_params[:'Content-Type'] = content_type
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = @api_client.object_to_http_body(body)
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -260,33 +225,21 @@ module YousignClient
       return data, status_code, headers
     end
     # Create a new User on Yousign application
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [UserOutput]
-    def users_post(authorization, content_type, body, opts = {})
-      data, _status_code, _headers = users_post_with_http_info(authorization, content_type, body, opts)
+    def users_post(body, opts = {})
+      data, _status_code, _headers = users_post_with_http_info(body, opts)
       data
     end
 
     # Create a new User on Yousign application
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(UserOutput, Fixnum, Hash)>] UserOutput data, response status code and response headers
-    def users_post_with_http_info(authorization, content_type, body, opts = {})
+    def users_post_with_http_info(body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UsersApi.users_post ...'
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling UsersApi.users_post"
-      end
-      # verify the required parameter 'content_type' is set
-      if @api_client.config.client_side_validation && content_type.nil?
-        fail ArgumentError, "Missing the required parameter 'content_type' when calling UsersApi.users_post"
       end
       # verify the required parameter 'body' is set
       if @api_client.config.client_side_validation && body.nil?
@@ -302,15 +255,13 @@ module YousignClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      header_params[:'Authorization'] = authorization
-      header_params[:'Content-Type'] = content_type
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = @api_client.object_to_http_body(body)
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

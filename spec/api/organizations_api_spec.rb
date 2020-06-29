@@ -34,7 +34,6 @@ describe 'OrganizationsApi' do
 
   # unit tests for organizations_get
   # List all Organizations
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [Array<OrganizationOutput>]
   describe 'organizations_get test' do

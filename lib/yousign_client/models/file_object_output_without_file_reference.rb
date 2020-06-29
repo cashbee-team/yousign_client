@@ -131,28 +131,13 @@ module YousignClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if !@position.nil? && @position !~ Regexp.new(/^\\d+(,\\d+){3}$/)
-        invalid_properties.push('invalid value for "position", must conform to the pattern /^\\d+(,\\d+){3}$/.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@position.nil? && @position !~ Regexp.new(/^\\d+(,\\d+){3}$/)
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] position Value to be assigned
-    def position=(position)
-      if !position.nil? && position !~ Regexp.new(/^\\d+(,\\d+){3}$/)
-        fail ArgumentError, 'invalid value for "position", must conform to the pattern /^\\d+(,\\d+){3}$/.'
-      end
-
-      @position = position
     end
 
     # Checks equality by comparing each attribute.

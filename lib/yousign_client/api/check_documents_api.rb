@@ -21,30 +21,24 @@ module YousignClient
     end
     # Get informations about a bank document (RIB)
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [CheckDocumentBankAccountsOutput]
-    def check_document_bank_accounts_id_get(id, authorization, opts = {})
-      data, _status_code, _headers = check_document_bank_accounts_id_get_with_http_info(id, authorization, opts)
+    def check_document_bank_accounts_id_get(id, opts = {})
+      data, _status_code, _headers = check_document_bank_accounts_id_get_with_http_info(id, opts)
       data
     end
 
     # Get informations about a bank document (RIB)
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [Array<(CheckDocumentBankAccountsOutput, Fixnum, Hash)>] CheckDocumentBankAccountsOutput data, response status code and response headers
-    def check_document_bank_accounts_id_get_with_http_info(id, authorization, opts = {})
+    def check_document_bank_accounts_id_get_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CheckDocumentsApi.check_document_bank_accounts_id_get ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling CheckDocumentsApi.check_document_bank_accounts_id_get"
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling CheckDocumentsApi.check_document_bank_accounts_id_get"
       end
       # resource path
       local_var_path = '/check-document/bank_accounts/{id}'.sub('{' + 'id' + '}', id.to_s)
@@ -58,14 +52,13 @@ module YousignClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'Authorization'] = authorization
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -79,33 +72,21 @@ module YousignClient
       return data, status_code, headers
     end
     # Verify a bank document (RIB)
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [CheckDocumentBankAccountsOutput]
-    def check_document_bank_accounts_post(authorization, content_type, body, opts = {})
-      data, _status_code, _headers = check_document_bank_accounts_post_with_http_info(authorization, content_type, body, opts)
+    def check_document_bank_accounts_post(body, opts = {})
+      data, _status_code, _headers = check_document_bank_accounts_post_with_http_info(body, opts)
       data
     end
 
     # Verify a bank document (RIB)
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CheckDocumentBankAccountsOutput, Fixnum, Hash)>] CheckDocumentBankAccountsOutput data, response status code and response headers
-    def check_document_bank_accounts_post_with_http_info(authorization, content_type, body, opts = {})
+    def check_document_bank_accounts_post_with_http_info(body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CheckDocumentsApi.check_document_bank_accounts_post ...'
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling CheckDocumentsApi.check_document_bank_accounts_post"
-      end
-      # verify the required parameter 'content_type' is set
-      if @api_client.config.client_side_validation && content_type.nil?
-        fail ArgumentError, "Missing the required parameter 'content_type' when calling CheckDocumentsApi.check_document_bank_accounts_post"
       end
       # verify the required parameter 'body' is set
       if @api_client.config.client_side_validation && body.nil?
@@ -121,15 +102,13 @@ module YousignClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      header_params[:'Authorization'] = authorization
-      header_params[:'Content-Type'] = content_type
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = @api_client.object_to_http_body(body)
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -144,30 +123,24 @@ module YousignClient
     end
     # Get informations about an identity document (passport, id cards)
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [CheckDocumentIdentitiesOutput]
-    def check_document_identities_id_get(id, authorization, opts = {})
-      data, _status_code, _headers = check_document_identities_id_get_with_http_info(id, authorization, opts)
+    def check_document_identities_id_get(id, opts = {})
+      data, _status_code, _headers = check_document_identities_id_get_with_http_info(id, opts)
       data
     end
 
     # Get informations about an identity document (passport, id cards)
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [Array<(CheckDocumentIdentitiesOutput, Fixnum, Hash)>] CheckDocumentIdentitiesOutput data, response status code and response headers
-    def check_document_identities_id_get_with_http_info(id, authorization, opts = {})
+    def check_document_identities_id_get_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CheckDocumentsApi.check_document_identities_id_get ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling CheckDocumentsApi.check_document_identities_id_get"
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling CheckDocumentsApi.check_document_identities_id_get"
       end
       # resource path
       local_var_path = '/check-document/identities/{id}'.sub('{' + 'id' + '}', id.to_s)
@@ -181,14 +154,13 @@ module YousignClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'Authorization'] = authorization
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -202,33 +174,21 @@ module YousignClient
       return data, status_code, headers
     end
     # Verify an identity document (passport, id cards)
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [CheckDocumentIdentitiesOutput]
-    def check_document_identities_post(authorization, content_type, body, opts = {})
-      data, _status_code, _headers = check_document_identities_post_with_http_info(authorization, content_type, body, opts)
+    def check_document_identities_post(body, opts = {})
+      data, _status_code, _headers = check_document_identities_post_with_http_info(body, opts)
       data
     end
 
     # Verify an identity document (passport, id cards)
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(CheckDocumentIdentitiesOutput, Fixnum, Hash)>] CheckDocumentIdentitiesOutput data, response status code and response headers
-    def check_document_identities_post_with_http_info(authorization, content_type, body, opts = {})
+    def check_document_identities_post_with_http_info(body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CheckDocumentsApi.check_document_identities_post ...'
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling CheckDocumentsApi.check_document_identities_post"
-      end
-      # verify the required parameter 'content_type' is set
-      if @api_client.config.client_side_validation && content_type.nil?
-        fail ArgumentError, "Missing the required parameter 'content_type' when calling CheckDocumentsApi.check_document_identities_post"
       end
       # verify the required parameter 'body' is set
       if @api_client.config.client_side_validation && body.nil?
@@ -244,15 +204,13 @@ module YousignClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      header_params[:'Authorization'] = authorization
-      header_params[:'Content-Type'] = content_type
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = @api_client.object_to_http_body(body)
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

@@ -35,7 +35,6 @@ describe 'OperationsApi' do
   # unit tests for operations_id_get
   # Find an Operation by ID
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [OperationOutput]
   describe 'operations_id_get test' do
@@ -46,8 +45,6 @@ describe 'OperationsApi' do
 
   # unit tests for operations_post
   # Create a new Operation
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [OperationOutput]

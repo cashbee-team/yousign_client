@@ -34,7 +34,6 @@ describe 'UserGroupsApi' do
 
   # unit tests for user_groups_get
   # Get User Group list
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [Array<UserGroup>]
   describe 'user_groups_get test' do
@@ -46,7 +45,6 @@ describe 'UserGroupsApi' do
   # unit tests for user_groups_id_get
   # Find a User Group by ID
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [UserGroup]
   describe 'user_groups_id_get test' do

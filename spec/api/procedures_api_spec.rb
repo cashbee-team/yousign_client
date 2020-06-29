@@ -34,7 +34,6 @@ describe 'ProceduresApi' do
 
   # unit tests for export_procedures_get
   # Export Procedure list
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @option opts [String] :status Return Procedure list based on the status for each Procedure
   # @option opts [String] :name Filter by name (contains)
@@ -57,7 +56,6 @@ describe 'ProceduresApi' do
 
   # unit tests for procedures_get
   # Get Procedure list
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @option opts [String] :status Return Procedure list based on the status for each Procedure
   # @option opts [BOOLEAN] :template Used to get Procedure template list
@@ -86,7 +84,6 @@ describe 'ProceduresApi' do
   # unit tests for procedures_id_delete
   # Delete a Procedure
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'procedures_id_delete test' do
@@ -98,8 +95,6 @@ describe 'ProceduresApi' do
   # unit tests for procedures_id_duplicate_post
   # Duplicate a Procedure
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [ProcedureOutput]
@@ -112,7 +107,6 @@ describe 'ProceduresApi' do
   # unit tests for procedures_id_get
   # Find a Procedure by ID
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [ProcedureOutput]
   describe 'procedures_id_get test' do
@@ -125,7 +119,6 @@ describe 'ProceduresApi' do
   # Get a Procedure proof file
   # Get a Procedure proof file
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [String]
   describe 'procedures_id_proof_get test' do
@@ -137,8 +130,6 @@ describe 'ProceduresApi' do
   # unit tests for procedures_id_put
   # Update a Procedure
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [ProcedureOutput]
@@ -151,8 +142,6 @@ describe 'ProceduresApi' do
   # unit tests for procedures_id_remind_post
   # Remind a Procedure
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [ProcedureOutput]
@@ -164,8 +153,6 @@ describe 'ProceduresApi' do
 
   # unit tests for procedures_post
   # Create a new Procedure
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [ProcedureOutput]

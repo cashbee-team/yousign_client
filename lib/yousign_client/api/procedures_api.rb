@@ -20,7 +20,6 @@ module YousignClient
       @api_client = api_client
     end
     # Export Procedure list
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @option opts [String] :status Return Procedure list based on the status for each Procedure
     # @option opts [String] :name Filter by name (contains)
@@ -35,13 +34,12 @@ module YousignClient
     # @option opts [Array<Date>] :deleted_at Filter by delete date  deletedAt[after]&#x3D;2017-09-18 deletedAt[before]&#x3D;2017-09-18 deletedAt[strictly_after]&#x3D;2017-09-18 deletedAt[strictly_before]&#x3D;2017-09-18
     # @option opts [String] :order_created_at Order by attribut
     # @return [String]
-    def export_procedures_get(authorization, opts = {})
-      data, _status_code, _headers = export_procedures_get_with_http_info(authorization, opts)
+    def export_procedures_get(opts = {})
+      data, _status_code, _headers = export_procedures_get_with_http_info(opts)
       data
     end
 
     # Export Procedure list
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @option opts [String] :status Return Procedure list based on the status for each Procedure
     # @option opts [String] :name Filter by name (contains)
@@ -56,13 +54,9 @@ module YousignClient
     # @option opts [Array<Date>] :deleted_at Filter by delete date  deletedAt[after]&#x3D;2017-09-18 deletedAt[before]&#x3D;2017-09-18 deletedAt[strictly_after]&#x3D;2017-09-18 deletedAt[strictly_before]&#x3D;2017-09-18
     # @option opts [String] :order_created_at Order by attribut
     # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
-    def export_procedures_get_with_http_info(authorization, opts = {})
+    def export_procedures_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProceduresApi.export_procedures_get ...'
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling ProceduresApi.export_procedures_get"
       end
       if @api_client.config.client_side_validation && opts[:'status'] && !['active', 'finished', 'expired', 'refused', 'draft'].include?(opts[:'status'])
         fail ArgumentError, 'invalid value for "status", must be one of active, finished, expired, refused, draft'
@@ -94,14 +88,13 @@ module YousignClient
       header_params['Accept'] = @api_client.select_header_accept(['text/csv'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'Authorization'] = authorization
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -115,7 +108,6 @@ module YousignClient
       return data, status_code, headers
     end
     # Get Procedure list
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @option opts [String] :status Return Procedure list based on the status for each Procedure
     # @option opts [BOOLEAN] :template Used to get Procedure template list (default to false)
@@ -135,13 +127,12 @@ module YousignClient
     # @option opts [Array<Date>] :deleted_at Filter by delete date  deletedAt[after]&#x3D;2017-09-18 deletedAt[before]&#x3D;2017-09-18 deletedAt[strictly_after]&#x3D;2017-09-18 deletedAt[strictly_before]&#x3D;2017-09-18
     # @option opts [String] :order_created_at Order by createdAt  order[createdAt]&#x3D;asc order[createdAt]&#x3D;desc
     # @return [Array<ProcedureOutput>]
-    def procedures_get(authorization, opts = {})
-      data, _status_code, _headers = procedures_get_with_http_info(authorization, opts)
+    def procedures_get(opts = {})
+      data, _status_code, _headers = procedures_get_with_http_info(opts)
       data
     end
 
     # Get Procedure list
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @option opts [String] :status Return Procedure list based on the status for each Procedure
     # @option opts [BOOLEAN] :template Used to get Procedure template list
@@ -161,13 +152,9 @@ module YousignClient
     # @option opts [Array<Date>] :deleted_at Filter by delete date  deletedAt[after]&#x3D;2017-09-18 deletedAt[before]&#x3D;2017-09-18 deletedAt[strictly_after]&#x3D;2017-09-18 deletedAt[strictly_before]&#x3D;2017-09-18
     # @option opts [String] :order_created_at Order by createdAt  order[createdAt]&#x3D;asc order[createdAt]&#x3D;desc
     # @return [Array<(Array<ProcedureOutput>, Fixnum, Hash)>] Array<ProcedureOutput> data, response status code and response headers
-    def procedures_get_with_http_info(authorization, opts = {})
+    def procedures_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProceduresApi.procedures_get ...'
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling ProceduresApi.procedures_get"
       end
       if @api_client.config.client_side_validation && opts[:'status'] && !['active', 'finished', 'expired', 'refused', 'draft'].include?(opts[:'status'])
         fail ArgumentError, 'invalid value for "status", must be one of active, finished, expired, refused, draft'
@@ -204,14 +191,13 @@ module YousignClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'Authorization'] = authorization
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -226,30 +212,24 @@ module YousignClient
     end
     # Delete a Procedure
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def procedures_id_delete(id, authorization, opts = {})
-      procedures_id_delete_with_http_info(id, authorization, opts)
+    def procedures_id_delete(id, opts = {})
+      procedures_id_delete_with_http_info(id, opts)
       nil
     end
 
     # Delete a Procedure
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def procedures_id_delete_with_http_info(id, authorization, opts = {})
+    def procedures_id_delete_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProceduresApi.procedures_id_delete ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling ProceduresApi.procedures_id_delete"
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling ProceduresApi.procedures_id_delete"
       end
       # resource path
       local_var_path = '/procedures/{id}'.sub('{' + 'id' + '}', id.to_s)
@@ -263,14 +243,13 @@ module YousignClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'Authorization'] = authorization
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -284,38 +263,26 @@ module YousignClient
     end
     # Duplicate a Procedure
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [ProcedureOutput]
-    def procedures_id_duplicate_post(id, authorization, content_type, body, opts = {})
-      data, _status_code, _headers = procedures_id_duplicate_post_with_http_info(id, authorization, content_type, body, opts)
+    def procedures_id_duplicate_post(id, body, opts = {})
+      data, _status_code, _headers = procedures_id_duplicate_post_with_http_info(id, body, opts)
       data
     end
 
     # Duplicate a Procedure
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ProcedureOutput, Fixnum, Hash)>] ProcedureOutput data, response status code and response headers
-    def procedures_id_duplicate_post_with_http_info(id, authorization, content_type, body, opts = {})
+    def procedures_id_duplicate_post_with_http_info(id, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProceduresApi.procedures_id_duplicate_post ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling ProceduresApi.procedures_id_duplicate_post"
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling ProceduresApi.procedures_id_duplicate_post"
-      end
-      # verify the required parameter 'content_type' is set
-      if @api_client.config.client_side_validation && content_type.nil?
-        fail ArgumentError, "Missing the required parameter 'content_type' when calling ProceduresApi.procedures_id_duplicate_post"
       end
       # verify the required parameter 'body' is set
       if @api_client.config.client_side_validation && body.nil?
@@ -331,15 +298,13 @@ module YousignClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      header_params[:'Authorization'] = authorization
-      header_params[:'Content-Type'] = content_type
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = @api_client.object_to_http_body(body)
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -354,30 +319,24 @@ module YousignClient
     end
     # Find a Procedure by ID
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [ProcedureOutput]
-    def procedures_id_get(id, authorization, opts = {})
-      data, _status_code, _headers = procedures_id_get_with_http_info(id, authorization, opts)
+    def procedures_id_get(id, opts = {})
+      data, _status_code, _headers = procedures_id_get_with_http_info(id, opts)
       data
     end
 
     # Find a Procedure by ID
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [Array<(ProcedureOutput, Fixnum, Hash)>] ProcedureOutput data, response status code and response headers
-    def procedures_id_get_with_http_info(id, authorization, opts = {})
+    def procedures_id_get_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProceduresApi.procedures_id_get ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling ProceduresApi.procedures_id_get"
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling ProceduresApi.procedures_id_get"
       end
       # resource path
       local_var_path = '/procedures/{id}'.sub('{' + 'id' + '}', id.to_s)
@@ -391,14 +350,13 @@ module YousignClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'Authorization'] = authorization
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -414,31 +372,25 @@ module YousignClient
     # Get a Procedure proof file
     # Get a Procedure proof file
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [String]
-    def procedures_id_proof_get(id, authorization, opts = {})
-      data, _status_code, _headers = procedures_id_proof_get_with_http_info(id, authorization, opts)
+    def procedures_id_proof_get(id, opts = {})
+      data, _status_code, _headers = procedures_id_proof_get_with_http_info(id, opts)
       data
     end
 
     # Get a Procedure proof file
     # Get a Procedure proof file
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
     # @param [Hash] opts the optional parameters
     # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
-    def procedures_id_proof_get_with_http_info(id, authorization, opts = {})
+    def procedures_id_proof_get_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProceduresApi.procedures_id_proof_get ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling ProceduresApi.procedures_id_proof_get"
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling ProceduresApi.procedures_id_proof_get"
       end
       # resource path
       local_var_path = '/procedures/{id}/proof'.sub('{' + 'id' + '}', id.to_s)
@@ -452,14 +404,13 @@ module YousignClient
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'Authorization'] = authorization
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -474,38 +425,26 @@ module YousignClient
     end
     # Update a Procedure
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [ProcedureOutput]
-    def procedures_id_put(id, authorization, content_type, body, opts = {})
-      data, _status_code, _headers = procedures_id_put_with_http_info(id, authorization, content_type, body, opts)
+    def procedures_id_put(id, body, opts = {})
+      data, _status_code, _headers = procedures_id_put_with_http_info(id, body, opts)
       data
     end
 
     # Update a Procedure
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ProcedureOutput, Fixnum, Hash)>] ProcedureOutput data, response status code and response headers
-    def procedures_id_put_with_http_info(id, authorization, content_type, body, opts = {})
+    def procedures_id_put_with_http_info(id, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProceduresApi.procedures_id_put ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling ProceduresApi.procedures_id_put"
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling ProceduresApi.procedures_id_put"
-      end
-      # verify the required parameter 'content_type' is set
-      if @api_client.config.client_side_validation && content_type.nil?
-        fail ArgumentError, "Missing the required parameter 'content_type' when calling ProceduresApi.procedures_id_put"
       end
       # verify the required parameter 'body' is set
       if @api_client.config.client_side_validation && body.nil?
@@ -521,15 +460,13 @@ module YousignClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      header_params[:'Authorization'] = authorization
-      header_params[:'Content-Type'] = content_type
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = @api_client.object_to_http_body(body)
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -544,38 +481,26 @@ module YousignClient
     end
     # Remind a Procedure
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [ProcedureOutput]
-    def procedures_id_remind_post(id, authorization, content_type, body, opts = {})
-      data, _status_code, _headers = procedures_id_remind_post_with_http_info(id, authorization, content_type, body, opts)
+    def procedures_id_remind_post(id, body, opts = {})
+      data, _status_code, _headers = procedures_id_remind_post_with_http_info(id, body, opts)
       data
     end
 
     # Remind a Procedure
     # @param id 
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ProcedureOutput, Fixnum, Hash)>] ProcedureOutput data, response status code and response headers
-    def procedures_id_remind_post_with_http_info(id, authorization, content_type, body, opts = {})
+    def procedures_id_remind_post_with_http_info(id, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProceduresApi.procedures_id_remind_post ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling ProceduresApi.procedures_id_remind_post"
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling ProceduresApi.procedures_id_remind_post"
-      end
-      # verify the required parameter 'content_type' is set
-      if @api_client.config.client_side_validation && content_type.nil?
-        fail ArgumentError, "Missing the required parameter 'content_type' when calling ProceduresApi.procedures_id_remind_post"
       end
       # verify the required parameter 'body' is set
       if @api_client.config.client_side_validation && body.nil?
@@ -591,15 +516,13 @@ module YousignClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      header_params[:'Authorization'] = authorization
-      header_params[:'Content-Type'] = content_type
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = @api_client.object_to_http_body(body)
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -613,33 +536,21 @@ module YousignClient
       return data, status_code, headers
     end
     # Create a new Procedure
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [ProcedureOutput]
-    def procedures_post(authorization, content_type, body, opts = {})
-      data, _status_code, _headers = procedures_post_with_http_info(authorization, content_type, body, opts)
+    def procedures_post(body, opts = {})
+      data, _status_code, _headers = procedures_post_with_http_info(body, opts)
       data
     end
 
     # Create a new Procedure
-    # @param authorization Authentication credentials for HTTP authentication
-    # @param content_type The MIME type of the body of the request
     # @param body 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ProcedureOutput, Fixnum, Hash)>] ProcedureOutput data, response status code and response headers
-    def procedures_post_with_http_info(authorization, content_type, body, opts = {})
+    def procedures_post_with_http_info(body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProceduresApi.procedures_post ...'
-      end
-      # verify the required parameter 'authorization' is set
-      if @api_client.config.client_side_validation && authorization.nil?
-        fail ArgumentError, "Missing the required parameter 'authorization' when calling ProceduresApi.procedures_post"
-      end
-      # verify the required parameter 'content_type' is set
-      if @api_client.config.client_side_validation && content_type.nil?
-        fail ArgumentError, "Missing the required parameter 'content_type' when calling ProceduresApi.procedures_post"
       end
       # verify the required parameter 'body' is set
       if @api_client.config.client_side_validation && body.nil?
@@ -655,15 +566,13 @@ module YousignClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      header_params[:'Authorization'] = authorization
-      header_params[:'Content-Type'] = content_type
 
       # form parameters
       form_params = {}
 
       # http body (model)
       post_body = @api_client.object_to_http_body(body)
-      auth_names = []
+      auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

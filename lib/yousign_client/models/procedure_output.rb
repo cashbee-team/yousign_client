@@ -244,14 +244,6 @@ module YousignClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if !@creator.nil? && @creator !~ Regexp.new(/^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
-        invalid_properties.push('invalid value for "creator", must conform to the pattern /^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/.')
-      end
-
-      if !@workspace.nil? && @workspace !~ Regexp.new(/^\/workspaces\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
-        invalid_properties.push('invalid value for "workspace", must conform to the pattern /^\/workspaces\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/.')
-      end
-
       invalid_properties
     end
 
@@ -260,8 +252,6 @@ module YousignClient
     def valid?
       status_validator = EnumAttributeValidator.new('String', ['draft', 'active', 'finished', 'expired', 'refused'])
       return false unless status_validator.valid?(@status)
-      return false if !@creator.nil? && @creator !~ Regexp.new(/^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
-      return false if !@workspace.nil? && @workspace !~ Regexp.new(/^\/workspaces\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
       true
     end
 
@@ -273,26 +263,6 @@ module YousignClient
         fail ArgumentError, 'invalid value for "status", must be one of #{validator.allowable_values}.'
       end
       @status = status
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] creator Value to be assigned
-    def creator=(creator)
-      if !creator.nil? && creator !~ Regexp.new(/^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
-        fail ArgumentError, 'invalid value for "creator", must conform to the pattern /^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/.'
-      end
-
-      @creator = creator
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] workspace Value to be assigned
-    def workspace=(workspace)
-      if !workspace.nil? && workspace !~ Regexp.new(/^\/workspaces\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
-        fail ArgumentError, 'invalid value for "workspace", must conform to the pattern /^\/workspaces\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/.'
-      end
-
-      @workspace = workspace
     end
 
     # Checks equality by comparing each attribute.

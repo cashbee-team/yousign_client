@@ -201,10 +201,6 @@ module YousignClient
         invalid_properties.push('invalid value for "file", file cannot be nil.')
       end
 
-      if !@position.nil? && @position !~ Regexp.new(/^\\d+(,\\d+){3}$/)
-        invalid_properties.push('invalid value for "position", must conform to the pattern /^\\d+(,\\d+){3}$/.')
-      end
-
       if !@content.nil? && @content.to_s.length > 255
         invalid_properties.push('invalid value for "content", the character length must be smaller than or equal to 255.')
       end
@@ -228,7 +224,6 @@ module YousignClient
     # @return true if the model is valid
     def valid?
       return false if @file.nil?
-      return false if !@position.nil? && @position !~ Regexp.new(/^\\d+(,\\d+){3}$/)
       type_validator = EnumAttributeValidator.new('String', ['signature', 'text'])
       return false unless type_validator.valid?(@type)
       return false if !@content.nil? && @content.to_s.length > 255
@@ -238,16 +233,6 @@ module YousignClient
       return false if !@font_size.nil? && @font_size < 6
       return false if !@font_color.nil? && @font_color !~ Regexp.new(/^(0|255|25[0-4]|2[0-4]\\d|1\\d\\d|0?\\d?\\d),(0|255|25[0-4]|2[0-4]\\d|1\\d\\d|0?\\d?\\d),(0|255|25[0-4]|2[0-4]\\d|1\\d\\d|0?\\d?\\d)$/)
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] position Value to be assigned
-    def position=(position)
-      if !position.nil? && position !~ Regexp.new(/^\\d+(,\\d+){3}$/)
-        fail ArgumentError, 'invalid value for "position", must conform to the pattern /^\\d+(,\\d+){3}$/.'
-      end
-
-      @position = position
     end
 
     # Custom attribute writer method checking allowed values (enum).

@@ -127,7 +127,7 @@ describe 'MemberOutput' do
   describe 'test attribute "operation_level"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["none", "custom"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["none", "custom", "advanced"])
       # validator.allowable_values.each do |value|
       #   expect { @instance.operation_level = value }.not_to raise_error
       # end

@@ -35,7 +35,6 @@ describe 'ConsentProcessesApi' do
   # unit tests for consent_process_values_get
   # Get list of Consent Process Value
   # @param member id of member
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [ConsentProcessValueOutput]
   describe 'consent_process_values_get test' do
@@ -47,7 +46,6 @@ describe 'ConsentProcessesApi' do
   # unit tests for consent_process_values_id_get
   # Get a Consent Process Value
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @option opts [String] :member id of member (required for anonymous)
   # @return [ConsentProcessValueOutput]
@@ -59,8 +57,6 @@ describe 'ConsentProcessesApi' do
 
   # unit tests for consent_process_values_post
   # Create a new Consent Process Value
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [ConsentProcessValueOutput]
@@ -72,7 +68,6 @@ describe 'ConsentProcessesApi' do
 
   # unit tests for consent_processes_get
   # Get list of Consent Processes
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @option opts [String] :member id of member (required for anonymous)
   # @option opts [String] :procedure id of procedure (required if the member attribut is not set)
@@ -86,7 +81,6 @@ describe 'ConsentProcessesApi' do
   # unit tests for consent_processes_id_delete
   # Delete a Consent Process
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'consent_processes_id_delete test' do
@@ -98,7 +92,6 @@ describe 'ConsentProcessesApi' do
   # unit tests for consent_processes_id_get
   # Get a Consent Process
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @option opts [String] :member id of member (required for anonymous)
   # @return [ConsentProcessOutput]
@@ -111,8 +104,6 @@ describe 'ConsentProcessesApi' do
   # unit tests for consent_processes_id_put
   # Update a Consent Process
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [ConsentProcessOutput]
@@ -124,8 +115,6 @@ describe 'ConsentProcessesApi' do
 
   # unit tests for consent_processes_post
   # Create a new Consent Process
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [ConsentProcessOutput]

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **check_document_bank_accounts_id_get**
-> CheckDocumentBankAccountsOutput check_document_bank_accounts_id_get(id, authorization)
+> CheckDocumentBankAccountsOutput check_document_bank_accounts_id_get(id)
 
 Get informations about a bank document (RIB)
 
@@ -19,17 +19,22 @@ Get informations about a bank document (RIB)
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::CheckDocumentsApi.new
 
 id = 'id_example' # String | 
 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Get informations about a bank document (RIB)
-  result = api_instance.check_document_bank_accounts_id_get(id, authorization)
+  result = api_instance.check_document_bank_accounts_id_get(id)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling CheckDocumentsApi->check_document_bank_accounts_id_get: #{e}"
@@ -41,7 +46,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -49,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -59,7 +63,7 @@ No authorization required
 
 
 # **check_document_bank_accounts_post**
-> CheckDocumentBankAccountsOutput check_document_bank_accounts_post(authorization, content_type, body)
+> CheckDocumentBankAccountsOutput check_document_bank_accounts_post(body)
 
 Verify a bank document (RIB)
 
@@ -67,19 +71,22 @@ Verify a bank document (RIB)
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::CheckDocumentsApi.new
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 body = YousignClient::CheckDocumentBankAccountsInput.new # CheckDocumentBankAccountsInput | 
 
 
 begin
   #Verify a bank document (RIB)
-  result = api_instance.check_document_bank_accounts_post(authorization, content_type, body)
+  result = api_instance.check_document_bank_accounts_post(body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling CheckDocumentsApi->check_document_bank_accounts_post: #{e}"
@@ -90,8 +97,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**CheckDocumentBankAccountsInput**](CheckDocumentBankAccountsInput.md)|  | 
 
 ### Return type
@@ -100,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -110,7 +115,7 @@ No authorization required
 
 
 # **check_document_identities_id_get**
-> CheckDocumentIdentitiesOutput check_document_identities_id_get(id, authorization)
+> CheckDocumentIdentitiesOutput check_document_identities_id_get(id)
 
 Get informations about an identity document (passport, id cards)
 
@@ -118,17 +123,22 @@ Get informations about an identity document (passport, id cards)
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::CheckDocumentsApi.new
 
 id = 'id_example' # String | 
 
-authorization = 'authorization_example' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Get informations about an identity document (passport, id cards)
-  result = api_instance.check_document_identities_id_get(id, authorization)
+  result = api_instance.check_document_identities_id_get(id)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling CheckDocumentsApi->check_document_identities_id_get: #{e}"
@@ -140,7 +150,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -148,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -158,7 +167,7 @@ No authorization required
 
 
 # **check_document_identities_post**
-> CheckDocumentIdentitiesOutput check_document_identities_post(authorization, content_type, body)
+> CheckDocumentIdentitiesOutput check_document_identities_post(body)
 
 Verify an identity document (passport, id cards)
 
@@ -166,19 +175,22 @@ Verify an identity document (passport, id cards)
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::CheckDocumentsApi.new
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 body = YousignClient::CheckDocumentIdentitiesInput.new # CheckDocumentIdentitiesInput | 
 
 
 begin
   #Verify an identity document (passport, id cards)
-  result = api_instance.check_document_identities_post(authorization, content_type, body)
+  result = api_instance.check_document_identities_post(body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling CheckDocumentsApi->check_document_identities_post: #{e}"
@@ -189,8 +201,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**CheckDocumentIdentitiesInput**](CheckDocumentIdentitiesInput.md)|  | 
 
 ### Return type
@@ -199,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **files_id_download_get**
-> String files_id_download_get(id, authorization)
+> String files_id_download_get(id)
 
 Download a File
 
@@ -21,17 +21,22 @@ Used to get the base64 content of a file
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::FilesApi.new
 
 id = 'id_example' # String | 
 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Download a File
-  result = api_instance.files_id_download_get(id, authorization)
+  result = api_instance.files_id_download_get(id)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling FilesApi->files_id_download_get: #{e}"
@@ -43,7 +48,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -51,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -61,7 +65,7 @@ No authorization required
 
 
 # **files_id_duplicate_post**
-> FileOutput files_id_duplicate_post(id, authorization, content_type)
+> FileOutput files_id_duplicate_post(id)
 
 Duplicate a File
 
@@ -71,19 +75,22 @@ Duplicate a file. It will be create a clone of this file, with a new ID.
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::FilesApi.new
 
 id = 'id_example' # String | 
 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
-
 
 begin
   #Duplicate a File
-  result = api_instance.files_id_duplicate_post(id, authorization, content_type)
+  result = api_instance.files_id_duplicate_post(id)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling FilesApi->files_id_duplicate_post: #{e}"
@@ -95,8 +102,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
 
 ### Return type
 
@@ -104,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -114,7 +119,7 @@ No authorization required
 
 
 # **files_id_get**
-> FileOutput files_id_get(id, authorization)
+> FileOutput files_id_get(id)
 
 Find a File by ID
 
@@ -124,17 +129,22 @@ Returns all the information regarding the File but without its content (for perf
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::FilesApi.new
 
 id = 'id_example' # String | 
 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find a File by ID
-  result = api_instance.files_id_get(id, authorization)
+  result = api_instance.files_id_get(id)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling FilesApi->files_id_get: #{e}"
@@ -146,7 +156,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -154,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -164,7 +173,7 @@ No authorization required
 
 
 # **files_post**
-> FileOutput files_post(authorization, content_type, body)
+> FileOutput files_post(body)
 
 Create a new File
 
@@ -174,19 +183,22 @@ Used to upload a file in base64 on our platform
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::FilesApi.new
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 body = YousignClient::FileInput.new # FileInput | 
 
 
 begin
   #Create a new File
-  result = api_instance.files_post(authorization, content_type, body)
+  result = api_instance.files_post(body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling FilesApi->files_post: #{e}"
@@ -197,8 +209,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**FileInput**](FileInput.md)|  | 
 
 ### Return type
@@ -207,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 

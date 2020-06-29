@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **file_objects_id_delete**
-> file_objects_id_delete(id, authorization)
+> file_objects_id_delete(id)
 
 Delete a File Object
 
@@ -21,17 +21,22 @@ Delete a File Object
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::FileObjectsApi.new
 
 id = 'id_example' # String | 
 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Delete a File Object
-  api_instance.file_objects_id_delete(id, authorization)
+  api_instance.file_objects_id_delete(id)
 rescue YousignClient::ApiError => e
   puts "Exception when calling FileObjectsApi->file_objects_id_delete: #{e}"
 end
@@ -42,7 +47,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -50,7 +54,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -60,7 +64,7 @@ No authorization required
 
 
 # **file_objects_id_get**
-> FileObjectOutput file_objects_id_get(id, authorization)
+> FileObjectOutput file_objects_id_get(id)
 
 Find a File Object by ID
 
@@ -70,17 +74,22 @@ Get a File Object
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::FileObjectsApi.new
 
 id = 'id_example' # String | 
 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
 
 begin
   #Find a File Object by ID
-  result = api_instance.file_objects_id_get(id, authorization)
+  result = api_instance.file_objects_id_get(id)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling FileObjectsApi->file_objects_id_get: #{e}"
@@ -92,7 +101,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -100,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -110,7 +118,7 @@ No authorization required
 
 
 # **file_objects_id_put**
-> FileObjectOutput file_objects_id_put(id, authorization, content_type, body)
+> FileObjectOutput file_objects_id_put(idbody)
 
 Update a File Object
 
@@ -120,21 +128,24 @@ Update a File Object
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::FileObjectsApi.new
 
 id = 'id_example' # String | 
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 body = YousignClient::FileObjectInput.new # FileObjectInput | 
 
 
 begin
   #Update a File Object
-  result = api_instance.file_objects_id_put(id, authorization, content_type, body)
+  result = api_instance.file_objects_id_put(idbody)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling FileObjectsApi->file_objects_id_put: #{e}"
@@ -146,8 +157,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**FileObjectInput**](FileObjectInput.md)|  | 
 
 ### Return type
@@ -156,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -166,7 +175,7 @@ No authorization required
 
 
 # **file_objects_post**
-> FileObjectOutput file_objects_post(authorization, content_type, body)
+> FileObjectOutput file_objects_post(body)
 
 Create a new File Object
 
@@ -176,19 +185,22 @@ Create a new fileObject
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::FileObjectsApi.new
-
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-
-content_type = 'application/json' # String | The MIME type of the body of the request
 
 body = YousignClient::FileObjectInput.new # FileObjectInput | 
 
 
 begin
   #Create a new File Object
-  result = api_instance.file_objects_post(authorization, content_type, body)
+  result = api_instance.file_objects_post(body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling FileObjectsApi->file_objects_post: #{e}"
@@ -199,8 +211,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**FileObjectInput**](FileObjectInput.md)|  | 
 
 ### Return type
@@ -209,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 

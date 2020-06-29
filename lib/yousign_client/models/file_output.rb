@@ -173,10 +173,6 @@ module YousignClient
         invalid_properties.push('invalid value for "workspace", must conform to the pattern /^\/workspaces\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/.')
       end
 
-      if !@creator.nil? && @creator !~ Regexp.new(/^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
-        invalid_properties.push('invalid value for "creator", must conform to the pattern /^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/.')
-      end
-
       invalid_properties
     end
 
@@ -186,7 +182,6 @@ module YousignClient
       type_validator = EnumAttributeValidator.new('String', ['signable', 'sign_image', 'attachment'])
       return false unless type_validator.valid?(@type)
       return false if !@workspace.nil? && @workspace !~ Regexp.new(/^\/workspaces\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
-      return false if !@creator.nil? && @creator !~ Regexp.new(/^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
       true
     end
 
@@ -208,16 +203,6 @@ module YousignClient
       end
 
       @workspace = workspace
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] creator Value to be assigned
-    def creator=(creator)
-      if !creator.nil? && creator !~ Regexp.new(/^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/)
-        fail ArgumentError, 'invalid value for "creator", must conform to the pattern /^\/users\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/.'
-      end
-
-      @creator = creator
     end
 
     # Checks equality by comparing each attribute.
