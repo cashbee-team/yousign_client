@@ -15,22 +15,26 @@ Method | HTTP request | Description
 [**procedures_post**](ProceduresApi.md#procedures_post) | **POST** /procedures | Create a new Procedure
 
 
-
-## export_procedures_get
-
-> String export_procedures_get(authorization, opts)
+# **export_procedures_get**
+> String export_procedures_get(opts)
 
 Export Procedure list
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ProceduresApi.new
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-opts = {
+
+opts = { 
   status: 'status_example', # String | Return Procedure list based on the status for each Procedure
   name: 'test', # String | Filter by name (contains)
   members_firstname: 'test', # String | Filter by member firstname (contains)
@@ -47,7 +51,7 @@ opts = {
 
 begin
   #Export Procedure list
-  result = api_instance.export_procedures_get(authorization, opts)
+  result = api_instance.export_procedures_get(opts)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ProceduresApi->export_procedures_get: #{e}"
@@ -56,10 +60,8 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
  **status** | **String**| Return Procedure list based on the status for each Procedure | [optional] 
  **name** | **String**| Filter by name (contains) | [optional] 
  **members_firstname** | **String**| Filter by member firstname (contains) | [optional] 
@@ -79,34 +81,40 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/csv
+ - **Content-Type**: application/json
+ - **Accept**: text/csv
 
 
-## procedures_get
 
-> Array&lt;ProcedureOutput&gt; procedures_get(authorization, opts)
+# **procedures_get**
+> Array&lt;ProcedureOutput&gt; procedures_get(opts)
 
 Get Procedure list
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ProceduresApi.new
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-opts = {
+
+opts = { 
   status: 'status_example', # String | Return Procedure list based on the status for each Procedure
-  template: false, # Boolean | Used to get Procedure template list
+  template: false, # BOOLEAN | Used to get Procedure template list
   members: ['/members/f8311c9b-7b37-46d4-b28e-0c40d44b2f95'], # Array<String> | Get Procedure list for given members (paraph mode)
   items_per_page: '20', # String | Number of items per page for the pagination
-  pagination: true, # Boolean | Enable the pagination
+  pagination: true, # BOOLEAN | Enable the pagination
   page: 2, # Integer | Page of the pagination
   name: 'test', # String | Filter by name (contains)
   members_firstname: 'test', # String | Filter by member firstname (contains)
@@ -123,7 +131,7 @@ opts = {
 
 begin
   #Get Procedure list
-  result = api_instance.procedures_get(authorization, opts)
+  result = api_instance.procedures_get(opts)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ProceduresApi->procedures_get: #{e}"
@@ -132,15 +140,13 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
  **status** | **String**| Return Procedure list based on the status for each Procedure | [optional] 
- **template** | **Boolean**| Used to get Procedure template list | [optional] [default to false]
+ **template** | **BOOLEAN**| Used to get Procedure template list | [optional] [default to false]
  **members** | [**Array&lt;String&gt;**](String.md)| Get Procedure list for given members (paraph mode) | [optional] 
  **items_per_page** | **String**| Number of items per page for the pagination | [optional] 
- **pagination** | **Boolean**| Enable the pagination | [optional] 
+ **pagination** | **BOOLEAN**| Enable the pagination | [optional] 
  **page** | **Integer**| Page of the pagination | [optional] 
  **name** | **String**| Filter by name (contains) | [optional] 
  **members_firstname** | **String**| Filter by member firstname (contains) | [optional] 
@@ -160,33 +166,40 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## procedures_id_delete
 
-> procedures_id_delete(id, authorization)
+# **procedures_id_delete**
+> procedures_id_delete(id)
 
 Delete a Procedure
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ProceduresApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
+
 
 begin
   #Delete a Procedure
-  api_instance.procedures_id_delete(id, authorization)
+  api_instance.procedures_id_delete(id)
 rescue YousignClient::ApiError => e
   puts "Exception when calling ProceduresApi->procedures_id_delete: #{e}"
 end
@@ -194,11 +207,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -206,35 +217,42 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## procedures_id_duplicate_post
 
-> ProcedureOutput procedures_id_duplicate_post(id, authorization, content_type, body)
+# **procedures_id_duplicate_post**
+> ProcedureOutput procedures_id_duplicate_post(id, body)
 
 Duplicate a Procedure
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ProceduresApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-content_type = 'application/json' # String | The MIME type of the body of the request
+
 body = YousignClient::ProcedureDuplicateInput.new # ProcedureDuplicateInput | 
+
 
 begin
   #Duplicate a Procedure
-  result = api_instance.procedures_id_duplicate_post(id, authorization, content_type, body)
+  result = api_instance.procedures_id_duplicate_post(id, body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ProceduresApi->procedures_id_duplicate_post: #{e}"
@@ -243,12 +261,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**ProcedureDuplicateInput**](ProcedureDuplicateInput.md)|  | 
 
 ### Return type
@@ -257,33 +272,40 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## procedures_id_get
 
-> ProcedureOutput procedures_id_get(id, authorization)
+# **procedures_id_get**
+> ProcedureOutput procedures_id_get(id)
 
 Find a Procedure by ID
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ProceduresApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
+
 
 begin
   #Find a Procedure by ID
-  result = api_instance.procedures_id_get(id, authorization)
+  result = api_instance.procedures_id_get(id)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ProceduresApi->procedures_id_get: #{e}"
@@ -292,11 +314,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -304,35 +324,42 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## procedures_id_proof_get
 
-> String procedures_id_proof_get(id, authorization)
+# **procedures_id_proof_get**
+> String procedures_id_proof_get(id)
 
 Get a Procedure proof file
 
 Get a Procedure proof file
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ProceduresApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
+
 
 begin
   #Get a Procedure proof file
-  result = api_instance.procedures_id_proof_get(id, authorization)
+  result = api_instance.procedures_id_proof_get(id)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ProceduresApi->procedures_id_proof_get: #{e}"
@@ -341,11 +368,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -353,35 +378,42 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## procedures_id_put
 
-> ProcedureOutput procedures_id_put(id, authorization, content_type, body)
+# **procedures_id_put**
+> ProcedureOutput procedures_id_put(idbody)
 
 Update a Procedure
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ProceduresApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-content_type = 'application/json' # String | The MIME type of the body of the request
+
 body = YousignClient::ProcedureInput.new # ProcedureInput | 
+
 
 begin
   #Update a Procedure
-  result = api_instance.procedures_id_put(id, authorization, content_type, body)
+  result = api_instance.procedures_id_put(idbody)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ProceduresApi->procedures_id_put: #{e}"
@@ -390,12 +422,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**ProcedureInput**](ProcedureInput.md)|  | 
 
 ### Return type
@@ -404,35 +433,42 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## procedures_id_remind_post
 
-> ProcedureOutput procedures_id_remind_post(id, authorization, content_type, body)
+# **procedures_id_remind_post**
+> ProcedureOutput procedures_id_remind_post(id, body)
 
 Remind a Procedure
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ProceduresApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-content_type = 'application/json' # String | The MIME type of the body of the request
+
 body = YousignClient::ProcedureRemindInput.new # ProcedureRemindInput | 
+
 
 begin
   #Remind a Procedure
-  result = api_instance.procedures_id_remind_post(id, authorization, content_type, body)
+  result = api_instance.procedures_id_remind_post(id, body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ProceduresApi->procedures_id_remind_post: #{e}"
@@ -441,12 +477,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**ProcedureRemindInput**](ProcedureRemindInput.md)|  | 
 
 ### Return type
@@ -455,34 +488,40 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## procedures_post
 
-> ProcedureOutput procedures_post(authorization, content_type, body)
+# **procedures_post**
+> ProcedureOutput procedures_post(body)
 
 Create a new Procedure
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ProceduresApi.new
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-content_type = 'application/json' # String | The MIME type of the body of the request
+
 body = YousignClient::ProcedureInput.new # ProcedureInput | 
+
 
 begin
   #Create a new Procedure
-  result = api_instance.procedures_post(authorization, content_type, body)
+  result = api_instance.procedures_post(body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ProceduresApi->procedures_post: #{e}"
@@ -491,11 +530,8 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**ProcedureInput**](ProcedureInput.md)|  | 
 
 ### Return type
@@ -504,10 +540,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
 

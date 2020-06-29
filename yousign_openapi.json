@@ -18,14 +18,7 @@
       "get" : {
         "tags" : [ "Organizations" ],
         "summary" : "List all Organizations",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -46,14 +39,7 @@
       "get" : {
         "tags" : [ "Workspaces" ],
         "summary" : "List all Workspaces",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -74,14 +60,7 @@
       "get" : {
         "tags" : [ "Users" ],
         "summary" : "List all Users",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -99,20 +78,6 @@
         "summary" : "Create a new User on Yousign application",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -137,14 +102,7 @@
       "get" : {
         "tags" : [ "Users" ],
         "summary" : "Find a User by ID",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -159,20 +117,6 @@
         "summary" : "Update a User",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -192,14 +136,7 @@
       "delete" : {
         "tags" : [ "Users" ],
         "summary" : "Delete a User",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "204" : {
             "description" : "Status 204"
@@ -221,14 +158,7 @@
         "tags" : [ "User Groups" ],
         "summary" : "Get User Group list",
         "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -249,14 +179,7 @@
       "get" : {
         "tags" : [ "User Groups" ],
         "summary" : "Find a User Group by ID",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -283,20 +206,6 @@
         "description" : "Used to upload a file in base64 on our platform",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -322,14 +231,7 @@
         "tags" : [ "Files" ],
         "summary" : "Find a File by ID",
         "description" : "Returns all the information regarding the File but without its content (for performance issue).",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -354,14 +256,7 @@
         "tags" : [ "Files" ],
         "summary" : "Download a File",
         "description" : "Used to get the base64 content of a file",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -390,21 +285,6 @@
         "tags" : [ "Files" ],
         "summary" : "Duplicate a File",
         "description" : "Duplicate a file. It will be create a clone of this file, with a new ID.",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        } ],
         "responses" : {
           "201" : {
             "description" : "Status 201",
@@ -563,14 +443,7 @@
           "type" : "string",
           "description" : "Order by createdAt\n\norder[createdAt]=asc\norder[createdAt]=desc",
           "enum" : [ "asc", "desc" ]
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        }  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -608,20 +481,6 @@
         "summary" : "Create a new Procedure",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -649,14 +508,7 @@
       "get" : {
         "tags" : [ "Procedures" ],
         "summary" : "Find a Procedure by ID",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -674,20 +526,6 @@
         "summary" : "Update a Procedure",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -713,14 +551,7 @@
       "delete" : {
         "tags" : [ "Procedures" ],
         "summary" : "Delete a Procedure",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "204" : {
             "description" : "Status 204"
@@ -743,20 +574,6 @@
         "summary" : "Duplicate a Procedure",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -887,14 +704,7 @@
           "type" : "string",
           "description" : "Order by attribut",
           "enum" : [ "asc", "desc" ]
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        }  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -917,20 +727,6 @@
         "summary" : "Remind a Procedure",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -965,14 +761,7 @@
         "tags" : [ "Procedures" ],
         "summary" : "Get a Procedure proof file",
         "description" : "Get a Procedure proof file",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -1008,14 +797,7 @@
           "required" : false,
           "type" : "string",
           "x-example" : "Id for filter about a procedure"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        }  ],
         "responses" : {
           "200" : {
             "description" : "Array of members",
@@ -1034,20 +816,6 @@
         "description" : "Create a new member",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -1075,20 +843,6 @@
         "description" : "Edit a member",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -1109,14 +863,7 @@
         "tags" : [ "Members" ],
         "summary" : "Delete a Member",
         "description" : "Delete a member",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "204" : {
             "description" : "Status 204"
@@ -1138,14 +885,7 @@
         "tags" : [ "Members" ],
         "summary" : "Get a proof file of a Member",
         "description" : "Get a proof file of a member",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -1178,20 +918,6 @@
         "description" : "Create a new fileObject",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -1217,14 +943,7 @@
         "tags" : [ "File Objects" ],
         "summary" : "Find a File Object by ID",
         "description" : "Get a File Object",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -1240,20 +959,6 @@
         "description" : "Update a File Object",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -1274,14 +979,7 @@
         "tags" : [ "File Objects" ],
         "summary" : "Delete a File Object",
         "description" : "Delete a File Object",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "204" : {
             "description" : "Status 204"
@@ -1305,20 +1003,6 @@
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -1344,14 +1028,7 @@
         "tags" : [ "Operations" ],
         "summary" : "Find an Operation by ID",
         "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -1375,14 +1052,7 @@
       "get" : {
         "tags" : [ "Authentications" ],
         "summary" : "Get an Authentication",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -1397,20 +1067,6 @@
         "summary" : "Update an inwebo Authentication",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -1447,14 +1103,7 @@
       "get" : {
         "tags" : [ "Authentications" ],
         "summary" : "Find an Authentication by ID",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -1470,20 +1119,6 @@
         "consumes" : [ ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -1537,14 +1172,7 @@
       "get" : {
         "tags" : [ "Authentications" ],
         "summary" : "Find an Authentication by ID",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -1560,20 +1188,6 @@
         "consumes" : [ ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -1642,14 +1256,7 @@
           "type" : "string",
           "description" : "id of procedure (required if the member attribut is not set)",
           "x-example" : "/procedures/17625df4-4ee7-498e-822d-3637c91b6f40"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        }  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -1668,20 +1275,6 @@
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -1714,14 +1307,7 @@
           "type" : "string",
           "description" : "id of member (required for anonymous)",
           "x-example" : "/members/17625df4-4ee7-498e-822d-3637c91b6f40"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        }  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -1737,20 +1323,6 @@
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -1770,14 +1342,7 @@
       "delete" : {
         "tags" : [ "Consent Processes" ],
         "summary" : "Delete a Consent Process",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "204" : {
             "description" : "Status 204"
@@ -1805,14 +1370,7 @@
           "type" : "string",
           "description" : "id of member (required for anonymous)",
           "x-example" : "/members/17625df4-4ee7-498e-822d-3637c91b6f40"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        }  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -1843,14 +1401,7 @@
           "type" : "string",
           "description" : "id of member",
           "x-example" : "/members/17625df4-4ee7-498e-822d-3637c91b6f40"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        }  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -1866,20 +1417,6 @@
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -1904,14 +1441,7 @@
       "get" : {
         "tags" : [ "Signature UIs" ],
         "summary" : "Get Signature UI list",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -1930,20 +1460,6 @@
         "description" : "Here is the url format to build on your side to get a custom signature interface with your settings : \nhttps://webapp.yousign.com/procedure/sign?members=~2Fmembers~2F__MEMBER_ID__&signatureUi=~2Fsignature_uis~2F__SIGNATURE_UI_ID__",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -1975,20 +1491,6 @@
           "type" : "string",
           "description" : "id of a signature ui",
           "x-example" : "/signature_uis/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
         } ],
         "responses" : {
           "200" : {
@@ -2009,20 +1511,6 @@
           "type" : "string",
           "description" : "id of signature ui to update",
           "x-example" : "/signature_uis/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
         } ],
         "responses" : {
           "200" : {
@@ -2043,20 +1531,6 @@
           "type" : "string",
           "description" : "Id of the signature ui",
           "x-example" : "/signature_uis/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
         } ],
         "responses" : {
           "204" : {
@@ -2091,14 +1565,7 @@
           "required" : false,
           "type" : "string",
           "description" : "Filtering on id of signature ui resource"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        }  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -2116,20 +1583,6 @@
         "summary" : "Create a new Signature UI Label",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -2161,14 +1614,7 @@
           "type" : "string",
           "description" : "id of signature ui label",
           "x-example" : "/signature_ui_labels/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        }  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -2189,21 +1635,7 @@
           "type" : "string",
           "description" : "Id of signature ui labels",
           "x-example" : "/signature_ui_labels/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
+        } , {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -2230,14 +1662,7 @@
           "type" : "string",
           "description" : "Id of signature ui label",
           "x-example" : "/signature_ui_labels/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        }  ],
         "responses" : {
           "204" : {
             "description" : "Status 204"
@@ -2260,20 +1685,6 @@
         "summary" : "Create a Server Stamp",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -2301,14 +1712,7 @@
       "get" : {
         "tags" : [ "Server Stamps" ],
         "summary" : "Find a Server Stamp by ID",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -2337,20 +1741,6 @@
         "summary" : "Verify an identity document (passport, id cards)",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -2375,13 +1765,7 @@
       "get" : {
         "tags" : [ "Check Documents" ],
         "summary" : "Get informations about an identity document (passport, id cards)",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -2407,20 +1791,6 @@
         "summary" : "Verify a bank document (RIB)",
         "consumes" : [ ],
         "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        }, {
-          "name" : "Content-Type",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "The MIME type of the body of the request",
-          "x-example" : "application/json"
-        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
@@ -2448,14 +1818,7 @@
       "get" : {
         "tags" : [ "Check Documents" ],
         "summary" : "Get informations about a bank document (RIB)",
-        "parameters" : [ {
-          "name" : "Authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : "Authentication credentials for HTTP authentication",
-          "x-example" : "Bearer {{access_token}}"
-        } ],
+        "parameters" : [  ],
         "responses" : {
           "200" : {
             "description" : "Status 200",
@@ -2474,13 +1837,6 @@
       "x-restlet" : {
         "section" : "Check Document"
       }
-    }
-  },
-  "securityDefinitions" : {
-    "ApiKey" : {
-      "type" : "apiKey",
-      "name" : "Authorization",
-      "in" : "header"
     }
   },
   "definitions" : {
@@ -5394,5 +4750,17 @@
       },
       "Check Document" : { }
     }
-  }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "api_key": []
+    }
+  ]
 }

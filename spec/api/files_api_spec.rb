@@ -36,7 +36,6 @@ describe 'FilesApi' do
   # Download a File
   # Used to get the base64 content of a file
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [String]
   describe 'files_id_download_get test' do
@@ -49,8 +48,6 @@ describe 'FilesApi' do
   # Duplicate a File
   # Duplicate a file. It will be create a clone of this file, with a new ID.
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param [Hash] opts the optional parameters
   # @return [FileOutput]
   describe 'files_id_duplicate_post test' do
@@ -63,7 +60,6 @@ describe 'FilesApi' do
   # Find a File by ID
   # Returns all the information regarding the File but without its content (for performance issue).
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [FileOutput]
   describe 'files_id_get test' do
@@ -75,8 +71,6 @@ describe 'FilesApi' do
   # unit tests for files_post
   # Create a new File
   # Used to upload a file in base64 on our platform
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [FileOutput]

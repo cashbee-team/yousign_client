@@ -1,7 +1,6 @@
 # YousignClient::FileObjectOutputWithoutFileReference
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Id of the object | [optional] 
@@ -14,22 +13,5 @@ Name | Type | Description | Notes
 **updated_at** | **DateTime** | Updated date of the object | [optional] 
 **executed_at** | **DateTime** | Date of signature or validation | [optional] 
 **reason** | **String** | The reason they are signing the agreement | [optional] [default to &#39;Signed by Yousign&#39;]
-
-## Code Sample
-
-```ruby
-require 'YousignClient'
-
-instance = YousignClient::FileObjectOutputWithoutFileReference.new(id: /file_objects/9d1ede2b-5687-4440-bdc8-dd0bc64f668c,
-                                 page: null,
-                                 position: 400,700,500,800,
-                                 field_name: null,
-                                 mention: Read and approuved,
-                                 mention2__internal: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 executed_at: null,
-                                 reason: null)
-```
 
 

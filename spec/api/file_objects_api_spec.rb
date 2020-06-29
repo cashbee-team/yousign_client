@@ -36,7 +36,6 @@ describe 'FileObjectsApi' do
   # Delete a File Object
   # Delete a File Object
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'file_objects_id_delete test' do
@@ -49,7 +48,6 @@ describe 'FileObjectsApi' do
   # Find a File Object by ID
   # Get a File Object
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [FileObjectOutput]
   describe 'file_objects_id_get test' do
@@ -62,8 +60,6 @@ describe 'FileObjectsApi' do
   # Update a File Object
   # Update a File Object
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [FileObjectOutput]
@@ -76,8 +72,6 @@ describe 'FileObjectsApi' do
   # unit tests for file_objects_post
   # Create a new File Object
   # Create a new fileObject
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [FileObjectOutput]

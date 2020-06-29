@@ -1,7 +1,6 @@
 # YousignClient::ServerStampOutput
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Resource server stamp uri | 
@@ -14,22 +13,5 @@ Name | Type | Description | Notes
 **finished_at** | **DateTime** |  | 
 **status** | **String** |  | 
 **workspace** | **String** | Resource workspace uri | 
-
-## Code Sample
-
-```ruby
-require 'YousignClient'
-
-instance = YousignClient::ServerStampOutput.new(id: /server_stamps/0c73955f-e4c8-4975-9a8c-ad0bc3dde689,
-                                 file: /files/1eb8923e-0558-4f0e-823e-294b422a28e2,
-                                 certificate: /certificates/5025dee5-8c16-444e-8147-a008d87156b2,
-                                 config: null,
-                                 file_objects: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 finished_at: null,
-                                 status: null,
-                                 workspace: /workspaces/3df0b580-adfe-43a9-859c-d724bcfc240b)
-```
 
 

@@ -1,7 +1,6 @@
 # YousignClient::UserOutput
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Object&#39;s ID | [optional] 
@@ -17,43 +16,14 @@ Name | Type | Description | Notes
 **group** | [**UserGroup**](UserGroup.md) |  | [optional] 
 **created_at** | **DateTime** | Created date of the object | [optional] 
 **updated_at** | **DateTime** | Updated date of the object | [optional] 
-**deleted** | **Boolean** | Defines if the User is deleted or not | [optional] 
+**deleted** | **BOOLEAN** | Defines if the User is deleted or not | [optional] 
 **deleted_at** | **DateTime** | Defines the date where the user has been deleted | [optional] 
-**config** | [**Object**](.md) |  | [optional] 
+**config** | **Object** |  | [optional] 
 **inwebo_user_request** | **String** | Internal usage, should not be used | [optional] 
 **saml_name_id** | **String** | ID of SAML | [optional] 
 **default_sign_image** | **String** | ID of the default sign image. | [optional] 
 **notifications** | [**UserOutputNotifications**](UserOutputNotifications.md) |  | [optional] 
-**fast_sign** | **Boolean** | Defines if the fast signature is available for the user on the Yousign application | [optional] 
+**fast_sign** | **BOOLEAN** | Defines if the fast signature is available for the user on the Yousign application | [optional] 
 **full_name** | **String** | User&#39;s full name | [optional] 
-
-## Code Sample
-
-```ruby
-require 'YousignClient'
-
-instance = YousignClient::UserOutput.new(id: /users/9d1ede2b-5687-4440-bdc8-dd0bc64f668c,
-                                 firstname: null,
-                                 lastname: null,
-                                 email: null,
-                                 title: null,
-                                 phone: null,
-                                 status: null,
-                                 organization: /organizations/b7599d85-4076-4752-94fb-8fbe10147e60,
-                                 workspaces: null,
-                                 permission: null,
-                                 group: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 deleted: null,
-                                 deleted_at: null,
-                                 config: null,
-                                 inwebo_user_request: /inwebo_user_requests/b7599d85-4076-4752-94fb-8fbe10147e60,
-                                 saml_name_id: null,
-                                 default_sign_image: /files/9d1ede2b-5687-4440-bdc8-dd0bc64f668c,
-                                 notifications: null,
-                                 fast_sign: null,
-                                 full_name: null)
-```
 
 

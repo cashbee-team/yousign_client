@@ -35,7 +35,6 @@ describe 'MembersApi' do
   # unit tests for members_get
   # Get all Members
   # Returns the list of Members of a organization. It only usefull if you use the query params named \&quot;procedure\&quot; for retrieve all members of a procedure.
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @option opts [String] :procedure 
   # @return [Array<MemberOutput>]
@@ -49,7 +48,6 @@ describe 'MembersApi' do
   # Delete a Member
   # Delete a member
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'members_id_delete test' do
@@ -62,7 +60,6 @@ describe 'MembersApi' do
   # Get a proof file of a Member
   # Get a proof file of a member
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [String]
   describe 'members_id_proof_get test' do
@@ -75,8 +72,6 @@ describe 'MembersApi' do
   # Edit a Member
   # Edit a member
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [MemberOutput]
@@ -89,8 +84,6 @@ describe 'MembersApi' do
   # unit tests for members_post
   # Create a new Member
   # Create a new member
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [MemberOutput]

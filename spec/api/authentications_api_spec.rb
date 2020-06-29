@@ -35,7 +35,6 @@ describe 'AuthenticationsApi' do
   # unit tests for authentications_email_id_get
   # Find an Authentication by ID
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [AuthenticationEmailOutput]
   describe 'authentications_email_id_get test' do
@@ -47,8 +46,6 @@ describe 'AuthenticationsApi' do
   # unit tests for authentications_email_id_put
   # Update an Email Authentication
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [AuthenticationEmailOutput]
@@ -61,7 +58,6 @@ describe 'AuthenticationsApi' do
   # unit tests for authentications_inwebo_id_get
   # Get an Authentication
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [AuthenticationInweboOutput]
   describe 'authentications_inwebo_id_get test' do
@@ -73,8 +69,6 @@ describe 'AuthenticationsApi' do
   # unit tests for authentications_inwebo_id_put
   # Update an inwebo Authentication
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [AuthenticationInweboOutput]
@@ -87,7 +81,6 @@ describe 'AuthenticationsApi' do
   # unit tests for authentications_sms_id_get
   # Find an Authentication by ID
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [AuthenticationSmsOutput]
   describe 'authentications_sms_id_get test' do
@@ -99,8 +92,6 @@ describe 'AuthenticationsApi' do
   # unit tests for authentications_sms_id_put
   # Update an SMS Authentication
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [AuthenticationSmsOutput]

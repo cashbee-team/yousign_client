@@ -14,26 +14,31 @@ Method | HTTP request | Description
 [**consent_processes_post**](ConsentProcessesApi.md#consent_processes_post) | **POST** /consent_processes | Create a new Consent Process
 
 
-
-## consent_process_values_get
-
-> ConsentProcessValueOutput consent_process_values_get(member, authorization)
+# **consent_process_values_get**
+> ConsentProcessValueOutput consent_process_values_get(member)
 
 Get list of Consent Process Value
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ConsentProcessesApi.new
+
 member = '/members/17625df4-4ee7-498e-822d-3637c91b6f40' # String | id of member
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
+
 
 begin
   #Get list of Consent Process Value
-  result = api_instance.consent_process_values_get(member, authorization)
+  result = api_instance.consent_process_values_get(member)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ConsentProcessesApi->consent_process_values_get: #{e}"
@@ -42,11 +47,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **member** | **String**| id of member | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -54,36 +57,43 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## consent_process_values_id_get
 
-> ConsentProcessValueOutput consent_process_values_id_get(id, authorization, opts)
+# **consent_process_values_id_get**
+> ConsentProcessValueOutput consent_process_values_id_get(id, opts)
 
 Get a Consent Process Value
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ConsentProcessesApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-opts = {
+
+opts = { 
   member: '/members/17625df4-4ee7-498e-822d-3637c91b6f40' # String | id of member (required for anonymous)
 }
 
 begin
   #Get a Consent Process Value
-  result = api_instance.consent_process_values_id_get(id, authorization, opts)
+  result = api_instance.consent_process_values_id_get(id, opts)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ConsentProcessesApi->consent_process_values_id_get: #{e}"
@@ -92,11 +102,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
  **member** | **String**| id of member (required for anonymous) | [optional] 
 
 ### Return type
@@ -105,34 +113,40 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## consent_process_values_post
 
-> ConsentProcessValueOutput consent_process_values_post(authorization, content_type, body)
+# **consent_process_values_post**
+> ConsentProcessValueOutput consent_process_values_post(body)
 
 Create a new Consent Process Value
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ConsentProcessesApi.new
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-content_type = 'application/json' # String | The MIME type of the body of the request
+
 body = YousignClient::ConsentProcessValueInput.new # ConsentProcessValueInput | 
+
 
 begin
   #Create a new Consent Process Value
-  result = api_instance.consent_process_values_post(authorization, content_type, body)
+  result = api_instance.consent_process_values_post(body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ConsentProcessesApi->consent_process_values_post: #{e}"
@@ -141,11 +155,8 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**ConsentProcessValueInput**](ConsentProcessValueInput.md)|  | 
 
 ### Return type
@@ -154,36 +165,42 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## consent_processes_get
 
-> Array&lt;ConsentProcessOutput&gt; consent_processes_get(authorization, opts)
+# **consent_processes_get**
+> Array&lt;ConsentProcessOutput&gt; consent_processes_get(opts)
 
 Get list of Consent Processes
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ConsentProcessesApi.new
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-opts = {
+
+opts = { 
   member: '/members/17625df4-4ee7-498e-822d-3637c91b6f40', # String | id of member (required for anonymous)
   procedure: '/procedures/17625df4-4ee7-498e-822d-3637c91b6f40' # String | id of procedure (required if the member attribut is not set)
 }
 
 begin
   #Get list of Consent Processes
-  result = api_instance.consent_processes_get(authorization, opts)
+  result = api_instance.consent_processes_get(opts)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ConsentProcessesApi->consent_processes_get: #{e}"
@@ -192,10 +209,8 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
  **member** | **String**| id of member (required for anonymous) | [optional] 
  **procedure** | **String**| id of procedure (required if the member attribut is not set) | [optional] 
 
@@ -205,33 +220,40 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## consent_processes_id_delete
 
-> consent_processes_id_delete(id, authorization)
+# **consent_processes_id_delete**
+> consent_processes_id_delete(id)
 
 Delete a Consent Process
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ConsentProcessesApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
+
 
 begin
   #Delete a Consent Process
-  api_instance.consent_processes_id_delete(id, authorization)
+  api_instance.consent_processes_id_delete(id)
 rescue YousignClient::ApiError => e
   puts "Exception when calling ConsentProcessesApi->consent_processes_id_delete: #{e}"
 end
@@ -239,11 +261,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -251,36 +271,43 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## consent_processes_id_get
 
-> ConsentProcessOutput consent_processes_id_get(id, authorization, opts)
+# **consent_processes_id_get**
+> ConsentProcessOutput consent_processes_id_get(id, opts)
 
 Get a Consent Process
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ConsentProcessesApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-opts = {
+
+opts = { 
   member: '/members/17625df4-4ee7-498e-822d-3637c91b6f40' # String | id of member (required for anonymous)
 }
 
 begin
   #Get a Consent Process
-  result = api_instance.consent_processes_id_get(id, authorization, opts)
+  result = api_instance.consent_processes_id_get(id, opts)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ConsentProcessesApi->consent_processes_id_get: #{e}"
@@ -289,11 +316,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
  **member** | **String**| id of member (required for anonymous) | [optional] 
 
 ### Return type
@@ -302,35 +327,42 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## consent_processes_id_put
 
-> ConsentProcessOutput consent_processes_id_put(id, authorization, content_type, body)
+# **consent_processes_id_put**
+> ConsentProcessOutput consent_processes_id_put(idbody)
 
 Update a Consent Process
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ConsentProcessesApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-content_type = 'application/json' # String | The MIME type of the body of the request
+
 body = YousignClient::ConsentProcessInput.new # ConsentProcessInput | 
+
 
 begin
   #Update a Consent Process
-  result = api_instance.consent_processes_id_put(id, authorization, content_type, body)
+  result = api_instance.consent_processes_id_put(idbody)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ConsentProcessesApi->consent_processes_id_put: #{e}"
@@ -339,12 +371,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**ConsentProcessInput**](ConsentProcessInput.md)|  | 
 
 ### Return type
@@ -353,34 +382,40 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## consent_processes_post
 
-> ConsentProcessOutput consent_processes_post(authorization, content_type, body)
+# **consent_processes_post**
+> ConsentProcessOutput consent_processes_post(body)
 
 Create a new Consent Process
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::ConsentProcessesApi.new
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-content_type = 'application/json' # String | The MIME type of the body of the request
+
 body = YousignClient::ConsentProcessInput.new # ConsentProcessInput | 
+
 
 begin
   #Create a new Consent Process
-  result = api_instance.consent_processes_post(authorization, content_type, body)
+  result = api_instance.consent_processes_post(body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling ConsentProcessesApi->consent_processes_post: #{e}"
@@ -389,11 +424,8 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**ConsentProcessInput**](ConsentProcessInput.md)|  | 
 
 ### Return type
@@ -402,10 +434,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
 

@@ -34,7 +34,6 @@ describe 'UsersApi' do
 
   # unit tests for users_get
   # List all Users
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [Array<UserOutput>]
   describe 'users_get test' do
@@ -46,7 +45,6 @@ describe 'UsersApi' do
   # unit tests for users_id_delete
   # Delete a User
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'users_id_delete test' do
@@ -58,7 +56,6 @@ describe 'UsersApi' do
   # unit tests for users_id_get
   # Find a User by ID
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [UserOutput]
   describe 'users_id_get test' do
@@ -70,8 +67,6 @@ describe 'UsersApi' do
   # unit tests for users_id_put
   # Update a User
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [UserOutput]
@@ -83,8 +78,6 @@ describe 'UsersApi' do
 
   # unit tests for users_post
   # Create a new User on Yousign application
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [UserOutput]

@@ -1,7 +1,6 @@
 # YousignClient::FileObjectInput
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **file** | **String** | File id reference | 
@@ -13,31 +12,10 @@ Name | Type | Description | Notes
 **member** | **String** | Member id reference | [optional] 
 **reason** | **String** | [type&#x3D;signature] The reason they are signing the agreement | [optional] [default to &#39;Signed by Yousign&#39;]
 **type** | **String** | The type of the file object | [optional] [default to &#39;signature&#39;]
-**content_required** | **Boolean** | [type&#x3D;text] Indicate if the member must fill or not the field | [optional] [default to false]
+**content_required** | **BOOLEAN** | [type&#x3D;text] Indicate if the member must fill or not the field | [optional] [default to false]
 **content** | **String** | [type&#x3D;text] The content of the field. Could be used for placeholder | [optional] 
 **font_family** | **String** | [type&#x3D;text] The font familly used to render the TextField. Currently only the default value will be used. | [optional] [default to &#39;raleway&#39;]
 **font_size** | **Integer** | [type&#x3D;text] The font size used to render the field. Currently only the default value will be used. | [optional] [default to 12]
 **font_color** | **String** | [type&#x3D;text] The font color used to render the field. | [optional] 
-
-## Code Sample
-
-```ruby
-require 'YousignClient'
-
-instance = YousignClient::FileObjectInput.new(file: null,
-                                 page: null,
-                                 position: 400,700,500,800,
-                                 field_name: null,
-                                 mention: null,
-                                 mention2: null,
-                                 member: null,
-                                 reason: null,
-                                 type: null,
-                                 content_required: null,
-                                 content: null,
-                                 font_family: null,
-                                 font_size: null,
-                                 font_color: 0,0,0)
-```
 
 

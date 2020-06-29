@@ -1,7 +1,6 @@
 # YousignClient::CheckDocumentIdentitiesOutput
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Id of the object | [optional] 
@@ -20,38 +19,10 @@ Name | Type | Description | Notes
 **extracted_issuance_date** | **Date** | Extracted issuance date on the document | [optional] 
 **extracted_expiration_date** | **Date** | Extracted expiration date on the document | [optional] 
 **extracted_mrz** | **Array&lt;String&gt;** | Extracted MRZ on the document | [optional] 
-**first_name_valid** | **Boolean** | Defines if one firstname sent in the input is valid | [optional] 
-**birth_name_valid** | **Boolean** | Defines if birth name sent in the input is valid | [optional] 
-**mrz_valid** | **Boolean** | Defines if MRZ sent in the input is valid | [optional] 
-**expired** | **Boolean** | Defines if the document is expired | [optional] 
-**valid** | **Boolean** | Defines if the document is valid | [optional] 
-
-## Code Sample
-
-```ruby
-require 'YousignClient'
-
-instance = YousignClient::CheckDocumentIdentitiesOutput.new(id: /check-document/identities/9d1ede2b-5687-4440-bdc8-dd0bc64f668c,
-                                 created_at: null,
-                                 updated_at: null,
-                                 first_names: null,
-                                 birth_name: null,
-                                 birth_date: null,
-                                 workspace: /workspaces/9d1ede2b-5687-4440-bdc8-dd0bc64f668c,
-                                 creator: /users/9d1ede2b-5687-4440-bdc8-dd0bc64f668c,
-                                 document_type: null,
-                                 extracted_first_names: null,
-                                 extracted_birth_name: null,
-                                 extracted_birth_date: null,
-                                 extracted_gender: null,
-                                 extracted_issuance_date: null,
-                                 extracted_expiration_date: null,
-                                 extracted_mrz: null,
-                                 first_name_valid: null,
-                                 birth_name_valid: null,
-                                 mrz_valid: null,
-                                 expired: null,
-                                 valid: null)
-```
+**first_name_valid** | **BOOLEAN** | Defines if one firstname sent in the input is valid | [optional] 
+**birth_name_valid** | **BOOLEAN** | Defines if birth name sent in the input is valid | [optional] 
+**mrz_valid** | **BOOLEAN** | Defines if MRZ sent in the input is valid | [optional] 
+**expired** | **BOOLEAN** | Defines if the document is expired | [optional] 
+**valid** | **BOOLEAN** | Defines if the document is valid | [optional] 
 
 

@@ -35,7 +35,6 @@ describe 'ServerStampsApi' do
   # unit tests for server_stamps_id_get
   # Find a Server Stamp by ID
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [ServerStampOutput]
   describe 'server_stamps_id_get test' do
@@ -46,8 +45,6 @@ describe 'ServerStampsApi' do
 
   # unit tests for server_stamps_post
   # Create a Server Stamp
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [ServerStampOutput]

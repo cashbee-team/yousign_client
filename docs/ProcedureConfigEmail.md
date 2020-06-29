@@ -1,7 +1,6 @@
 # YousignClient::ProcedureConfigEmail
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **procedure_started** | [**Array&lt;ConfigEmailTemplate&gt;**](ConfigEmailTemplate.md) |  | [optional] 
@@ -12,20 +11,5 @@ Name | Type | Description | Notes
 **member_started** | [**Array&lt;ConfigEmailTemplate&gt;**](ConfigEmailTemplate.md) |  | [optional] 
 **member_finished** | [**Array&lt;ConfigEmailTemplate&gt;**](ConfigEmailTemplate.md) |  | [optional] 
 **comment_created** | [**Array&lt;ConfigEmailTemplate&gt;**](ConfigEmailTemplate.md) |  | [optional] 
-
-## Code Sample
-
-```ruby
-require 'YousignClient'
-
-instance = YousignClient::ProcedureConfigEmail.new(procedure_started: null,
-                                 procedure_finished: null,
-                                 procedure_refused: null,
-                                 procedure_expired: null,
-                                 procedure_deleted: null,
-                                 member_started: null,
-                                 member_finished: null,
-                                 comment_created: null)
-```
 
 

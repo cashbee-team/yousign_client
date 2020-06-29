@@ -8,26 +8,31 @@ Method | HTTP request | Description
 [**operations_post**](OperationsApi.md#operations_post) | **POST** /operations | Create a new Operation
 
 
-
-## operations_id_get
-
-> OperationOutput operations_id_get(id, authorization)
+# **operations_id_get**
+> OperationOutput operations_id_get(id)
 
 Find an Operation by ID
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::OperationsApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
+
 
 begin
   #Find an Operation by ID
-  result = api_instance.operations_id_get(id, authorization)
+  result = api_instance.operations_id_get(id)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling OperationsApi->operations_id_get: #{e}"
@@ -36,11 +41,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -48,34 +51,40 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## operations_post
 
-> OperationOutput operations_post(authorization, content_type, body)
+# **operations_post**
+> OperationOutput operations_post(body)
 
 Create a new Operation
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::OperationsApi.new
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-content_type = 'application/json' # String | The MIME type of the body of the request
+
 body = YousignClient::OperationInput.new # OperationInput | 
+
 
 begin
   #Create a new Operation
-  result = api_instance.operations_post(authorization, content_type, body)
+  result = api_instance.operations_post(body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling OperationsApi->operations_post: #{e}"
@@ -84,11 +93,8 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**OperationInput**](OperationInput.md)|  | 
 
 ### Return type
@@ -97,10 +103,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
 

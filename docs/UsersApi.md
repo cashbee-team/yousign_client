@@ -11,25 +11,28 @@ Method | HTTP request | Description
 [**users_post**](UsersApi.md#users_post) | **POST** /users | Create a new User on Yousign application
 
 
-
-## users_get
-
-> Array&lt;UserOutput&gt; users_get(authorization)
+# **users_get**
+> Array&lt;UserOutput&gt; users_get
 
 List all Users
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::UsersApi.new
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
 
 begin
   #List all Users
-  result = api_instance.users_get(authorization)
+  result = api_instance.users_get
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling UsersApi->users_get: #{e}"
@@ -37,11 +40,7 @@ end
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -49,33 +48,40 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## users_id_delete
 
-> users_id_delete(id, authorization)
+# **users_id_delete**
+> users_id_delete(id)
 
 Delete a User
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::UsersApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
+
 
 begin
   #Delete a User
-  api_instance.users_id_delete(id, authorization)
+  api_instance.users_id_delete(id)
 rescue YousignClient::ApiError => e
   puts "Exception when calling UsersApi->users_id_delete: #{e}"
 end
@@ -83,11 +89,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -95,33 +99,40 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## users_id_get
 
-> UserOutput users_id_get(id, authorization)
+# **users_id_get**
+> UserOutput users_id_get(id)
 
 Find a User by ID
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::UsersApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
+
 
 begin
   #Find a User by ID
-  result = api_instance.users_id_get(id, authorization)
+  result = api_instance.users_id_get(id)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling UsersApi->users_id_get: #{e}"
@@ -130,11 +141,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
 
 ### Return type
 
@@ -142,35 +151,42 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## users_id_put
 
-> UserOutput users_id_put(id, authorization, content_type, body)
+# **users_id_put**
+> UserOutput users_id_put(idbody)
 
 Update a User
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::UsersApi.new
+
 id = 'id_example' # String | 
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-content_type = 'application/json' # String | The MIME type of the body of the request
+
 body = YousignClient::UserInput.new # UserInput | 
+
 
 begin
   #Update a User
-  result = api_instance.users_id_put(id, authorization, content_type, body)
+  result = api_instance.users_id_put(idbody)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling UsersApi->users_id_put: #{e}"
@@ -179,12 +195,9 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**UserInput**](UserInput.md)|  | 
 
 ### Return type
@@ -193,34 +206,40 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## users_post
 
-> UserOutput users_post(authorization, content_type, body)
+# **users_post**
+> UserOutput users_post(body)
 
 Create a new User on Yousign application
 
 ### Example
-
 ```ruby
 # load the gem
 require 'yousign_client'
+# setup authorization
+YousignClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = YousignClient::UsersApi.new
-authorization = 'Bearer {{access_token}}' # String | Authentication credentials for HTTP authentication
-content_type = 'application/json' # String | The MIME type of the body of the request
+
 body = YousignClient::UserInput.new # UserInput | 
+
 
 begin
   #Create a new User on Yousign application
-  result = api_instance.users_post(authorization, content_type, body)
+  result = api_instance.users_post(body)
   p result
 rescue YousignClient::ApiError => e
   puts "Exception when calling UsersApi->users_post: #{e}"
@@ -229,11 +248,8 @@ end
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authentication credentials for HTTP authentication | 
- **content_type** | **String**| The MIME type of the body of the request | 
  **body** | [**UserInput**](UserInput.md)|  | 
 
 ### Return type
@@ -242,10 +258,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
 

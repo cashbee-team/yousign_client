@@ -35,7 +35,6 @@ describe 'SignatureUIsApi' do
   # unit tests for signature_ui_labels_get
   # Get Signature UI Labels
   # Only usefull if you use a filter with name or signatureUI
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @option opts [String] :name Filtering on name of signature ui labels
   # @option opts [String] :signature_ui Filtering on id of signature ui resource
@@ -49,7 +48,6 @@ describe 'SignatureUIsApi' do
   # unit tests for signature_ui_labels_id_delete
   # Delete a Signature UI Label
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @option opts [String] :id2 Id of signature ui label
   # @return [nil]
@@ -62,7 +60,6 @@ describe 'SignatureUIsApi' do
   # unit tests for signature_ui_labels_id_get
   # Find a Signature UI Label by ID
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @option opts [String] :id2 id of signature ui label
   # @return [SignatureUiLabelOutput]
@@ -75,8 +72,6 @@ describe 'SignatureUIsApi' do
   # unit tests for signature_ui_labels_id_put
   # Update a Signature UI Label
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :id2 Id of signature ui labels
@@ -89,8 +84,6 @@ describe 'SignatureUIsApi' do
 
   # unit tests for signature_ui_labels_post
   # Create a new Signature UI Label
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [SignatureUiLabelOutput]
@@ -102,7 +95,6 @@ describe 'SignatureUIsApi' do
 
   # unit tests for signature_uis_get
   # Get Signature UI list
-  # @param authorization Authentication credentials for HTTP authentication
   # @param [Hash] opts the optional parameters
   # @return [Array<SignatureUiOutput>]
   describe 'signature_uis_get test' do
@@ -114,8 +106,6 @@ describe 'SignatureUIsApi' do
   # unit tests for signature_uis_id_delete
   # Delete a Signature UI
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param [Hash] opts the optional parameters
   # @option opts [String] :id2 Id of the signature ui
   # @return [nil]
@@ -128,8 +118,6 @@ describe 'SignatureUIsApi' do
   # unit tests for signature_uis_id_get
   # Find a Signature UI by ID
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param [Hash] opts the optional parameters
   # @option opts [String] :id2 id of a signature ui
   # @return [SignatureUiOutput]
@@ -142,8 +130,6 @@ describe 'SignatureUIsApi' do
   # unit tests for signature_uis_id_put
   # Update a Signature UI
   # @param id 
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param [Hash] opts the optional parameters
   # @option opts [String] :id2 id of signature ui to update
   # @return [SignatureUiInputUpdate]
@@ -156,8 +142,6 @@ describe 'SignatureUIsApi' do
   # unit tests for signature_uis_post
   # Create a new Signature UI
   # Here is the url format to build on your side to get a custom signature interface with your settings :  https://webapp.yousign.com/procedure/sign?members&#x3D;~2Fmembers~2F__MEMBER_ID__&amp;signatureUi&#x3D;~2Fsignature_uis~2F__SIGNATURE_UI_ID__
-  # @param authorization Authentication credentials for HTTP authentication
-  # @param content_type The MIME type of the body of the request
   # @param body 
   # @param [Hash] opts the optional parameters
   # @return [SignatureUiOutput]

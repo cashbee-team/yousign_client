@@ -1,7 +1,6 @@
 # YousignClient::MemberOutput
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Id of the object | [optional] 
@@ -21,29 +20,5 @@ Name | Type | Description | Notes
 **operation_level** | **String** |  | [optional] 
 **operation_custom_modes** | **Array&lt;String&gt;** |  | [optional] 
 **mode_sms_configuration** | [**ModeSmsConfiguration**](ModeSmsConfiguration.md) |  | [optional] 
-
-## Code Sample
-
-```ruby
-require 'YousignClient'
-
-instance = YousignClient::MemberOutput.new(id: /members/9d1ede2b-5687-4440-bdc8-dd0bc64f668c,
-                                 user: /users/9d1ede2b-5687-4440-bdc8-dd0bc64f668c,
-                                 type: null,
-                                 firstname: null,
-                                 lastname: null,
-                                 email: null,
-                                 phone: null,
-                                 position: null,
-                                 created_at: null,
-                                 updated_at: null,
-                                 status: null,
-                                 file_objects: null,
-                                 comment: null,
-                                 procedure: null,
-                                 operation_level: null,
-                                 operation_custom_modes: null,
-                                 mode_sms_configuration: null)
-```
 
 
