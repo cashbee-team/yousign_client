@@ -37,7 +37,7 @@ Finally add this to the Gemfile:
 
 If the Ruby gem is hosted at a git repository: https://github.com/GIT_USER_ID/GIT_REPO_ID, then add the following in the Gemfile:
 
-    gem 'yousign_client', :git => 'https://github.com/GIT_USER_ID/GIT_REPO_ID.git'
+    gem 'yousign_client', :git => 'https://github.com/cashbee-team/yousign_client.git'
 
 ### Include the Ruby code directly
 
