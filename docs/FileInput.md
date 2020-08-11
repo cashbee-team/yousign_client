@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **metadata** | [**FileInputMetadata**](FileInputMetadata.md) |  | [optional] 
 **content** | **String** | Content in base 64 of the file | [optional] 
 **procedure** | **String** | Id of the procedure | [optional] 
-**position** | **Integer** |  | [optional] [default to 0]
+**position** | **Integer** |  | [optional] 
 
 
