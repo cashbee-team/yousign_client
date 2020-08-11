@@ -2460,8 +2460,7 @@
         },
         "position" : {
           "type" : "integer",
-          "format" : "int32",
-          "default" : 0
+          "format" : "int32"
         }
       },
       "x-restlet" : {

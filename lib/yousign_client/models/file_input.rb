@@ -124,8 +124,6 @@ module YousignClient
 
       if attributes.has_key?(:'position')
         self.position = attributes[:'position']
-      else
-        self.position = 0
       end
     end
 
