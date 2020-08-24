@@ -2833,6 +2833,11 @@
           "format" : "date-time",
           "description" : "Updated date of the object"
         },
+        "finishedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Finished date of the object"
+        },
         "expiresAt" : {
           "type" : "string",
           "format" : "date-time",

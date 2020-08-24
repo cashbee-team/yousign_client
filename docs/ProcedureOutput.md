@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **description** | **String** | Description of procedure | [optional] 
 **created_at** | **DateTime** | Created date of the object | [optional] 
 **updated_at** | **DateTime** | Updated date of the object | [optional] 
+**finished_at** | **DateTime** | Finished date of the object | [optional] 
 **expires_at** | **DateTime** | Expiration date. The procedure will be out of usage after this date. | [optional] 
 **status** | **String** | Status of the procedure | [optional] 
 **creator** | **String** | Id of creator of the object | [optional] 

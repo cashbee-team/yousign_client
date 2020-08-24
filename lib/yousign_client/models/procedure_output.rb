@@ -29,6 +29,9 @@ module YousignClient
     # Updated date of the object
     attr_accessor :updated_at
 
+    # Finished date of the object
+    attr_accessor :finished_at
+
     # Expiration date. The procedure will be out of usage after this date.
     attr_accessor :expires_at
 
@@ -101,6 +104,7 @@ module YousignClient
         :'description' => :'description',
         :'created_at' => :'createdAt',
         :'updated_at' => :'updatedAt',
+        :'finished_at' => :'finishedAt',
         :'expires_at' => :'expiresAt',
         :'status' => :'status',
         :'creator' => :'creator',
@@ -127,6 +131,7 @@ module YousignClient
         :'description' => :'String',
         :'created_at' => :'DateTime',
         :'updated_at' => :'DateTime',
+        :'finished_at' => :'DateTime',
         :'expires_at' => :'DateTime',
         :'status' => :'String',
         :'creator' => :'String',
@@ -171,6 +176,10 @@ module YousignClient
 
       if attributes.has_key?(:'updatedAt')
         self.updated_at = attributes[:'updatedAt']
+      end
+
+      if attributes.has_key?(:'finishedAt')
+        self.finished_at = attributes[:'finishedAt']
       end
 
       if attributes.has_key?(:'expiresAt')
@@ -275,6 +284,7 @@ module YousignClient
           description == o.description &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
+          finished_at == o.finished_at &&
           expires_at == o.expires_at &&
           status == o.status &&
           creator == o.creator &&
@@ -301,7 +311,7 @@ module YousignClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, description, created_at, updated_at, expires_at, status, creator, creator_first_name, creator_last_name, workspace, template, ordered, parent, metadata, config, members, files, related_files_enable, archive].hash
+      [id, name, description, created_at, updated_at, finished_at, expires_at, status, creator, creator_first_name, creator_last_name, workspace, template, ordered, parent, metadata, config, members, files, related_files_enable, archive].hash
     end
 
     # Builds the object from hash
