@@ -1,0 +1,116 @@
+PATH
+  remote: .
+  specs:
+    yousign_client (1.1.0)
+      typhoeus (~> 1.4.0)
+
+GEM
+  remote: https://rubygems.org/
+  remote: https://rubygems.pkg.github.com/cashbee-team/
+  specs:
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    ast (2.4.2)
+    autotest (5.0.0)
+      minitest-autotest (~> 1.0)
+    autotest-fsevent (0.2.19)
+      sys-uname
+    autotest-growl (0.2.16)
+    autotest-rails-pure (4.1.2)
+    byebug (11.1.3)
+    coderay (1.1.3)
+    codestyle (2.1.0)
+      rubocop (~> 1.22.0)
+      rubocop-performance (~> 1.11.5)
+      rubocop-rake (~> 0.6.0)
+      rubocop-rspec (~> 2.5.0)
+    crack (0.4.5)
+      rexml
+    diff-lcs (1.5.0)
+    ethon (0.15.0)
+      ffi (>= 1.15.0)
+    ffi (1.15.5)
+    hashdiff (1.0.1)
+    method_source (1.0.0)
+    minitest (5.15.0)
+    minitest-autotest (1.1.1)
+      minitest-server (~> 1.0)
+      path_expander (~> 1.0)
+    minitest-server (1.0.6)
+      minitest (~> 5.0)
+    parallel (1.21.0)
+    parser (3.1.0.0)
+      ast (~> 2.4.1)
+    path_expander (1.1.0)
+    pry (0.13.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.9.0)
+      byebug (~> 11.0)
+      pry (~> 0.13.0)
+    public_suffix (4.0.6)
+    rainbow (3.1.1)
+    rake (13.0.6)
+    regexp_parser (2.2.1)
+    rexml (3.2.5)
+    rspec (3.11.0)
+      rspec-core (~> 3.11.0)
+      rspec-expectations (~> 3.11.0)
+      rspec-mocks (~> 3.11.0)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-support (3.11.0)
+    rubocop (1.22.3)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.12.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.15.1)
+      parser (>= 3.0.1.1)
+    rubocop-performance (1.11.5)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
+    rubocop-rake (0.6.0)
+      rubocop (~> 1.0)
+    rubocop-rspec (2.5.0)
+      rubocop (~> 1.19)
+    ruby-progressbar (1.11.0)
+    sys-uname (1.2.2)
+      ffi (~> 1.1)
+    typhoeus (1.4.0)
+      ethon (>= 0.9.0)
+    unicode-display_width (2.1.0)
+    vcr (6.0.0)
+    webmock (3.14.0)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  autotest
+  autotest-fsevent
+  autotest-growl
+  autotest-rails-pure
+  codestyle!
+  pry-byebug
+  rake
+  rspec
+  vcr
+  webmock
+  yousign_client!
+
+BUNDLED WITH
+   2.1.2
